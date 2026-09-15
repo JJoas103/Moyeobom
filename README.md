@@ -43,8 +43,11 @@
 4. **서버 실행**
    ```bash
    npm run start   # node app.js
-   npm run dev     # nodemon
+   npm run dev     # nodemon / localhost:3000
    ```
+   ++react 마이그레이션 이후 react 서버도 별도로 구동 필요
+   cd frontend
+   npm run dev     # localhost:5173
 
 ---
 
