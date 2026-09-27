@@ -54,7 +54,24 @@ const userSchema = new mongoose.Schema(
         alert_comment: { type: Boolean, default: true },
         alert_badge: { type: Boolean, default: true },
         alert_marketing: { type: Boolean, default: false },
-        badges: { type: [String], default: [] }
+        badges: { type: [String], default: [] },
+
+        // 온보딩 설문 결과 — 행사 추천의 초기 입력값
+        preferences: {
+            hobbies: { type: [String], default: [] },
+            personality: { type: [String], default: [] },
+            genres: { type: [String], default: [] },
+            preferredTime: { type: [String], default: [] },   // 평일저녁 / 주말낮 / 주말저녁 ...
+            preferredAreas: { type: [String], default: [] }
+        },
+        // 온보딩 완료 시각 (건너뛰기도 완료로 기록 — 매번 다시 묻지 않기 위함)
+        onboardedAt: { type: Date, default: null },
+        // 참여 이력으로 갱신되는 취향 가중치. key: 장르/카테고리, value: 누적 점수
+        tasteVector: {
+            type: Map,
+            of: Number,
+            default: {}
+        }
     },{
         timestamps : true
     }

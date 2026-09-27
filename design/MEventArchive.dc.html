@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Noto Sans KR", -apple-system, sans-serif; background: #f4f6f9; color: #1e293b; -webkit-font-smoothing: antialiased; }
+    a { color: #1d9e75; } a:hover { color: #16a34a; }
+  </style>
+</helmet>
+
+<div style="width: 390px; height: 896px; display: flex; flex-direction: column; background: #f4f6f9;">
+
+  <div style="display: flex; align-items: center; gap: 8px; padding: 13px 16px; background: #1d9e75; flex-shrink: 0;">
+    <span style="font-size: 10.5px; font-weight: 700; color: #1d9e75; background: #ffffff; padding: 3px 9px; border-radius: 100px; white-space: nowrap;">핵심</span>
+    <span style="font-size: 11.5px; font-weight: 500; color: #e6f9f4; line-height: 1.35;">3개월 뒤 같은 화면 &mdash; &ldquo;게시판과 뭐가 다른가&rdquo;에 대한 답</span>
+  </div>
+
+  <div style="flex-grow: 1; overflow: hidden; display: flex; flex-direction: column;">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: #ffffff; border-bottom: 1px solid #e2e8f0; flex-shrink: 0;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      <span style="font-size: 15px; font-weight: 700;">행사</span>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+    </div>
+
+    <div style="flex-grow: 1; overflow: hidden;">
+
+      <div style="height: 150px; background: linear-gradient(150deg, #0f766e 0%, #1d9e75 55%, #6ee7c7 100%); position: relative; display: flex; align-items: flex-end; padding: 16px;">
+        <div style="position: absolute; top: 13px; left: 16px; font-size: 10.5px; font-weight: 700; color: #065f46; background: rgba(255,255,255,0.92); padding: 4px 10px; border-radius: 100px;">전시</div>
+        <div style="color: #ffffff;">
+          <div style="font-size: 19px; font-weight: 900; letter-spacing: -0.4px;">사물의 재구성</div>
+          <div style="font-size: 12px; font-weight: 500; opacity: 0.9; margin-top: 3px;">서울시립미술관 &middot; ~11.30 &middot; 무료</div>
+        </div>
+      </div>
+
+      <div style="background: #ffffff; padding: 15px 16px; border-bottom: 8px solid #f4f6f9;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+          <div style="display: flex; align-items: baseline; gap: 7px;">
+            <span style="font-size: 14.5px; font-weight: 700;">이 행사를 본 사람들</span>
+            <span style="font-size: 13.5px; font-weight: 800; color: #1d9e75;">47</span>
+          </div>
+          <span style="font-size: 12px; color: #1d9e75; font-weight: 600;">모두 보기</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 11px; padding: 12px 13px;">
+            <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 6px;">
+              <div style="width: 21px; height: 21px; border-radius: 50%; background: #e6f9f4; border: 1px solid #6ee7c7; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #1d9e75;">현</div>
+              <span style="font-size: 12px; font-weight: 600;">현우</span>
+              <span style="font-size: 10.5px; color: #94a3b8;">3일 전 &middot; 혼자 관람</span>
+            </div>
+            <div style="font-size: 12.5px; line-height: 1.55; color: #334155;">2층 마지막 방이 진짜입니다. 사람 없을 때 가서 오래 앉아 있었어요.</div>
+          </div>
+
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 11px; padding: 12px 13px;">
+            <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 6px;">
+              <div style="width: 21px; height: 21px; border-radius: 50%; background: #eff6ff; border: 1px solid #bfdbfe; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #2563eb;">지</div>
+              <span style="font-size: 12px; font-weight: 600;">지수</span>
+              <span style="font-size: 10.5px; color: #94a3b8;">5일 전</span>
+              <span style="font-size: 9.5px; font-weight: 600; color: #1d9e75; background: #e6f9f4; padding: 2px 6px; border-radius: 100px;">모임 동행</span>
+            </div>
+            <div style="font-size: 12.5px; line-height: 1.55; color: #334155;">생각보다 금방 봅니다. 40분이면 충분해서 끝나고 얘기할 시간이 넉넉했어요.</div>
+          </div>
+
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 11px; padding: 12px 13px;">
+            <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 6px;">
+              <div style="width: 21px; height: 21px; border-radius: 50%; background: #fefce8; border: 1px solid #fde68a; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #ca8a04;">민</div>
+              <span style="font-size: 12px; font-weight: 600;">민재</span>
+              <span style="font-size: 10.5px; color: #94a3b8;">1주 전 &middot; 혼자 관람</span>
+            </div>
+            <div style="font-size: 12.5px; line-height: 1.55; color: #334155;">주말 오후는 줄이 깁니다. 평일 저녁 추천.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="background: #ffffff; padding: 15px 16px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+          <div style="display: flex; align-items: baseline; gap: 7px;">
+            <span style="font-size: 14.5px; font-weight: 700;">같이 갈 모임</span>
+            <span style="font-size: 13.5px; font-weight: 800; color: #1d9e75;">4</span>
+          </div>
+          <span style="font-size: 12px; color: #1d9e75; font-weight: 600;">모임 열기</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          <div style="border: 1px solid #e2e8f0; border-radius: 11px; padding: 12px 13px;">
+            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+              <span style="font-size: 10px; font-weight: 700; color: #ffffff; background: #1d9e75; padding: 3px 8px; border-radius: 100px;">모집중</span>
+              <span style="font-size: 11px; color: #64748b;">9월 12일 (목) 19:00</span>
+            </div>
+            <div style="font-size: 13px; font-weight: 600; margin-bottom: 7px;">목요일 저녁, 조용할 때 같이</div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 11.5px; color: #64748b;">3 / 4명</span>
+              <div style="width: 96px; height: 5px; background: #e2e8f0; border-radius: 100px; overflow: hidden;"><div style="width: 75%; height: 100%; background: #1d9e75;"></div></div>
+            </div>
+          </div>
+
+          <div style="border: 1px solid #e2e8f0; border-radius: 11px; padding: 12px 13px; opacity: 0.72;">
+            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+              <span style="font-size: 10px; font-weight: 700; color: #64748b; background: #e2e8f0; padding: 3px 8px; border-radius: 100px;">마감</span>
+              <span style="font-size: 11px; color: #64748b;">9월 14일 (토) 14:00</span>
+            </div>
+            <div style="font-size: 13px; font-weight: 600; margin-bottom: 7px;">토요일 낮에 보고 커피 한 잔</div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 11.5px; color: #64748b;">4 / 4명</span>
+              <div style="width: 96px; height: 5px; background: #e2e8f0; border-radius: 100px; overflow: hidden;"><div style="width: 100%; height: 100%; background: #94a3b8;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

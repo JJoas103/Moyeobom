@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Noto Sans KR", -apple-system, sans-serif; background: #f4f6f9; color: #1e293b; -webkit-font-smoothing: antialiased; }
+    a { color: #1d9e75; } a:hover { color: #16a34a; }
+  </style>
+</helmet>
+
+<div style="width: 390px; height: 896px; display: flex; flex-direction: column; background: #f4f6f9;">
+
+  <div style="display: flex; align-items: center; gap: 8px; padding: 13px 16px; background: #1d9e75; flex-shrink: 0;">
+    <span style="font-size: 10.5px; font-weight: 700; color: #1d9e75; background: #ffffff; padding: 3px 9px; border-radius: 100px; white-space: nowrap;">핵심</span>
+    <span style="font-size: 11.5px; font-weight: 500; color: #e6f9f4; line-height: 1.35;">&ldquo;클릭하면 뭘 보여줄 건가&rdquo;에 대한 답</span>
+  </div>
+
+  <div style="flex-grow: 1; overflow: hidden; display: flex; flex-direction: column;">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: #ffffff; border-bottom: 1px solid #e2e8f0; flex-shrink: 0;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      <span style="font-size: 15px; font-weight: 700;">모임</span>
+      <span style="width: 22px;"></span>
+    </div>
+
+    <div style="flex-grow: 1; overflow: hidden;">
+
+      <div style="background: #ffffff; padding: 16px; border-bottom: 8px solid #f4f6f9;">
+        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 9px;">
+          <span style="font-size: 10px; font-weight: 700; color: #ffffff; background: #1d9e75; padding: 3px 8px; border-radius: 100px;">모집중</span>
+          <span style="font-size: 10px; font-weight: 600; color: #065f46; background: #e6f9f4; padding: 3px 8px; border-radius: 100px;">사물의 재구성</span>
+        </div>
+        <div style="font-size: 17.5px; font-weight: 800; letter-spacing: -0.3px; line-height: 1.35;">목요일 저녁, 조용할 때 같이</div>
+        <div style="font-size: 12.5px; color: #64748b; line-height: 1.6; margin-top: 8px;">각자 보고 8시에 만나서 얘기해요. 처음이라 부담 없이요.</div>
+
+        <div style="display: flex; align-items: center; gap: 9px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #e2e8f0;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: #e6f9f4; border: 1px solid #6ee7c7; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #1d9e75;">현</div>
+          <div style="flex-grow: 1;">
+            <div style="font-size: 12.5px; font-weight: 600;">현우 <span style="font-size: 10px; font-weight: 500; color: #94a3b8;">호스트</span></div>
+            <div style="font-size: 10.5px; color: #64748b; margin-top: 1px;">매너 점수 72 &middot; 모임 5회</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #ffffff; padding: 16px; border-bottom: 8px solid #f4f6f9;">
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span style="font-size: 13px;">9월 12일 (목) 오후 7:00</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.9" stroke-linecap="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span style="font-size: 13px;">서울시립미술관 정문 앞</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 14px; padding-top: 13px; border-top: 1px solid #e2e8f0;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 12.5px; font-weight: 600;">참여 인원</span>
+            <span style="font-size: 12.5px;"><strong style="color: #1d9e75; font-weight: 800;">3</strong> <span style="color:#94a3b8;">/ 4명</span></span>
+          </div>
+          <div style="width: 100%; height: 6px; background: #e2e8f0; border-radius: 100px; overflow: hidden; margin-bottom: 11px;"><div style="width: 75%; height: 100%; background: #1d9e75;"></div></div>
+          <div style="display: flex; gap: 7px;">
+            <div style="width: 30px; height: 30px; border-radius: 50%; background: #e6f9f4; border: 1px solid #6ee7c7; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #1d9e75;">현</div>
+            <div style="width: 30px; height: 30px; border-radius: 50%; background: #eff6ff; border: 1px solid #bfdbfe; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #2563eb;">지</div>
+            <div style="width: 30px; height: 30px; border-radius: 50%; background: #fefce8; border: 1px solid #fde68a; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #ca8a04;">민</div>
+            <div style="width: 30px; height: 30px; border-radius: 50%; border: 1px dashed #cbd5e1; display: flex; align-items: center; justify-content: center;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #ffffff; padding: 16px; border-bottom: 8px solid #f4f6f9; border-left: 3px solid #1d9e75;">
+        <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 4px;">
+          <span style="font-size: 14.5px; font-weight: 700;">보고 나서 갈 곳</span>
+          <span style="font-size: 9.5px; font-weight: 700; color: #ffffff; background: #1d9e75; padding: 2px 7px; border-radius: 100px;">차별점</span>
+        </div>
+        <div style="font-size: 11.5px; color: #64748b; line-height: 1.5; margin-bottom: 12px;">전시장 반경 500m &middot; 호스트가 미리 정합니다</div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="border: 2px solid #1d9e75; background: #e6f9f4; border-radius: 11px; padding: 11px 12px; display: flex; align-items: center; gap: 10px;">
+            <div style="width: 20px; height: 20px; border-radius: 50%; background: #1d9e75; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <div style="flex-grow: 1;">
+              <div style="font-size: 13px; font-weight: 700; color: #065f46;">코히 시나몬</div>
+              <div style="font-size: 11px; color: #047857; margin-top: 2px;">덕수궁길 · 180m · 도보 3분</div>
+            </div>
+            <span style="font-size: 10px; font-weight: 700; color: #ffffff; background: #1d9e75; padding: 3px 8px; border-radius: 100px;">확정</span>
+          </div>
+
+          <div style="border: 1px solid #e2e8f0; border-radius: 11px; padding: 11px 12px; display: flex; align-items: center; gap: 10px;">
+            <div style="width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid #cbd5e1; flex-shrink: 0;"></div>
+            <div style="flex-grow: 1;">
+              <div style="font-size: 13px; font-weight: 600; color: #64748b;">아우어 베이커리 정동</div>
+              <div style="font-size: 11px; color: #94a3b8; margin-top: 2px;">정동길 · 240m · 도보 4분</div>
+            </div>
+          </div>
+
+          <div style="border: 1px solid #e2e8f0; border-radius: 11px; padding: 11px 12px; display: flex; align-items: center; gap: 10px;">
+            <div style="width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid #cbd5e1; flex-shrink: 0;"></div>
+            <div style="flex-grow: 1;">
+              <div style="font-size: 13px; font-weight: 600; color: #64748b;">정동 1928 아트센터 카페</div>
+              <div style="font-size: 11px; color: #94a3b8; margin-top: 2px;">정동길 · 310m · 도보 5분</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 11px; font-size: 10.5px; color: #94a3b8; line-height: 1.5;">kakaoLocalService.js &mdash; getNearbyParking과 같은 구조로 함수 1개 추가</div>
+      </div>
+
+      <div style="background: #ffffff; padding: 16px;">
+        <div style="background: #fefce8; border: 1px solid #fde68a; border-radius: 11px; padding: 13px;">
+          <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 8px;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="1.9" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+            <span style="font-size: 12.5px; font-weight: 700; color: #854d0e;">오픈채팅 링크</span>
+            <span style="font-size: 9.5px; font-weight: 600; color: #854d0e; background: #fef9c3; padding: 2px 7px; border-radius: 100px;">참여 확정자만</span>
+          </div>
+          <div style="background: #ffffff; border-radius: 8px; padding: 10px 12px; font-size: 12px; color: #1d9e75; font-weight: 600;">open.kakao.com/o/gA7xK2 &nbsp;&rarr;</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
