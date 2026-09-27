@@ -1,5 +1,5 @@
 // 온보딩 설문의 선택지를 한 곳에서 정의한다.
-// 화면(views/member/onboarding.ejs), 검증(onboardingController), 추천 매칭(recommendService)이
+// 보기 제공·검증(routes/api/onboardingApiRouter)과 추천 매칭(recommendService)이
 // 모두 이 파일을 참조하므로 선택지와 행사 태그가 어긋나지 않는다.
 
 // 장르 — eventApiService.GENRE_MAP이 행사에 붙이는 태그와 문자열이 정확히 일치해야
