@@ -22,12 +22,8 @@ passport.use(new LocalStrategy({
         return done(error);
     }
 }));
-// 구글 전략
-passport.use(new GoogleStrategy({
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "/auth/google/callback"
-}, async (accessToken, refreshToken, profile, done) => {
+// 구글/네이버 로그인 성공/신규가입 판별 로직
+async function googleVerify(accessToken, refreshToken, profile, done) {
     try {
         const email = profile.emails[0].value;
         let user = await userService.findUserByEmail(email);
@@ -36,7 +32,7 @@ passport.use(new GoogleStrategy({
             return done(null, user);
         } else {
             // 사용자가 없으면 소셜 정보만 전달 (DB 저장 안함)
-            return done(null, false, { 
+            return done(null, false, {
                 type: 'social_new',
                 socialData: {
                     email,
@@ -49,14 +45,9 @@ passport.use(new GoogleStrategy({
     } catch (error) {
         return done(error);
     }
-}));
+}
 
-// 네이버 전략
-passport.use(new NaverStrategy({
-    clientID: process.env.NAVER_CLIENT_ID,
-    clientSecret: process.env.NAVER_CLIENT_SECRET,
-    callbackURL: "/auth/naver/callback"
-}, async (accessToken, refreshToken, profile, done) => {
+async function naverVerify(accessToken, refreshToken, profile, done) {
     try {
         const email = profile.email;
         let user = await userService.findUserByEmail(email);
@@ -65,7 +56,7 @@ passport.use(new NaverStrategy({
             return done(null, user);
         } else {
             // 사용자가 없으면 소셜 정보만 전달
-            return done(null, false, { 
+            return done(null, false, {
                 type: 'social_new',
                 socialData: {
                     email,
@@ -78,7 +69,35 @@ passport.use(new NaverStrategy({
     } catch (error) {
         return done(error);
     }
-}));
+}
+
+// 구글 전략
+passport.use(new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: "/auth/google/callback"
+}, googleVerify));
+
+// 네이버 전략
+passport.use(new NaverStrategy({
+    clientID: process.env.NAVER_CLIENT_ID,
+    clientSecret: process.env.NAVER_CLIENT_SECRET,
+    callbackURL: "/auth/naver/callback"
+}, naverVerify));
+
+// 리액트 구글 전략
+passport.use('google-api', new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: "/api/auth/google/callback"
+}, googleVerify));
+
+// 리액트 네이버 전략
+passport.use('naver-api', new NaverStrategy({
+    clientID: process.env.NAVER_CLIENT_ID,
+    clientSecret: process.env.NAVER_CLIENT_SECRET,
+    callbackURL: "/api/auth/naver/callback"
+}, naverVerify));
 
 passport.serializeUser((user, done) => done(null, user.id));
 passport.deserializeUser(async (id, done) => {

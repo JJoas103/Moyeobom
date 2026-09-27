@@ -28,7 +28,11 @@ const getCongestion = async (req, res, next) => {
         const markerInfo = await placeService.getAllMarker();
         const surgePlace = await placeService.getSurgeTop5();
         const congestPlaceTopFive = await placeService.getCongestTop5();
-        const placeInfoLimt = await placeService.getPlaceInfoLimt();
+        const placeInfoLimtRaw = await placeService.getPlaceInfoLimt();
+        // getMain과 동일하게 "한산한 명소" 카드의 대표 이미지도 함께 내려준다.
+        // (원본 public/js/main.js의 5분 주기 갱신은 이 값을 쓰지 않으므로 필드 추가는 안전하다)
+        const images = await Promise.all(placeInfoLimtRaw.map(p => kakaoLocalService.getPlaceImage(p.name)));
+        const placeInfoLimt = placeInfoLimtRaw.map((p, i) => ({ ...p.toObject(), imageUrl: images[i] }));
         res.json({ markerInfo, surgePlace, congestPlaceTopFive, placeInfoLimt });
     } catch (error) {
         next(error);

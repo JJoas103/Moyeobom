@@ -3,16 +3,24 @@ const express = require("express");
 const path = require("path");
 const http = require("http");
 const { Server } = require("socket.io");
+const cors = require("cors");
 const connectDB = require("./config/database");
 const session = require("express-session");
 const passport = require("./config/passport");
 const { errorHandler, notFoundHandler } = require("./middlewares/errorMiddleware");
+const { apiErrorHandler } = require("./middlewares/apiErrorMiddleware");
 
 const app = express();
 
 const server = http.createServer(app);
 
-const io = new Server(server);
+// React(Vite) 개발 서버에서도 실시간 알림 소켓에 연결할 수 있도록 위의 Express cors 설정과 동일한 origin을 허용
+const io = new Server(server, {
+  cors: {
+    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    credentials: true,
+  },
+});
 
 app.set("io", io);
 
@@ -33,6 +41,13 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // 미들웨어
+// React(Vite) 개발 서버에서 /api/* 로 오는 요청을 허용 (기존 EJS 렌더링 경로는 영향 없음)
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    credentials: true,
+  }),
+);
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -112,6 +127,13 @@ const authRouter = require("./routes/authRouter");
 const placeRouter = require("./routes/placeRouter");
 const favoriteRouter = require("./routes/favoriteRouter");
 const visitRouter = require("./routes/visitRouter");
+// React 프론트엔드용 JSON API 라우터 (기존 EJS 라우터와 별개로 병행 운영)
+const meetingApiRouter = require("./routes/api/meetingApiRouter");
+const authApiRouter = require("./routes/api/authApiRouter");
+const memberApiRouter = require("./routes/api/memberApiRouter");
+const placeApiRouter = require("./routes/api/placeApiRouter");
+const feedApiRouter = require("./routes/api/feedApiRouter");
+const commentApiRouter = require("./routes/api/commentApiRouter");
 
 app.use("/", mainRouter);
 app.use("/member", userRouter);
@@ -122,6 +144,12 @@ app.use("/auth", authRouter);
 app.use("/place", placeRouter);
 app.use("/favorite", favoriteRouter);
 app.use("/visit", visitRouter);
+app.use("/api/meeting", meetingApiRouter);
+app.use("/api/auth", authApiRouter);
+app.use("/api/member", memberApiRouter);
+app.use("/api/place", placeApiRouter);
+app.use("/api/feed", feedApiRouter);
+app.use("/api/comment", commentApiRouter);
 
 // Socket.IO 연결
 io.on("connection", (socket) => {
@@ -145,6 +173,7 @@ io.on("connection", (socket) => {
 
 // 에러 핸들링
 app.use(notFoundHandler);
+app.use("/api", apiErrorHandler); // /api/* 요청은 EJS 대신 JSON으로 에러 응답
 app.use(errorHandler);
 
 // 포트 설정 (로그를 더 자세히 찍도록 변경)
