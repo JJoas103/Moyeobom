@@ -3,12 +3,15 @@ import Layout from './components/Layout'
 import ErrorMessage from './components/ErrorMessage'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
-import meetingRoutes from './pages/meeting/routes'
-import feedRoutes from './pages/feed/routes'
+import eventRoutes from './pages/event/routes'
+import gatheringRoutes from './pages/gathering/routes'
+import meRoutes from './pages/me/routes'
 import memberRoutes from './pages/member/routes'
-import placeRoutes from './pages/place/routes'
 import { useAuth } from './context/AuthContext'
 
+// 행사 기반으로 화면을 다시 짜면서 라우팅도 교체했다.
+// 이전 기획(혼잡도·지도·제보)의 pages/feed, pages/place, pages/meeting 은 파일은 남아 있지만
+// 여기서 내렸다. 지금 기획과 맞지 않는 화면이라 열려 있으면 오히려 혼란스럽다.
 function App() {
   const { authLoading } = useAuth()
 
@@ -23,17 +26,17 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="member" element={<Outlet />}>
-            {memberRoutes}
+          <Route path="event" element={<Outlet />}>
+            {eventRoutes}
           </Route>
           <Route path="meeting" element={<Outlet />}>
-            {meetingRoutes}
+            {gatheringRoutes}
           </Route>
-          <Route path="feed" element={<Outlet />}>
-            {feedRoutes}
+          <Route path="me" element={<Outlet />}>
+            {meRoutes}
           </Route>
-          <Route path="place" element={<Outlet />}>
-            {placeRoutes}
+          <Route path="member" element={<Outlet />}>
+            {memberRoutes}
           </Route>
           <Route path="*" element={<ErrorMessage />} />
         </Routes>

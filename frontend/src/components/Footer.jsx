@@ -36,7 +36,7 @@ function Footer() {
   return (
     <footer className="py-5 mt-5">
       <div className="container text-center footer">
-        <div className="small">© 2026 모여봄 - 서울 여유 공간 탐색 플랫폼</div>
+        <div className="small">© 2026 모여봄 — 같은 행사를 본 사람과, 여운이 식기 전에</div>
         <div className="small mt-1">팀 프로젝트 1조</div>
       </div>
     </footer>

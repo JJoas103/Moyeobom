@@ -393,3 +393,230 @@ body {
   font-weight: 700;
   vertical-align: middle;
 }
+
+/* ═════════ 행사 기반 화면 ═════════ */
+
+/* ── 로딩 자리 ──
+   카드가 들어올 자리를 미리 잡아 둔다. 로딩 중에 레이아웃이 밀리면
+   글자가 튀어 보여서 화면이 불안해 보인다. */
+.skeleton-card {
+  min-height: 260px;
+  background: linear-gradient(100deg, var(--surface2) 30%, #eef2f6 50%, var(--surface2) 70%);
+  background-size: 300% 100%;
+  animation: skeleton-sweep 1.4s ease-in-out infinite;
+}
+@keyframes skeleton-sweep {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-card {
+    animation: none;
+  }
+}
+
+/* ── 가로 스크롤 필터 ──
+   카테고리가 11개라 좁은 화면에서 줄바꿈하면 버튼이 3줄로 쌓여 화면을 다 먹는다. */
+.filter-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.filter-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── 정의형 메타 목록 (행사·모임 상세) ── */
+.event-meta {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 6px 12px;
+  margin: 0;
+  font-size: 14px;
+}
+.event-meta dt {
+  color: var(--ink-dim);
+  font-weight: 500;
+}
+.event-meta dd {
+  margin: 0;
+  min-width: 0;
+  word-break: break-word;
+}
+
+/* ── 추천 이유 상자 ── */
+.reason-box {
+  background: var(--brand-50);
+  border: 1px solid var(--brand-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+/* ── 콜드스타트 ──
+   모임이 0개인 행사. 초기에는 이 상태가 대부분이라 "덜 만든 화면"으로 보이면 안 된다. */
+.cold-start {
+  border-style: dashed;
+  border-color: var(--brand-border);
+  background: var(--brand-50);
+}
+
+/* ── 감상 목록 ── */
+.impression-list,
+.record-list,
+.participant-list,
+.cafe-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.participant-list {
+  gap: 8px;
+}
+.participant-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+/* ── 2차 장소 ── */
+.after-place {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--brand-border);
+  background: var(--brand-50);
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+.cafe-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.cafe-item:hover:not(:disabled) {
+  border-color: var(--brand);
+  background: var(--brand-50);
+}
+/* 호스트가 아니면 후보를 보기만 한다. 브라우저 기본 disabled 회색을 되돌린다 —
+   고를 수 없을 뿐 읽어야 하는 정보라 흐려지면 안 된다. */
+.cafe-item:disabled {
+  cursor: default;
+  color: var(--ink);
+  opacity: 1;
+}
+
+/* ── 모임 목록: 행사 단위 묶음 ──
+   같은 행사의 모임이 한 덩어리로 보이는 것이 게시판과 다른 지점이라 시각적으로 묶는다. */
+.event-group-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.event-group-head:hover {
+  border-color: var(--brand);
+}
+.event-group-thumb {
+  width: 48px;
+  flex-shrink: 0;
+}
+.event-group-body {
+  padding-left: 18px;
+  border-left: 2px solid var(--brand-border);
+  margin-left: 12px;
+}
+@media (max-width: 575.98px) {
+  .event-group-body {
+    padding-left: 10px;
+    margin-left: 6px;
+  }
+}
+
+/* ── 한 바퀴 안내 (홈) ── */
+.loop-steps {
+  list-style: none;
+  counter-reset: loop;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+@media (min-width: 992px) {
+  .loop-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.loop-steps li {
+  counter-increment: loop;
+  position: relative;
+  padding-left: 34px;
+}
+.loop-steps li::before {
+  content: counter(loop);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loop-steps strong {
+  display: block;
+  font-size: 14px;
+}
+.loop-steps span {
+  font-size: 13px;
+  color: var(--ink-sub);
+}
+
+/* ── 평가 대기 / 모임 종료 후 안내 ── */
+.pending-review,
+.loop-next {
+  border-color: var(--brand-border);
+  background: var(--brand-50);
+}
+
+/* ── 모임 만들기: 자동으로 채워진 칸 ── */
+.prefilled {
+  background: var(--surface2);
+}
+
+/* 좁은 칸에서 text-truncate 가 동작하려면 min-width 가 필요하다 (flex 기본값이 auto라서) */
+.min-width-0 {
+  min-width: 0;
+}
+
+/* ── 좁은 화면 넘침 방지 ──
+   flex 컬럼 안의 .text-truncate 는 min-width 가 auto 라서 제 내용만큼 폭을 요구한다.
+   그 요구가 카드 → 그리드 → body 로 전파돼 390px에서 가로 스크롤이 생긴다.
+   자식들의 min-width 를 0으로 눌러 부모 폭을 넘지 않게 한다. */
+.card-body,
+.card-body > *,
+.card > * {
+  min-width: 0;
+}
