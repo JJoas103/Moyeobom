@@ -106,6 +106,12 @@ function Detail() {
             </dd>
             <dt>주소</dt>
             <dd style={{ color: 'var(--ink-sub)' }}>{event.address}</dd>
+            {event.organizer && (
+              <>
+                <dt>주최</dt>
+                <dd style={{ color: 'var(--ink-sub)' }}>{event.organizer}</dd>
+              </>
+            )}
             <dt>요금</dt>
             <dd>{event.price || '무료'}</dd>
           </dl>

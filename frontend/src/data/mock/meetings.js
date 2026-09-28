@@ -2,6 +2,19 @@
 //
 // 게시판과 다른 지점이 여기서 드러나야 한다 — 모든 모임이 event 를 참조하고,
 // 제목·날짜·장소가 그 행사에서 따라온다. 빈 칸에 글을 쓰는 게 아니라 행사를 고르는 것이다.
+//
+// 참조하는 행사는 events.generated.json 의 실제 서울 문화행사다.
+// 행사를 다시 수집하면(npm run mock:events) id 가 가리키는 행사가 달라지므로,
+// 그때는 아래 제목·소개도 새 행사에 맞게 손봐야 한다.
+//
+//   evt-009  섬유기획전 [안식의 결]        전시 · 성동구 우란문화재단
+//   evt-010  26세종시즌 [스미레 미용실]     연극 · 종로구 세종M씨어터
+//   evt-013  강민수 달항아리 Moon Jar     전시 · 종로구 노화랑
+//   evt-014  DDP 협력전시 [SPECTRUM]    전시 · 중구 DDP
+//   evt-015  뮤지컬 [코드네임X]            뮤지컬 · 용산구 국립중앙박물관 극장 용
+//   evt-030  경기시나위 [해금가락을 爲하다]    국악 · 종로구 서울돈화문국악당
+//   evt-031  Autumn in Jazz           콘서트 · 서초구 재즈클럽 그루브
+//   evt-033  2026 인사동 엔틱&아트페어      축제 · 종로구 인사동 일대
 
 import { MOCK_EVENTS } from './events'
 
@@ -39,9 +52,9 @@ const makeMeeting = (m) => {
 export const MOCK_MEETINGS = [
   makeMeeting({
     _id: 'mtg-001',
-    event: 'evt-001',
-    title: '전시 보고 커피 한 잔',
-    content: '2층 소재관이 제일 좋았어요. 보고 나서 30분만 얘기하고 헤어져요. 처음 오셔도 괜찮습니다.',
+    event: 'evt-009',
+    title: '섬유전 보고 성수에서 커피',
+    content: '우란1경부터 천천히 보고, 끝나고 근처에서 30분만 얘기하고 헤어져요. 처음 오셔도 괜찮습니다.',
     author: 'usr-jisu',
     meetingDate: at(2, 15, 0),
     maxParticipants: 4,
@@ -50,9 +63,9 @@ export const MOCK_MEETINGS = [
   }),
   makeMeeting({
     _id: 'mtg-002',
-    event: 'evt-001',
+    event: 'evt-009',
     title: '평일 저녁 관람 같이 가실 분',
-    content: '퇴근하고 바로 갑니다. 관람부터 같이 하고 근처에서 가볍게 한 잔.',
+    content: '퇴근하고 바로 갑니다. 관람부터 같이 하고 성수에서 가볍게 한 잔.',
     author: 'usr-hayun',
     meetingDate: at(4, 19, 0),
     maxParticipants: 3,
@@ -61,9 +74,9 @@ export const MOCK_MEETINGS = [
   }),
   makeMeeting({
     _id: 'mtg-003',
-    event: 'evt-002',
+    event: 'evt-010',
     title: '연극 끝나고 여운 나누기',
-    content: '대학로에서 보고 근처 맥주집으로 이동합니다. 결말 얘기 하고 싶어서 만듭니다.',
+    content: '세종M씨어터에서 보고 근처 맥주집으로 이동합니다. 결말 얘기 하고 싶어서 만듭니다.',
     author: 'usr-me',
     meetingDate: at(3, 21, 40),
     maxParticipants: 5,
@@ -72,42 +85,42 @@ export const MOCK_MEETINGS = [
   }),
   makeMeeting({
     _id: 'mtg-004',
-    event: 'evt-003',
-    title: '실내악 듣고 서촌 산책',
-    content: '공연 1시간 40분, 끝나고 서촌 골목 걸으면서 얘기해요.',
+    event: 'evt-030',
+    title: '해금 듣고 돈화문 골목 산책',
+    content: '공연 한 시간 반, 끝나고 익선동까지 걸으면서 얘기해요.',
     author: 'usr-eunbi',
-    meetingDate: at(5, 18, 40),
+    meetingDate: at(5, 20, 40),
     maxParticipants: 4,
     participants: ['usr-eunbi'],
     tags: ['산책', '조용한모임'],
   }),
   makeMeeting({
     _id: 'mtg-005',
-    event: 'evt-005',
-    title: '재즈 페스티벌 돗자리 팀',
-    content: '돗자리랑 간식 챙겨갑니다. 여섯 명까지 받아요.',
+    event: 'evt-033',
+    title: '아트페어 같이 돌 사람',
+    content: '인사동 한 바퀴 천천히 돌고 점심 먹고 헤어져요. 여섯 명까지 받습니다.',
     author: 'usr-minjae',
-    meetingDate: at(9, 18, 0),
+    meetingDate: at(9, 11, 30),
     maxParticipants: 6,
     participants: ['usr-minjae', 'usr-jisu', 'usr-hayun'],
-    tags: ['야외', '피크닉'],
+    tags: ['낮모임', '야외'],
   }),
   makeMeeting({
     _id: 'mtg-006',
-    event: 'evt-009',
-    title: '첫 장편들 보고 한 마디씩',
-    content: '두 편 연속 보고 로비에서 짧게 얘기하고 헤어지는 모임입니다.',
+    event: 'evt-015',
+    title: '뮤지컬 보고 용산에서 한 마디씩',
+    content: '공연 끝나고 로비에서 짧게 얘기하고 헤어지는 모임입니다.',
     author: 'usr-seoyeon',
-    meetingDate: at(1, 16, 30),
+    meetingDate: at(1, 21, 30),
     maxParticipants: 4,
     participants: ['usr-seoyeon', 'usr-taeho'],
-    tags: ['영화', '짧은대화'],
+    tags: ['공연후', '짧은대화'],
   }),
   makeMeeting({
     _id: 'mtg-007',
-    event: 'evt-012',
-    title: '어쿠스틱 듣고 홍대 걷기',
-    content: '공연 끝나고 홍대 골목 한 바퀴. 늦어도 11시엔 해산합니다.',
+    event: 'evt-031',
+    title: '재즈 듣고 서초 걷기',
+    content: '공연 끝나고 한 바퀴. 늦어도 11시엔 해산합니다.',
     author: 'usr-doyul',
     meetingDate: at(7, 22, 0),
     maxParticipants: 4,
@@ -116,20 +129,20 @@ export const MOCK_MEETINGS = [
   }),
   makeMeeting({
     _id: 'mtg-008',
-    event: 'evt-011',
-    title: '책축제 같이 돌 사람',
-    content: '오전에 천천히 돌고 점심 먹고 헤어져요.',
+    event: 'evt-014',
+    title: 'DDP 전시 같이 보실 분',
+    content: '갤러리문 쪽부터 보고 DDP 안에서 커피 한 잔 하려고요.',
     author: 'usr-taeho',
-    meetingDate: at(4, 11, 30),
+    meetingDate: at(4, 14, 0),
     maxParticipants: 5,
     participants: ['usr-taeho'],
-    tags: ['낮모임', '책'],
+    tags: ['전시', '낮모임'],
   }),
   makeMeeting({
     _id: 'mtg-009',
-    event: 'evt-004',
+    event: 'evt-014',
     title: '무료 전시, 점심시간에 잠깐',
-    content: '시청 근처 직장인분들 환영합니다. 40분 보고 커피 한 잔.',
+    content: '동대문 근처 직장인분들 환영합니다. 40분 보고 커피 한 잔.',
     author: 'usr-jisu',
     meetingDate: at(0, 12, 20),
     maxParticipants: 4,
@@ -140,7 +153,7 @@ export const MOCK_MEETINGS = [
   makeMeeting({
     _id: 'mtg-010',
     event: 'evt-013',
-    title: '도자전 보고 삼청동 한 바퀴',
+    title: '달항아리 보고 삼청동 한 바퀴',
     content: '천천히 보고 나와서 차 마셨어요.',
     author: 'usr-hayun',
     meetingDate: at(-1, 15, 0),

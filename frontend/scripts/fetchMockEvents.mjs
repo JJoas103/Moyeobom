@@ -21,7 +21,28 @@ const OUT = path.resolve(HERE, '..', 'src', 'data', 'mock', 'events.generated.js
 const PAGE_SIZE = 1000
 const MAX_PAGES = 8
 const TARGET = 90 // 목업에 남길 건수
-const PER_CATEGORY = 9 // 한 카테고리가 목록을 독차지하지 않게 상한을 둔다
+const PER_CATEGORY = 12 // 한 카테고리가 목록을 독차지하지 않게 상한을 둔다
+const MAX_RUN_DAYS = 92 // 기간 상한 — 3개월
+
+// 관람하고 나서 이야기할 수 있는 행사만 담는다.
+// 서울 API 에는 "DDP 건축투어", "하수처리장 견학" 같은 교육/체험이 가장 많은데(128건),
+// 모여봄은 "같은 걸 보고 여운이 식기 전에 모인다"는 서비스라 성격이 맞지 않는다.
+const VIEWABLE = new Set([
+  '전시/미술',
+  '연극',
+  '뮤지컬/오페라',
+  '클래식',
+  '국악',
+  '무용',
+  '콘서트',
+  '영화',
+  '독주/독창회',
+  '축제-문화/예술',
+  '축제-전통/역사',
+  '축제-자연/경관',
+  '축제-시민화합',
+  '축제-기타',
+])
 
 // services/eventApiService.js 의 GENRE_MAP 과 같은 표
 const GENRE_MAP = {
@@ -72,20 +93,53 @@ function parseDate(value) {
   return isNaN(date.getTime()) ? null : date
 }
 
+// 제목 앞에 주최 기관이 대괄호로 붙어 온다 — "[서울시립 북서울미술관] 2026 타이틀 매치".
+// 목록에서는 작품명이 먼저 읽혀야 하므로 떼어내고, 뗀 이름은 organizer 로 살린다.
+function splitOrganizer(rawTitle = '') {
+  const m = rawTitle.trim().match(/^[[(【]([^\])】]{2,40})[\])】]\s*(.+)$/)
+  if (!m) return { title: rawTitle.trim(), bracket: '' }
+  const [, bracket, rest] = m
+  // 떼고 나서 남는 게 너무 짧으면 그 대괄호는 기관명이 아니라 제목의 일부다
+  return rest.trim().length >= 4 ? { title: rest.trim(), bracket: bracket.trim() } : { title: rawTitle.trim(), bracket: '' }
+}
+
+// ORG_NAME 이 기관 이름이 아니라 분류값("기타", "민간")으로 들어오는 행이 많다
+const ORG_PLACEHOLDER = new Set(['기타', '민간', '개인', '공공', '없음', '-'])
+function normalizeOrganizer(value) {
+  const name = (value || '').trim()
+  return ORG_PLACEHOLDER.has(name) ? '' : name
+}
+
+// 장소에 이미 기관 이름이 들어 있는 경우가 많다 ("노화랑 1,2층 전시장" ↔ "노화랑").
+// 그대로 두면 같은 이름이 두 줄에 걸쳐 반복된다.
+function isRedundant(organizer, venue) {
+  const squash = (v) => (v || '').replace(/[\s·()[\]]/g, '')
+  const o = squash(organizer)
+  const p = squash(venue)
+  if (!o || !p) return false
+  return p.includes(o) || o.includes(p)
+}
+
 function mapRow(row, index) {
   const codename = row.CODENAME || '기타'
   const { lat, lng } = normalizeCoords(row.LOT, row.LAT)
   const startAt = parseDate(row.STRTDATE)
   const endAt = parseDate(row.END_DATE)
+  const { title, bracket } = splitOrganizer(row.TITLE || '')
+  const venue = (row.PLACE || '').trim()
+  const organizer = normalizeOrganizer(row.ORG_NAME) || bracket
 
   return {
     _id: `evt-${String(index + 1).padStart(3, '0')}`,
     sourceId: `seoul:${row.TITLE}|${row.STRTDATE}|${row.PLACE}`.slice(0, 300),
-    title: (row.TITLE || '').trim(),
+    title,
+    // ORG_NAME 이 있으면 그쪽이 정확하다. 없을 때만 제목에서 뗀 대괄호를 쓴다.
+    // 다만 ORG_NAME 에는 "기타" 같은 분류값이 들어오는 경우가 많아 기관명으로 못 쓴다.
+    organizer: isRedundant(organizer, venue) ? '' : organizer,
     category: codename,
     genres: GENRE_MAP[codename] || GENRE_MAP['기타'],
-    venue: (row.PLACE || '').trim(),
-    address: (row.PLACE || '').trim(),
+    venue,
+    address: venue,
     area: (row.GUNAME || '').trim(),
     coords: { lat, lng },
     startAt: startAt ? startAt.toISOString() : null,
@@ -156,26 +210,54 @@ async function main() {
   }
 
   const now = Date.now()
+  const DAY = 24 * 60 * 60 * 1000
+  const dropped = { noPoster: 0, ended: 0, notViewable: 0, tooLong: 0, badDate: 0 }
+
   const usable = rows
-    .map((row, i) => ({ row, mapped: mapRow(row, i) }))
-    .filter(({ mapped }) => {
-      if (!mapped.title || !mapped.startAt) return false
+    .map((row, i) => mapRow(row, i))
+    .filter((e) => {
+      if (!e.title || !e.startAt) return false
       // 포스터가 없으면 목록이 비어 보인다. 이미지가 있는 것만 남긴다
-      if (!mapped.posterUrl) return false
+      if (!e.posterUrl) return (dropped.noPoster++, false)
+      // 관람하고 나서 이야기할 수 있는 행사만 (교육/체험 등 제외)
+      if (!VIEWABLE.has(e.category)) return (dropped.notViewable++, false)
+
+      const start = new Date(e.startAt).getTime()
+      const end = e.endAt ? new Date(e.endAt).getTime() : start
+      // 종료일이 시작일보다 빠른 데이터가 섞여 있다 (연도 오류). 믿을 수 없으니 버린다
+      if (end < start) return (dropped.badDate++, false)
       // 이미 끝난 행사는 화면에서 걸러지므로 애초에 담지 않는다
-      const end = mapped.endAt ? new Date(mapped.endAt).getTime() : new Date(mapped.startAt).getTime()
-      return end >= now
+      if (end < now) return (dropped.ended++, false)
+      // 1년짜리 상설전은 "여운이 식기 전에 모인다"와 어울리지 않는다
+      if (end - start > MAX_RUN_DAYS * DAY) return (dropped.tooLong++, false)
+      return true
     })
-    .sort((a, b) => new Date(a.mapped.startAt) - new Date(b.mapped.startAt))
+    // 지금 볼 수 있는 것을 앞에 둔다. 시작일 순으로만 두면 작년에 시작해 아직 하는
+    // 행사가 맨 앞에 와서, 목록 첫 화면이 "오래된 것"으로 채워진다
+    .sort((a, b) => {
+      const running = (e) => (new Date(e.startAt).getTime() <= now ? 0 : 1)
+      if (running(a) !== running(b)) return running(a) - running(b)
+      // 진행 중인 것은 곧 끝나는 순, 예정인 것은 곧 시작하는 순
+      return running(a) === 0
+        ? new Date(a.endAt || a.startAt) - new Date(b.endAt || b.startAt)
+        : new Date(a.startAt) - new Date(b.startAt)
+    })
+
+  console.log(
+    `
+거른 것 — 포스터 없음 ${dropped.noPoster} · 관람형 아님 ${dropped.notViewable} · ` +
+      `종료 ${dropped.ended} · 3개월 초과 ${dropped.tooLong} · 날짜 오류 ${dropped.badDate}`,
+  )
+  console.log(`남은 후보 ${usable.length}건`)
 
   // 카테고리가 한쪽으로 쏠리면 필터를 걸어 볼 게 없어진다
   const byCategory = new Map()
   const picked = []
-  for (const { mapped } of usable) {
-    const count = byCategory.get(mapped.category) || 0
+  for (const e of usable) {
+    const count = byCategory.get(e.category) || 0
     if (count >= PER_CATEGORY) continue
-    byCategory.set(mapped.category, count + 1)
-    picked.push(mapped)
+    byCategory.set(e.category, count + 1)
+    picked.push(e)
     if (picked.length >= TARGET) break
   }
 

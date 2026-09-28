@@ -1,0 +1,2105 @@
+[
+  {
+    "_id": "evt-001",
+    "sourceId": "seoul:2026 양성평등주간 기념행사: AI 시대의 양성평등, 서울의 미래가 되다|2026-08-26 00:00:00.0|서울여성플라자",
+    "title": "2026 양성평등주간 기념행사: AI 시대의 양성평등, 서울의 미래가 되다",
+    "organizer": "",
+    "category": "축제-시민화합",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "서울여성플라자",
+    "address": "서울여성플라자",
+    "area": "동작구",
+    "coords": {
+      "lat": 37.5116087174603,
+      "lng": 126.927226422645
+    },
+    "startAt": "2026-08-25T15:00:00.000Z",
+    "endAt": "2026-09-28T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4901f82244094a848e52b5c3d671c818&thumb=Y",
+    "detailUrl": "https://www.seoulwomen.or.kr/sfwf/contents/sfwf-notice.do?&schM=view&page=1&viewCount=10&id=31376&schBdcode=&schGroupCode="
+  },
+  {
+    "_id": "evt-002",
+    "sourceId": "seoul:강북문화재단-주한중국문화원 특별교류전 [판다만 있는게 아닌 청두- 강북에서 만나는 청두의 모든 순간]|2026-09-16 00:00:00.0|강북문화예술회관",
+    "title": "강북문화재단-주한중국문화원 특별교류전 [판다만 있는게 아닌 청두- 강북에서 만나는 청두의 모든 순간]",
+    "organizer": "강북문화재단",
+    "category": "전시/미술",
+    "genres": [
+      "전시",
+      "미술"
+    ],
+    "venue": "강북문화예술회관",
+    "address": "강북문화예술회관",
+    "area": "강북구",
+    "coords": {
+      "lat": 37.6409897866256,
+      "lng": 127.013878144422
+    },
+    "startAt": "2026-09-15T15:00:00.000Z",
+    "endAt": "2026-09-29T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=c57f8f80679b4f1d9cc0ef1c20d6b692&thumb=Y",
+    "detailUrl": "https://www.gbcf.or.kr/load.asp?subPage=110.View&cate=B&page=1&idx=440"
+  },
+  {
+    "_id": "evt-003",
+    "sourceId": "seoul:[노원문화재단] 문화공간 정담 기획전시 [손이 머문 자리, 공릉]|2026-09-03 00:00:00.0|문화공간 정담",
+    "title": "문화공간 정담 기획전시 [손이 머문 자리, 공릉]",
+    "organizer": "노원문화재단",
+    "category": "전시/미술",
+    "genres": [
+      "전시",
+      "미술"
+    ],
+    "venue": "문화공간 정담",
+    "address": "문화공간 정담",
+    "area": "노원구",
+    "coords": {
+      "lat": 37.6501722795275,
+      "lng": 127.080886310499
+    },
+    "startAt": "2026-09-02T15:00:00.000Z",
+    "endAt": "2026-09-29T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6fd2045f8bb94ae59a8fb7196f9563c3&thumb=Y",
+    "detailUrl": "https://nowonarts.kr/channels/exhibition/programs/1048"
+  },
+  {
+    "_id": "evt-004",
+    "sourceId": "seoul:[구립증산도서관] 2026년 9월 북인사이트 : 이호철통일로문학상|2026-09-01 00:00:00.0|구립증산도서관 2층 종합자료실 앞",
+    "title": "2026년 9월 북인사이트 : 이호철통일로문학상",
+    "organizer": "은평구청",
+    "category": "전시/미술",
+    "genres": [
+      "전시",
+      "미술"
+    ],
+    "venue": "구립증산도서관 2층 종합자료실 앞",
+    "address": "구립증산도서관 2층 종합자료실 앞",
+    "area": "은평구",
+    "coords": {
+      "lat": 37.5828094398328,
+      "lng": 126.907671330325
+    },
+    "startAt": "2026-08-31T15:00:00.000Z",
+    "endAt": "2026-09-29T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=2be92ae1d2004e65ab6a2e5db5a41924&thumb=Y",
+    "detailUrl": "https://www.eplib.or.kr/jslib/menu/10457/program/30028/eventLectureDetail.do?currentPageNo=1&lectureIdx=225296&manageCd=MB&searchTarget=&searchStatus=OPEN"
+  },
+  {
+    "_id": "evt-005",
+    "sourceId": "seoul:[B the B] 라라레서피 x MeME 작가 [WANTED: Protect Your Energy]|2026-08-01 00:00:00.0|비더비 UP-TOWN (울시 중구 을지로 281, DDP마켓 지하2층)",
+    "title": "라라레서피 x MeME 작가 [WANTED: Protect Your Energy]",
+    "organizer": "B the B",
+    "category": "전시/미술",
+    "genres": [
+      "전시",
+      "미술"
+    ],
+    "venue": "비더비 UP-TOWN (울시 중구 을지로 281, DDP마켓 지하2층)",
+    "address": "비더비 UP-TOWN (울시 중구 을지로 281, DDP마켓 지하2층)",
+    "area": "중구",
+    "coords": {
+      "lat": 37.5680445876689,
+      "lng": 127.010890355484
+    },
+    "startAt": "2026-07-31T15:00:00.000Z",
+    "endAt": "2026-09-29T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=347d574d5a9e46c5b5c5c84fbd8f2935&thumb=Y",
+    "detailUrl": "https://btheb.sba.kr/"
+  },
+  {
+    "_id": "evt-006",
+    "sourceId": "seoul:[문학의집·서울] 제5회 시의 정원|2026-07-01 00:00:00.0|문학의집·서울 산림문학관 야외 정원",
+    "title": "제5회 시의 정원",
+    "organizer": "",
+    "category": "전시/미술",
+    "genres": [
+      "전시",
+      "미술"
+    ],
+    "venue": "문학의집·서울 산림문학관 야외 정원",
+    "address": "문학의집·서울 산림문학관 야외 정원",
+    "area": "중구",
+    "coords": {
+      "lat": 37.5580841736,
+      "lng": 126.9892390979
+    },
+    "startAt": "2026-06-30T15:00:00.000Z",
+    "endAt": "2026-09-29T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=5bdf4cf0b36d4cfcb91822678092bfa0&thumb=Y",
+    "detailUrl": "http://www.imhs.co.kr/index.html"
+  },
+  {
+    "_id": "evt-007",
+    "sourceId": "seoul:[마포구립서강도서관] 3분기/어린이갤러리 [내일은 맑겠습니다]|2026-07-01 00:00:00.0|마포구립서강도서관 4층 어린이자료실",
+    "title": "3분기/어린이갤러리 [내일은 맑겠습니다]",
+    "organizer": "마포구청",
+    "category": "전시/미술",
+    "genres": [
+      "전시",
+      "미술"
+    ],
+    "venue": "마포구립서강도서관 4층 어린이자료실",
+    "address": "마포구립서강도서관 4층 어린이자료실",
+    "area": "마포구",
+    "coords": {
+      "lat": 37.5477347268018,
+      "lng": 126.932061794829
+    },
+    "startAt": "2026-06-30T15:00:00.000Z",
+    "endAt": "2026-09-29T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=fdc9077da2cc4801b891f62f5eefab98&thumb=Y",
+    "detailUrl": "https://mplib.mapo.go.kr/sglib/PGM3028/eventDetail.do?eventSn=12767"
+  },
+  {
+    "_id": "evt-008",
+    "sourceId": "seoul:[갤러리 그라프] 기획전시 《After Hours: 밤이 되면 달라지는 감각》 - 서유라, 정인지, YEKKI|2026-08-26 00:00:00.0|갤러리 그라프 전시실",
+    "title": "기획전시 《After Hours: 밤이 되면 달라지는 감각》 - 서유라, 정인지, YEKKI",
+    "organizer": "",
+    "category": "전시/미술",
+    "genres": [
+      "전시",
+      "미술"
+    ],
+    "venue": "갤러리 그라프 전시실",
+    "address": "갤러리 그라프 전시실",
+    "area": "강남구",
+    "coords": {
+      "lat": 37.5234788204389,
+      "lng": 127.046743383017
+    },
+    "startAt": "2026-08-25T15:00:00.000Z",
+    "endAt": "2026-10-01T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=27c9edc71cc84d3db6f8d5f711c1eaf5&thumb=Y",
+    "detailUrl": "https://ggrappe.com/exhibitions/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=173216341&t=board"
+  },
+  {
+    "_id": "evt-009",
+    "sourceId": "seoul:섬유기획전 [안식의 결 Texture of Rest]|2026-07-24 00:00:00.0|우란문화재단 우란1경, 우란2경 ",
+    "title": "섬유기획전 [안식의 결 Texture of Rest]",
+    "organizer": "",
+    "category": "전시/미술",
+    "genres": [
+      "전시",
+      "미술"
+    ],
+    "venue": "우란문화재단 우란1경, 우란2경",
+    "address": "우란문화재단 우란1경, 우란2경",
+    "area": "성동구",
+    "coords": {
+      "lat": 37.5437897702564,
+      "lng": 127.054416929987
+    },
+    "startAt": "2026-07-23T15:00:00.000Z",
+    "endAt": "2026-10-01T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6cd09d6c58bb4c5ab2d963489874ec5b&thumb=Y",
+    "detailUrl": "https://wooranfdn.org/program/exhibition_view.jsp?idx=206"
+  },
+  {
+    "_id": "evt-010",
+    "sourceId": "seoul:[세종문화회관] 26세종시즌 [스미레 미용실]|2026-09-12 00:00:00.0|세종M씨어터",
+    "title": "26세종시즌 [스미레 미용실]",
+    "organizer": "세종문화회관",
+    "category": "연극",
+    "genres": [
+      "연극",
+      "공연"
+    ],
+    "venue": "세종M씨어터",
+    "address": "세종M씨어터",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.57260128068914,
+      "lng": 126.97577534746529
+    },
+    "startAt": "2026-09-11T15:00:00.000Z",
+    "endAt": "2026-10-02T15:00:00.000Z",
+    "price": "R석 80,000원 S석 60,000원 A석 40,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=cabf72f0c90446f1a43cbf195664aa4b&thumb=Y",
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=36787&menuNo=200320"
+  },
+  {
+    "_id": "evt-011",
+    "sourceId": "seoul:세종뮤지엄갤러리 기획초대전 [스윽, 탁: 이 움직임에 동의한다면] 김동규 개인전|2026-09-16 00:00:00.0|광진구 능동로  209 세종대학교 대양AI B1 세종뮤지엄갤러리 1관 ",
+    "title": "세종뮤지엄갤러리 기획초대전 [스윽, 탁: 이 움직임에 동의한다면] 김동규 개인전",
+    "organizer": "",
+    "category": "전시/미술",
+    "genres": [
+      "전시",
+      "미술"
+    ],
+    "venue": "광진구 능동로  209 세종대학교 대양AI B1 세종뮤지엄갤러리 1관",
+    "address": "광진구 능동로  209 세종대학교 대양AI B1 세종뮤지엄갤러리 1관",
+    "area": "광진구",
+    "coords": {
+      "lat": 37.5516093089619,
+      "lng": 127.07318364213
+    },
+    "startAt": "2026-09-15T15:00:00.000Z",
+    "endAt": "2026-10-03T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0895161c947b4390abfc4a27c1625c7e&thumb=Y",
+    "detailUrl": "https://www.instagram.com/p/DdVeYUhGXXz/"
+  },
+  {
+    "_id": "evt-012",
+    "sourceId": "seoul:[영등포아트스퀘어] 2026 현대미술 기획전 [서로를 모르지만 같은 밤을 지난다]|2026-09-08 00:00:00.0|영등포아트스퀘어",
+    "title": "2026 현대미술 기획전 [서로를 모르지만 같은 밤을 지난다]",
+    "organizer": "영등포구청",
+    "category": "전시/미술",
+    "genres": [
+      "전시",
+      "미술"
+    ],
+    "venue": "영등포아트스퀘어",
+    "address": "영등포아트스퀘어",
+    "area": "영등포구",
+    "coords": {
+      "lat": 37.5172332566615,
+      "lng": 126.903715993779
+    },
+    "startAt": "2026-09-07T15:00:00.000Z",
+    "endAt": "2026-10-05T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=cbc6a8a7ce5b42f6b2e62d72f6d5fdbb&thumb=Y",
+    "detailUrl": "https://ydpartsquare.com/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EB%B0%8F-%EC%98%88%EC%95%BD/view/6263723"
+  },
+  {
+    "_id": "evt-013",
+    "sourceId": "seoul:[노화랑] 강민수 달항아리 Moon Jar|2026-09-17 00:00:00.0|노화랑 1,2층 전시장",
+    "title": "강민수 달항아리 Moon Jar",
+    "organizer": "",
+    "category": "전시/미술",
+    "genres": [
+      "전시",
+      "미술"
+    ],
+    "venue": "노화랑 1,2층 전시장",
+    "address": "노화랑 1,2층 전시장",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.5748603162364,
+      "lng": 126.984085733694
+    },
+    "startAt": "2026-09-16T15:00:00.000Z",
+    "endAt": "2026-10-07T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=cf61edff919340a4ab18df35ad0bd5af&thumb=Y",
+    "detailUrl": "https://rhogallery.com/ko/kang-minsoo/"
+  },
+  {
+    "_id": "evt-014",
+    "sourceId": "seoul:DDP 협력전시 [SPECTRUM]|2026-09-09 00:00:00.0|동대문디자인플라자(DDP) 갤러리문",
+    "title": "DDP 협력전시 [SPECTRUM]",
+    "organizer": "",
+    "category": "전시/미술",
+    "genres": [
+      "전시",
+      "미술"
+    ],
+    "venue": "동대문디자인플라자(DDP) 갤러리문",
+    "address": "동대문디자인플라자(DDP) 갤러리문",
+    "area": "중구",
+    "coords": {
+      "lat": 37.56735731522952,
+      "lng": 127.00977973484339
+    },
+    "startAt": "2026-09-08T15:00:00.000Z",
+    "endAt": "2026-10-08T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d1643501c18c49ac939272ac8bb18ebf&thumb=Y",
+    "detailUrl": "https://ddp.or.kr/index.html?menuno=239&siteno=2&bbsno=613&boardno=15&bbstopno=613&act=view&subno="
+  },
+  {
+    "_id": "evt-015",
+    "sourceId": "seoul:라이브 퀘스트 뮤지컬 [코드네임X]|2026-09-12 00:00:00.0|국립중앙박물관 극장 용",
+    "title": "라이브 퀘스트 뮤지컬 [코드네임X]",
+    "organizer": "",
+    "category": "뮤지컬/오페라",
+    "genres": [
+      "뮤지컬",
+      "오페라",
+      "공연"
+    ],
+    "venue": "국립중앙박물관 극장 용",
+    "address": "국립중앙박물관 극장 용",
+    "area": "용산구",
+    "coords": {
+      "lat": 37.5247022357875,
+      "lng": 126.977740246542
+    },
+    "startAt": "2026-09-11T15:00:00.000Z",
+    "endAt": "2026-10-17T15:00:00.000Z",
+    "price": "VIP석 77,000원 R석 66,000원 S석 44,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e5097d04bed64dc8b9df3f8aa24e1981&thumb=Y",
+    "detailUrl": "https://tickets.interpark.com/goods/26008690"
+  },
+  {
+    "_id": "evt-016",
+    "sourceId": "seoul:도심 정원에서 만나는 폰-프리 북클럽|2026-09-11 00:00:00.0|아이파크몰 용산점 7F 더 루프탑 미니정원",
+    "title": "도심 정원에서 만나는 폰-프리 북클럽",
+    "organizer": "",
+    "category": "축제-기타",
+    "genres": [
+      "축제"
+    ],
+    "venue": "아이파크몰 용산점 7F 더 루프탑 미니정원",
+    "address": "아이파크몰 용산점 7F 더 루프탑 미니정원",
+    "area": "용산구",
+    "coords": {
+      "lat": 37.5297718014452,
+      "lng": 126.964741503485
+    },
+    "startAt": "2026-09-10T15:00:00.000Z",
+    "endAt": "2026-10-22T15:00:00.000Z",
+    "price": "10,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=a94ee41ea14b41bda393f1a3c213fd1a&thumb=Y",
+    "detailUrl": "https://forms.gle/v5478N7ZQ1BdXq5G7"
+  },
+  {
+    "_id": "evt-017",
+    "sourceId": "seoul:[마포문화재단] 2026 서울마포음악창작소 음악 큐레이션 프로그램 [LP 한 잔]|2026-08-28 00:00:00.0|서울마포음악창작소 라이브홀",
+    "title": "2026 서울마포음악창작소 음악 큐레이션 프로그램 [LP 한 잔]",
+    "organizer": "마포문화재단",
+    "category": "콘서트",
+    "genres": [
+      "콘서트",
+      "음악",
+      "공연"
+    ],
+    "venue": "서울마포음악창작소 라이브홀",
+    "address": "서울마포음악창작소 라이브홀",
+    "area": "마포구",
+    "coords": {
+      "lat": 37.5550704891351,
+      "lng": 126.957534741247
+    },
+    "startAt": "2026-08-27T15:00:00.000Z",
+    "endAt": "2026-10-22T15:00:00.000Z",
+    "price": "전석 1만원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=890bf017ac7e4b08a4241594ac57416d&thumb=Y",
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2683&page=1"
+  },
+  {
+    "_id": "evt-018",
+    "sourceId": "seoul:[노들섬] 오픈노들|2026-08-04 00:00:00.0|노들섬",
+    "title": "오픈노들",
+    "organizer": "",
+    "category": "축제-문화/예술",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "노들섬",
+    "address": "노들섬",
+    "area": "용산구",
+    "coords": {
+      "lat": 37.5176638307111,
+      "lng": 126.958036465507
+    },
+    "startAt": "2026-08-03T15:00:00.000Z",
+    "endAt": "2026-10-30T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=30761e9c3ac048e1bcbe66f2f305da36&thumb=Y",
+    "detailUrl": "https://nodeul.org/program/%ec%98%a4%ed%94%88%eb%85%b8%eb%93%a4/"
+  },
+  {
+    "_id": "evt-019",
+    "sourceId": "seoul:[서울야외도서관] 2026년 서울야외도서관 (책읽는 서울광장, 광화문 책마당, 책읽는 맑은냇가)|2026-09-04 00:00:00.0|서울광장, 광화문광장(육조마당), 청계천(모전교~광통교)",
+    "title": "2026년 서울야외도서관 (책읽는 서울광장, 광화문 책마당, 책읽는 맑은냇가)",
+    "organizer": "서울도서관",
+    "category": "축제-문화/예술",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "서울광장, 광화문광장(육조마당), 청계천(모전교~광통교)",
+    "address": "서울광장, 광화문광장(육조마당), 청계천(모전교~광통교)",
+    "area": "중구",
+    "coords": {
+      "lat": 37.5653338689441,
+      "lng": 126.97769782752
+    },
+    "startAt": "2026-09-03T15:00:00.000Z",
+    "endAt": "2026-10-31T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=005bb45c0890482db8ac967068006793&thumb=Y",
+    "detailUrl": "https://seouloutdoorlibrary.kr/"
+  },
+  {
+    "_id": "evt-020",
+    "sourceId": "seoul:[중구문화재단] 뮤지컬 [디어 에반 핸슨]|2026-08-01 00:00:00.0|충무아트센터",
+    "title": "뮤지컬 [디어 에반 핸슨]",
+    "organizer": "중구문화재단",
+    "category": "뮤지컬/오페라",
+    "genres": [
+      "뮤지컬",
+      "오페라",
+      "공연"
+    ],
+    "venue": "충무아트센터",
+    "address": "충무아트센터",
+    "area": "중구",
+    "coords": {
+      "lat": 37.5659409687669,
+      "lng": 127.014790889728
+    },
+    "startAt": "2026-07-31T15:00:00.000Z",
+    "endAt": "2026-10-31T15:00:00.000Z",
+    "price": "VIP석 160,000원┃R석 130,000원 S석 100,000원┃A석 70,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=19fb5eb0e087415984110cf261bd84bb&thumb=Y",
+    "detailUrl": "https://www.caci.or.kr/product/ko/performance/2532"
+  },
+  {
+    "_id": "evt-021",
+    "sourceId": "seoul:2026년 수림뉴웨이브: 엇|2026-08-27 00:00:00.0|수림문화재단 김희수SPACE1",
+    "title": "2026년 수림뉴웨이브: 엇",
+    "organizer": "",
+    "category": "국악",
+    "genres": [
+      "국악",
+      "음악",
+      "공연"
+    ],
+    "venue": "수림문화재단 김희수SPACE1",
+    "address": "수림문화재단 김희수SPACE1",
+    "area": "동대문구",
+    "coords": {
+      "lat": 37.590705971349955,
+      "lng": 127.04281951646153
+    },
+    "startAt": "2026-08-26T15:00:00.000Z",
+    "endAt": "2026-11-04T15:00:00.000Z",
+    "price": "전석30,000원(예술인/재관람 50% 할인)",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e48c405cee664482b645890a4cb1c348&thumb=Y",
+    "detailUrl": "https://soorimcf.or.kr/content/program/view?code=PRO261961970HPDAU4417"
+  },
+  {
+    "_id": "evt-022",
+    "sourceId": "seoul:커피 볶는 기타리스트 김성진의 [한 잔의 여유 시리즈]|2026-09-15 00:00:00.0|라율아트홀",
+    "title": "커피 볶는 기타리스트 김성진의 [한 잔의 여유 시리즈]",
+    "organizer": "",
+    "category": "클래식",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "라율아트홀",
+    "address": "라율아트홀",
+    "area": "서초구",
+    "coords": {
+      "lat": 37.4824452369632,
+      "lng": 127.012614908746
+    },
+    "startAt": "2026-09-14T15:00:00.000Z",
+    "endAt": "2026-11-16T15:00:00.000Z",
+    "price": "1회 30,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=2f7c72a745924f20b94f7b740965ba1b&thumb=Y",
+    "detailUrl": "https://www.rayularthall.com/concerts/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=173475338&t=board"
+  },
+  {
+    "_id": "evt-023",
+    "sourceId": "seoul:2026 서울어텀페스타|2026-09-18 00:00:00.0|서울 전역의 실내외 공연장, 한강공원 일대, 서울문화재단 대학로센터 등",
+    "title": "2026 서울어텀페스타",
+    "organizer": "",
+    "category": "축제-문화/예술",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "서울 전역의 실내외 공연장, 한강공원 일대, 서울문화재단 대학로센터 등",
+    "address": "서울 전역의 실내외 공연장, 한강공원 일대, 서울문화재단 대학로센터 등",
+    "area": "광진구",
+    "coords": {
+      "lat": 37.528445575928004,
+      "lng": 127.06963873769291
+    },
+    "startAt": "2026-09-17T15:00:00.000Z",
+    "endAt": "2026-11-28T15:00:00.000Z",
+    "price": "각 공연 / 축제별 상이",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=367ad7c8294340e1a81fbb48f8832cdd&thumb=Y",
+    "detailUrl": "https://www.sfac.or.kr/seoulautumnfesta/"
+  },
+  {
+    "_id": "evt-024",
+    "sourceId": "seoul:유재아 플루트 리사이틀 : Violin Fantasy|2026-09-29 00:00:00.0|예술의전당리사이틀홀",
+    "title": "유재아 플루트 리사이틀 : Violin Fantasy",
+    "organizer": "",
+    "category": "클래식",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "예술의전당리사이틀홀",
+    "address": "예술의전당리사이틀홀",
+    "area": "서초구",
+    "coords": {
+      "lat": 37.4802401962069,
+      "lng": 127.014215239186
+    },
+    "startAt": "2026-09-28T15:00:00.000Z",
+    "endAt": "2026-09-28T15:00:00.000Z",
+    "price": "전석 3만원(학생할인50%)",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=b99dcb88cf2642c4b822c47d97c55c38&thumb=Y",
+    "detailUrl": "https://www.sac.or.kr/site/main/show/show_view?SN=77678"
+  },
+  {
+    "_id": "evt-025",
+    "sourceId": "seoul:[서초문화재단] 서리풀청년예술단 [서초M.스타즈] 5기 예술가곡 시리즈 [가을, 세계의 노래를 만나다]|2026-09-29 00:00:00.0|반포심산아트홀",
+    "title": "서리풀청년예술단 [서초M.스타즈] 5기 예술가곡 시리즈 [가을, 세계의 노래를 만나다]",
+    "organizer": "서초문화재단",
+    "category": "클래식",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "반포심산아트홀",
+    "address": "반포심산아트홀",
+    "area": "서초구",
+    "coords": {
+      "lat": 37.49904352601313,
+      "lng": 126.99165409240258
+    },
+    "startAt": "2026-09-28T15:00:00.000Z",
+    "endAt": "2026-09-28T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=237219eae3e44fdba423fad5b5a443bc&thumb=Y",
+    "detailUrl": "https://www.seochocf.or.kr/site/main/seocho/show/view?show_idx=995"
+  },
+  {
+    "_id": "evt-026",
+    "sourceId": "seoul:[공연봄날X전국무용제] 해외무용단 쇼케이스|2026-09-29 00:00:00.0|은평문화예술회관 공연장",
+    "title": "해외무용단 쇼케이스",
+    "organizer": "서울시청",
+    "category": "무용",
+    "genres": [
+      "무용",
+      "공연"
+    ],
+    "venue": "은평문화예술회관 공연장",
+    "address": "은평문화예술회관 공연장",
+    "area": "은평구",
+    "coords": {
+      "lat": 37.6036996869964,
+      "lng": 126.927901672834
+    },
+    "startAt": "2026-09-28T15:00:00.000Z",
+    "endAt": "2026-09-28T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e22883bd4fcb4f90b93e025f34b12bd2&thumb=Y",
+    "detailUrl": "https://www.springday.or.kr/niabbs5/inc.php?inc=sub2-2_list_img_in2&cat=%EB%AC%B4%EC%9A%A9&k_gubun2=3&kkno=9766527f2b5d3e95d4a733fcfb77bd7e&gubun2="
+  },
+  {
+    "_id": "evt-027",
+    "sourceId": "seoul:[2026공연봄날 공식선정작] 세비야 이발소, 오늘은 사랑 영업 중|2026-09-30 00:00:00.0|오류아트홀",
+    "title": "세비야 이발소, 오늘은 사랑 영업 중",
+    "organizer": "서울시청",
+    "category": "뮤지컬/오페라",
+    "genres": [
+      "뮤지컬",
+      "오페라",
+      "공연"
+    ],
+    "venue": "오류아트홀",
+    "address": "오류아트홀",
+    "area": "구로구",
+    "coords": {
+      "lat": 37.4953581177106,
+      "lng": 126.846035797544
+    },
+    "startAt": "2026-09-29T15:00:00.000Z",
+    "endAt": "2026-10-01T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e5f605d3c8d24b2d8338a93e772cd876&thumb=Y",
+    "detailUrl": "https://www.springday.or.kr/niabbs5/inc.php?inc=sub2-2_list_img_in2&cat=%EC%9D%8C%EC%95%85&k_gubun2=2&kkno=2a79ea27c279e471f4d180b08d62b00a&gubun2="
+  },
+  {
+    "_id": "evt-028",
+    "sourceId": "seoul:2026년 국가무형유산 이수자 지원 사업 공연 [사이, 소리]|2026-09-30 00:00:00.0|한국문화의집 kous",
+    "title": "2026년 국가무형유산 이수자 지원 사업 공연 [사이, 소리]",
+    "organizer": "",
+    "category": "국악",
+    "genres": [
+      "국악",
+      "음악",
+      "공연"
+    ],
+    "venue": "한국문화의집 kous",
+    "address": "한국문화의집 kous",
+    "area": "강남구",
+    "coords": {
+      "lat": 37.5068278109456,
+      "lng": 127.060465476538
+    },
+    "startAt": "2026-09-29T15:00:00.000Z",
+    "endAt": "2026-09-29T15:00:00.000Z",
+    "price": "전석 20,000원 ※ 학생 50%, 예술인패스 30%, 사전 예매 10% 할인",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=ffe2ba24a262403ca5c5fddc4ed76b04&thumb=Y",
+    "detailUrl": "https://booking.naver.com/booking/12/bizes/1720232"
+  },
+  {
+    "_id": "evt-029",
+    "sourceId": "seoul:[마포문화재단] M 마티네 [2026 MAC 모닝 콘서트 ＃7]|2026-09-30 00:00:00.0|마포아트센터 아트홀맥",
+    "title": "M 마티네 [2026 MAC 모닝 콘서트 ＃7]",
+    "organizer": "마포문화재단",
+    "category": "클래식",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "마포아트센터 아트홀맥",
+    "address": "마포아트센터 아트홀맥",
+    "area": "마포구",
+    "coords": {
+      "lat": 37.54987259578174,
+      "lng": 126.9455874749264
+    },
+    "startAt": "2026-09-29T15:00:00.000Z",
+    "endAt": "2026-09-29T15:00:00.000Z",
+    "price": "전석 20,000원[패키지권 구매 시 20% 할인]",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=fa3ffc13a923427b959e4a2e97695728&thumb=Y",
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2677&page=1"
+  },
+  {
+    "_id": "evt-030",
+    "sourceId": "seoul:경기시나위 [해금가락을 爲하다]|2026-09-30 00:00:00.0|서울돈화문국악당",
+    "title": "경기시나위 [해금가락을 爲하다]",
+    "organizer": "",
+    "category": "국악",
+    "genres": [
+      "국악",
+      "음악",
+      "공연"
+    ],
+    "venue": "서울돈화문국악당",
+    "address": "서울돈화문국악당",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.5772502822,
+      "lng": 126.9907306641
+    },
+    "startAt": "2026-09-29T15:00:00.000Z",
+    "endAt": "2026-09-29T15:00:00.000Z",
+    "price": "전석 30,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4fde3b53fa3342cbb4442a772fe1fdea&thumb=Y",
+    "detailUrl": "https://nol.yanolja.com/ticket/products/26012274"
+  },
+  {
+    "_id": "evt-031",
+    "sourceId": "seoul:[그루브재즈데이] Autumn in Jazz (스페셜 게스트 ; Wim Hoste & Chan Ha Kang)|2026-10-01 00:00:00.0|재즈클럽 그루브",
+    "title": "Autumn in Jazz (스페셜 게스트 ; Wim Hoste & Chan Ha Kang)",
+    "organizer": "그루브재즈데이",
+    "category": "콘서트",
+    "genres": [
+      "콘서트",
+      "음악",
+      "공연"
+    ],
+    "venue": "재즈클럽 그루브",
+    "address": "재즈클럽 그루브",
+    "area": "서초구",
+    "coords": {
+      "lat": 37.5126726963804,
+      "lng": 127.018453351461
+    },
+    "startAt": "2026-09-30T15:00:00.000Z",
+    "endAt": "2026-10-28T15:00:00.000Z",
+    "price": "20,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6f8aeb88d1784c5e9d297e42167ef6dd&thumb=Y",
+    "detailUrl": "https://www.groove.kr/jamsession"
+  },
+  {
+    "_id": "evt-032",
+    "sourceId": "seoul:연극 [탠덤]|2026-10-01 00:00:00.0|여행자극장",
+    "title": "연극 [탠덤]",
+    "organizer": "",
+    "category": "연극",
+    "genres": [
+      "연극",
+      "공연"
+    ],
+    "venue": "여행자극장",
+    "address": "여행자극장",
+    "area": "성북구",
+    "coords": {
+      "lat": 37.5889423855531,
+      "lng": 127.004652942556
+    },
+    "startAt": "2026-09-30T15:00:00.000Z",
+    "endAt": "2026-10-10T15:00:00.000Z",
+    "price": "정가 39,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6d31b6a21e064cb193079567de36aaba&thumb=Y",
+    "detailUrl": "https://linktr.ee/pg_nacta?utm_source=linktree_profile_share&ltsid=2e40453f-c0df-49ef-bba9-ed6e1dfe3afe"
+  },
+  {
+    "_id": "evt-033",
+    "sourceId": "seoul:2026 인사동 엔틱&아트페어|2026-10-01 00:00:00.0|인사아트프라자, 안녕인사동 및 인사동 문화지구 전 지역",
+    "title": "2026 인사동 엔틱&아트페어",
+    "organizer": "종로구청",
+    "category": "축제-문화/예술",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "인사아트프라자, 안녕인사동 및 인사동 문화지구 전 지역",
+    "address": "인사아트프라자, 안녕인사동 및 인사동 문화지구 전 지역",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.5738579749684,
+      "lng": 126.985609522118
+    },
+    "startAt": "2026-09-30T15:00:00.000Z",
+    "endAt": "2026-10-03T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=467396e36da347099415c3b621bab272&thumb=Y",
+    "detailUrl": "http://www.hiinsa.com"
+  },
+  {
+    "_id": "evt-034",
+    "sourceId": "seoul:2026년 광진구 하반기 야외도서관 [아차산 숲과 쉼]|2026-10-01 00:00:00.0|서울시 광진구 아차산어울림광장",
+    "title": "2026년 광진구 하반기 야외도서관 [아차산 숲과 쉼]",
+    "organizer": "광진구청",
+    "category": "축제-문화/예술",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "서울시 광진구 아차산어울림광장",
+    "address": "서울시 광진구 아차산어울림광장",
+    "area": "광진구",
+    "coords": {
+      "lat": 37.5521031425515,
+      "lng": 127.099975467627
+    },
+    "startAt": "2026-09-30T15:00:00.000Z",
+    "endAt": "2026-10-03T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=09a09f467b694c6ba260829bfe82ef2f&thumb=Y",
+    "detailUrl": "https://www.gwangjinlib.seoul.kr/gjinfo/20003/bbsPostDetail.do?postIdx=52383"
+  },
+  {
+    "_id": "evt-035",
+    "sourceId": "seoul:2026 한강국제무용축제 [돌아온 하멜  Welcome back Mr. Hamel]|2026-10-01 00:00:00.0|반포한강 예빛섬 야외무대",
+    "title": "2026 한강국제무용축제 [돌아온 하멜  Welcome back Mr. Hamel]",
+    "organizer": "",
+    "category": "축제-문화/예술",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "반포한강 예빛섬 야외무대",
+    "address": "반포한강 예빛섬 야외무대",
+    "area": "서초구",
+    "coords": {
+      "lat": 37.5097694752014,
+      "lng": 126.995269636407
+    },
+    "startAt": "2026-09-30T15:00:00.000Z",
+    "endAt": "2026-10-02T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=cb3fed5d689f47709392c9f2a06f41f3&thumb=Y",
+    "detailUrl": "https://www.sfac.or.kr/seoulautumnfesta/festival/create/209"
+  },
+  {
+    "_id": "evt-036",
+    "sourceId": "seoul:[금천문화재단] 2026 공연장상주단체 기획공연 [두아:유월의 눈]|2026-10-01 00:00:00.0|금천뮤지컬센터",
+    "title": "2026 공연장상주단체 기획공연 [두아:유월의 눈]",
+    "organizer": "금천문화재단",
+    "category": "연극",
+    "genres": [
+      "연극",
+      "공연"
+    ],
+    "venue": "금천뮤지컬센터",
+    "address": "금천뮤지컬센터",
+    "area": "금천구",
+    "coords": {
+      "lat": 37.468777055274,
+      "lng": 126.894474890365
+    },
+    "startAt": "2026-09-30T15:00:00.000Z",
+    "endAt": "2026-10-02T15:00:00.000Z",
+    "price": "전석 20,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=62034cda11ad4980b153d529b313106f&thumb=Y",
+    "detailUrl": "https://m.site.naver.com/2efd0"
+  },
+  {
+    "_id": "evt-037",
+    "sourceId": "seoul:무비 심포니 : The Space 영화음악콘서트|2026-10-01 00:00:00.0|세종대극장위치보기\t",
+    "title": "무비 심포니 : The Space 영화음악콘서트",
+    "organizer": "세종문화회관",
+    "category": "클래식",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "세종대극장위치보기",
+    "address": "세종대극장위치보기",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.57260128068914,
+      "lng": 126.97577534746529
+    },
+    "startAt": "2026-09-30T15:00:00.000Z",
+    "endAt": "2026-09-30T15:00:00.000Z",
+    "price": "VIP석 90,000원 R석 70,000원 S석 60,000원 A석 40,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=bc03b24355a84ea4ab264a8ec4122214&thumb=Y",
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37503&menuNo=200320"
+  },
+  {
+    "_id": "evt-038",
+    "sourceId": "seoul:[서울시립교향악단] 2026 서울시향 퇴근길 토크 콘서트 III : 북유럽의 밤|2026-10-01 00:00:00.0|대한성공회 서울주교좌성당",
+    "title": "2026 서울시향 퇴근길 토크 콘서트 III : 북유럽의 밤",
+    "organizer": "서울시립교향악단",
+    "category": "클래식",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "대한성공회 서울주교좌성당",
+    "address": "대한성공회 서울주교좌성당",
+    "area": "중구",
+    "coords": {
+      "lat": 37.5675100246955,
+      "lng": 126.975333738027
+    },
+    "startAt": "2026-09-30T15:00:00.000Z",
+    "endAt": "2026-09-30T15:00:00.000Z",
+    "price": "전석 20,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e4eded2e9f7d44afbb6553f54fdd3075&thumb=Y",
+    "detailUrl": "https://www.seoulphil.or.kr/perf/view?perfNo=7615"
+  },
+  {
+    "_id": "evt-039",
+    "sourceId": "seoul:수림뉴웨이브 2026 - 이재하 [현금제: 이중번역 (二重飜譯)]|2026-10-01 00:00:00.0|수림문화재단 김희수SPACE1",
+    "title": "수림뉴웨이브 2026 - 이재하 [현금제: 이중번역 (二重飜譯)]",
+    "organizer": "",
+    "category": "국악",
+    "genres": [
+      "국악",
+      "음악",
+      "공연"
+    ],
+    "venue": "수림문화재단 김희수SPACE1",
+    "address": "수림문화재단 김희수SPACE1",
+    "area": "동대문구",
+    "coords": {
+      "lat": 37.590705971349955,
+      "lng": 127.04281951646153
+    },
+    "startAt": "2026-09-30T15:00:00.000Z",
+    "endAt": "2026-09-30T15:00:00.000Z",
+    "price": "전석30,000원(예술인/재관람 50% 할인)",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0b58a923224242e5bde21c7e4f2d993f&thumb=Y",
+    "detailUrl": "https://nol.yanolja.com/ticket/products/26010645"
+  },
+  {
+    "_id": "evt-040",
+    "sourceId": "seoul:[종로문화재단] 2026 종로 가족공연축제|2026-10-02 00:00:00.0|종로 아이들극장",
+    "title": "2026 종로 가족공연축제",
+    "organizer": "종로문화재단",
+    "category": "연극",
+    "genres": [
+      "연극",
+      "공연"
+    ],
+    "venue": "종로 아이들극장",
+    "address": "종로 아이들극장",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.59029701704756,
+      "lng": 126.99830160838778
+    },
+    "startAt": "2026-10-01T15:00:00.000Z",
+    "endAt": "2026-10-31T15:00:00.000Z",
+    "price": "전석 20,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=85a183a5841a44d080d1a37c95929324&thumb=Y",
+    "detailUrl": "https://jct.jfac.or.kr/site/child/childProgram/view?pgIdx=375&pgCatCode="
+  },
+  {
+    "_id": "evt-041",
+    "sourceId": "seoul:[마포문화재단] 연극 [말린 고추와 복숭아향 립스틱]|2026-10-02 00:00:00.0|마포아트센터 플레이맥",
+    "title": "연극 [말린 고추와 복숭아향 립스틱]",
+    "organizer": "마포문화재단",
+    "category": "연극",
+    "genres": [
+      "연극",
+      "공연"
+    ],
+    "venue": "마포아트센터 플레이맥",
+    "address": "마포아트센터 플레이맥",
+    "area": "마포구",
+    "coords": {
+      "lat": 37.54987259578174,
+      "lng": 126.9455874749264
+    },
+    "startAt": "2026-10-01T15:00:00.000Z",
+    "endAt": "2026-10-24T15:00:00.000Z",
+    "price": "전석 50,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=479ab06a4eb7461794b0f727eda40340&thumb=Y",
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2685&page=1"
+  },
+  {
+    "_id": "evt-042",
+    "sourceId": "seoul:[남산골한옥마을] 2026 남산골 하반기 한옥콘서트 [시공이음]|2026-10-02 00:00:00.0|남산골한옥마을 관훈동 민씨 가옥",
+    "title": "2026 남산골 하반기 한옥콘서트 [시공이음]",
+    "organizer": "",
+    "category": "국악",
+    "genres": [
+      "국악",
+      "음악",
+      "공연"
+    ],
+    "venue": "남산골한옥마을 관훈동 민씨 가옥",
+    "address": "남산골한옥마을 관훈동 민씨 가옥",
+    "area": "중구",
+    "coords": {
+      "lat": 37.559304933707146,
+      "lng": 126.994440072131
+    },
+    "startAt": "2026-10-01T15:00:00.000Z",
+    "endAt": "2026-10-22T15:00:00.000Z",
+    "price": "전석 30,000원(10월 23일 무료공연)",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=185954a79be341919622f288baa3448d&thumb=Y",
+    "detailUrl": "https://www.hanokmaeul.co.kr/performance/?bmode=view&idx=173212714&back_url=Lw%3D%3D&t=board&page=1"
+  },
+  {
+    "_id": "evt-043",
+    "sourceId": "seoul:[서울시청] 2026 서울라이트 한강 빛섬축제 |2026-10-02 00:00:00.0|노들섬",
+    "title": "2026 서울라이트 한강 빛섬축제",
+    "organizer": "서울시청",
+    "category": "축제-문화/예술",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "노들섬",
+    "address": "노들섬",
+    "area": "용산구",
+    "coords": {
+      "lat": 37.5176638307111,
+      "lng": 126.958036465507
+    },
+    "startAt": "2026-10-01T15:00:00.000Z",
+    "endAt": "2026-10-10T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=c156a8a732ba4da186a80ffbc40acab1&thumb=Y",
+    "detailUrl": "https://bitseomfestival.com"
+  },
+  {
+    "_id": "evt-044",
+    "sourceId": "seoul:[한 잔의 여유] K-Tea Classic Concert: Seoul Edition 다도 음악회|2026-10-02 00:00:00.0|라율아트홀",
+    "title": "K-Tea Classic Concert: Seoul Edition 다도 음악회",
+    "organizer": "한 잔의 여유",
+    "category": "클래식",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "라율아트홀",
+    "address": "라율아트홀",
+    "area": "서초구",
+    "coords": {
+      "lat": 37.4824452369632,
+      "lng": 127.012614908746
+    },
+    "startAt": "2026-10-01T15:00:00.000Z",
+    "endAt": "2026-10-09T15:00:00.000Z",
+    "price": "전석 89,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=8c32a9c9c09944b8aa67faaf070b3f17&thumb=Y",
+    "detailUrl": "https://www.rayularthall.com/concerts/?bmode=view&idx=174463478&back_url=Lw%3D%3D&t=board&page="
+  },
+  {
+    "_id": "evt-045",
+    "sourceId": "seoul:연극 [나는 코다입니다]|2026-10-02 00:00:00.0|모두예술극장",
+    "title": "연극 [나는 코다입니다]",
+    "organizer": "",
+    "category": "연극",
+    "genres": [
+      "연극",
+      "공연"
+    ],
+    "venue": "모두예술극장",
+    "address": "모두예술극장",
+    "area": "서대문구",
+    "coords": {
+      "lat": 37.5601123698942,
+      "lng": 126.962282061624
+    },
+    "startAt": "2026-10-01T15:00:00.000Z",
+    "endAt": "2026-10-02T15:00:00.000Z",
+    "price": "전석 30,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=5a5130aaeca849528e23195d63258fc1&thumb=Y",
+    "detailUrl": "https://www.moduarttheater.or.kr/product/performance/253026"
+  },
+  {
+    "_id": "evt-046",
+    "sourceId": "seoul:2026 서울시 구립여성합창단 합창 페스티벌|2026-10-02 00:00:00.0|온라인 (서울시 유튜브 생중계)",
+    "title": "2026 서울시 구립여성합창단 합창 페스티벌",
+    "organizer": "서울시청",
+    "category": "클래식",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "온라인 (서울시 유튜브 생중계)",
+    "address": "온라인 (서울시 유튜브 생중계)",
+    "area": "강동구",
+    "coords": {
+      "lat": 37.5512204558342,
+      "lng": 127.157342546961
+    },
+    "startAt": "2026-10-01T15:00:00.000Z",
+    "endAt": "2026-10-01T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0f7c5585ebd74d6fb78b0c77a9cbadee&thumb=Y",
+    "detailUrl": "https://www.gdfac.or.kr/product/ko/performance/258470"
+  },
+  {
+    "_id": "evt-047",
+    "sourceId": "seoul:비올리스트 강동엽 보웬 전곡 시리즈 II - The English Rachmaninoff|2026-10-02 00:00:00.0|예술의전당 리사이틀홀",
+    "title": "비올리스트 강동엽 보웬 전곡 시리즈 II - The English Rachmaninoff",
+    "organizer": "",
+    "category": "클래식",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "예술의전당 리사이틀홀",
+    "address": "예술의전당 리사이틀홀",
+    "area": "서초구",
+    "coords": {
+      "lat": 37.4802401962069,
+      "lng": 127.014215239186
+    },
+    "startAt": "2026-10-01T15:00:00.000Z",
+    "endAt": "2026-10-01T15:00:00.000Z",
+    "price": "30,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d9d52f1ade2649cea6a87293d165bd38&thumb=Y",
+    "detailUrl": "https://www.sac.or.kr/site/main/show/show_view?SN=77711"
+  },
+  {
+    "_id": "evt-048",
+    "sourceId": "seoul:제 14회 북촌우리음악축제|2026-10-03 00:00:00.0|원서공원, 은덕문화원, 노무현시민센터, 종로구립고희동미술관",
+    "title": "제 14회 북촌우리음악축제",
+    "organizer": "",
+    "category": "축제-문화/예술",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "원서공원, 은덕문화원, 노무현시민센터, 종로구립고희동미술관",
+    "address": "원서공원, 은덕문화원, 노무현시민센터, 종로구립고희동미술관",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.5809050917445,
+      "lng": 126.98884828992
+    },
+    "startAt": "2026-10-02T15:00:00.000Z",
+    "endAt": "2026-10-03T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=2c31e04bfa3b46fbb3e49502d2ef504d&thumb=Y",
+    "detailUrl": "https://www.instagram.com/bukchonjebi"
+  },
+  {
+    "_id": "evt-049",
+    "sourceId": "seoul:2026 K-Wave Dance Festival|2026-10-03 00:00:00.0|이태원로(이태원역(6호선)과 녹사평역(6호선)사이 약 400m 구간)",
+    "title": "2026 K-Wave Dance Festival",
+    "organizer": "",
+    "category": "축제-문화/예술",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "이태원로(이태원역(6호선)과 녹사평역(6호선)사이 약 400m 구간)",
+    "address": "이태원로(이태원역(6호선)과 녹사평역(6호선)사이 약 400m 구간)",
+    "area": "용산구",
+    "coords": {
+      "lat": 37.534483277545,
+      "lng": 126.993721655506
+    },
+    "startAt": "2026-10-02T15:00:00.000Z",
+    "endAt": "2026-10-03T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=463668deb155441e9442d623fbc0113b&thumb=Y",
+    "detailUrl": "https://k-wavedance.co.kr/"
+  },
+  {
+    "_id": "evt-050",
+    "sourceId": "seoul:[서울남산국악당] 2026 남산 야광명월|2026-10-03 00:00:00.0|서울남산국악당 야외마당",
+    "title": "2026 남산 야광명월",
+    "organizer": "",
+    "category": "국악",
+    "genres": [
+      "국악",
+      "음악",
+      "공연"
+    ],
+    "venue": "서울남산국악당 야외마당",
+    "address": "서울남산국악당 야외마당",
+    "area": "중구",
+    "coords": {
+      "lat": 37.5583499463987,
+      "lng": 126.994021611776
+    },
+    "startAt": "2026-10-02T15:00:00.000Z",
+    "endAt": "2026-10-02T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=275f68e6cdbf43a0bc8e18c4f1eb65a1&thumb=Y",
+    "detailUrl": "https://www.sgtt.kr/program/detail/7372"
+  },
+  {
+    "_id": "evt-051",
+    "sourceId": "seoul:현대음악극 [밤은 무자비한 달의 여왕 (The Night is a Harsh Mistress)]|2026-10-03 00:00:00.0|서교스퀘어",
+    "title": "현대음악극 [밤은 무자비한 달의 여왕 (The Night is a Harsh Mistress)]",
+    "organizer": "서울생활문화센터-서교",
+    "category": "연극",
+    "genres": [
+      "연극",
+      "공연"
+    ],
+    "venue": "서교스퀘어",
+    "address": "서교스퀘어",
+    "area": "마포구",
+    "coords": {
+      "lat": 37.5508138163956,
+      "lng": 126.916493990351
+    },
+    "startAt": "2026-10-02T15:00:00.000Z",
+    "endAt": "2026-10-02T15:00:00.000Z",
+    "price": "전석 20,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=3c72498c8cba4db8a2fe8ecff711b437&thumb=Y",
+    "detailUrl": "https://nol.yanolja.com/ticket/products/26013179"
+  },
+  {
+    "_id": "evt-052",
+    "sourceId": "seoul:[동대문문화재단] 2026 동대문페스티벌|2026-10-03 00:00:00.0|장한로일대",
+    "title": "2026 동대문페스티벌",
+    "organizer": "동대문문화재단",
+    "category": "축제-문화/예술",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "장한로일대",
+    "address": "장한로일대",
+    "area": "동대문구",
+    "coords": {
+      "lat": 37.5696967138505,
+      "lng": 127.071439570463
+    },
+    "startAt": "2026-10-02T15:00:00.000Z",
+    "endAt": "2026-10-02T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=593f0f67f16341b3b9f16d54fb2a865e&thumb=Y",
+    "detailUrl": "https://ddmf.co.kr/"
+  },
+  {
+    "_id": "evt-053",
+    "sourceId": "seoul:[관악문화재단] 2026 샤로수길 클럽데이|2026-10-03 00:00:00.0|샤로수길 일대",
+    "title": "2026 샤로수길 클럽데이",
+    "organizer": "관악문화재단",
+    "category": "콘서트",
+    "genres": [
+      "콘서트",
+      "음악",
+      "공연"
+    ],
+    "venue": "샤로수길 일대",
+    "address": "샤로수길 일대",
+    "area": "관악구",
+    "coords": {
+      "lat": 37.478575870634586,
+      "lng": 126.95567304931458
+    },
+    "startAt": "2026-10-02T15:00:00.000Z",
+    "endAt": "2026-10-02T15:00:00.000Z",
+    "price": "블라인드 티켓 : 30,000원 / 온라인 예매가 : 40,000원 / 현장판매가 : 44,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=49b8b1fa0d8440b58a08768bd2316922&thumb=Y",
+    "detailUrl": "https://gfac.or.kr/site/main/performance/PERFORMANCE/view/324"
+  },
+  {
+    "_id": "evt-054",
+    "sourceId": "seoul:2026 힐링발레축제 Healing Ballet Festival|2026-10-04 00:00:00.0|송파문화예술회관 / 씨엠타워 (서초구 효령로 81, 씨엠타워 3층)",
+    "title": "2026 힐링발레축제 Healing Ballet Festival",
+    "organizer": "",
+    "category": "축제-문화/예술",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "송파문화예술회관 / 씨엠타워 (서초구 효령로 81, 씨엠타워 3층)",
+    "address": "송파문화예술회관 / 씨엠타워 (서초구 효령로 81, 씨엠타워 3층)",
+    "area": "송파구",
+    "coords": {
+      "lat": 37.5023578475607,
+      "lng": 127.093490160793
+    },
+    "startAt": "2026-10-03T15:00:00.000Z",
+    "endAt": "2026-10-05T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=b0632fc186cd4a089005e7f1c4b63493&thumb=Y",
+    "detailUrl": "https://www.interballet.co.kr/bbs/bbs_view.php?idx=374&page=1&code=notice&s_opt=All&s_key="
+  },
+  {
+    "_id": "evt-055",
+    "sourceId": "seoul:[세종문화회관] 정명훈xKBS교향악단x김선욱 베토벤+브람스|2026-10-04 00:00:00.0|세종대극장",
+    "title": "정명훈xKBS교향악단x김선욱 베토벤+브람스",
+    "organizer": "세종문화회관",
+    "category": "클래식",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "세종대극장",
+    "address": "세종대극장",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.57260128068914,
+      "lng": 126.97577534746529
+    },
+    "startAt": "2026-10-03T15:00:00.000Z",
+    "endAt": "2026-10-03T15:00:00.000Z",
+    "price": "VIP석 120,000원 R석 100,000원 S석 80,000원 A석 60,000원 B석 50,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=b110184a6e1a417986ed0cae1249be7c&thumb=Y",
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=36788&menuNo=200320"
+  },
+  {
+    "_id": "evt-056",
+    "sourceId": "seoul:[금천문화재단] 2026 금천시흥행궁문화제|2026-10-04 00:00:00.0|금천구 은행나무로 일대 (대우당 약국 ~ 시흥5동주민센터)",
+    "title": "2026 금천시흥행궁문화제",
+    "organizer": "금천문화재단",
+    "category": "축제-전통/역사",
+    "genres": [
+      "축제",
+      "역사"
+    ],
+    "venue": "금천구 은행나무로 일대 (대우당 약국 ~ 시흥5동주민센터)",
+    "address": "금천구 은행나무로 일대 (대우당 약국 ~ 시흥5동주민센터)",
+    "area": "금천구",
+    "coords": {
+      "lat": 37.45082505038279,
+      "lng": 126.90614907382468
+    },
+    "startAt": "2026-10-03T15:00:00.000Z",
+    "endAt": "2026-10-03T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=73b0be048f7442708ea7844ff3dba545&thumb=Y",
+    "detailUrl": "https://blog.naver.com/geumcheon1/224413886805"
+  },
+  {
+    "_id": "evt-057",
+    "sourceId": "seoul:[서울시/서울AI재단] 스마트라이프위크 2026 |2026-10-06 00:00:00.0|강남 코엑스 A·B홀",
+    "title": "스마트라이프위크 2026",
+    "organizer": "서울시청",
+    "category": "축제-기타",
+    "genres": [
+      "축제"
+    ],
+    "venue": "강남 코엑스 A·B홀",
+    "address": "강남 코엑스 A·B홀",
+    "area": "강남구",
+    "coords": {
+      "lat": 37.5118239121138,
+      "lng": 127.059159043842
+    },
+    "startAt": "2026-10-05T15:00:00.000Z",
+    "endAt": "2026-10-07T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4f2b97e50a0f4f228552f9140769c012&thumb=Y",
+    "detailUrl": "https://slw.kr/kor/main.do"
+  },
+  {
+    "_id": "evt-058",
+    "sourceId": "seoul:2026년 중증장애인생산품박람회|2026-10-06 00:00:00.0|서울 aT센터 1전시장",
+    "title": "2026년 중증장애인생산품박람회",
+    "organizer": "",
+    "category": "축제-시민화합",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "서울 aT센터 1전시장",
+    "address": "서울 aT센터 1전시장",
+    "area": "서초구",
+    "coords": {
+      "lat": 37.4682787075426,
+      "lng": 127.039136433366
+    },
+    "startAt": "2026-10-05T15:00:00.000Z",
+    "endAt": "2026-10-06T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=f89841e9f5d1491787c567a2af08d6e2&thumb=Y",
+    "detailUrl": "https://kavrdfair.com/"
+  },
+  {
+    "_id": "evt-059",
+    "sourceId": "seoul:[세종문화회관] 2026 누구나 클래식 with 국립심포니오케스트라|2026-10-06 00:00:00.0|세종대극장",
+    "title": "2026 누구나 클래식 with 국립심포니오케스트라",
+    "organizer": "세종문화회관",
+    "category": "클래식",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "세종대극장",
+    "address": "세종대극장",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.57260128068914,
+      "lng": 126.97577534746529
+    },
+    "startAt": "2026-10-05T15:00:00.000Z",
+    "endAt": "2026-10-05T15:00:00.000Z",
+    "price": "관람료 선택제 1,000원 3,000원 5,000원 10,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=036442da5ae445f99275d36365f5efd7&thumb=Y",
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=36850&menuNo=200320"
+  },
+  {
+    "_id": "evt-060",
+    "sourceId": "seoul:[세종문화회관] 2026 대한민국국악관현악축제 [KBS국악관현악단]|2026-10-06 00:00:00.0|세종M씨어터",
+    "title": "2026 대한민국국악관현악축제 [KBS국악관현악단]",
+    "organizer": "세종문화회관",
+    "category": "국악",
+    "genres": [
+      "국악",
+      "음악",
+      "공연"
+    ],
+    "venue": "세종M씨어터",
+    "address": "세종M씨어터",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.57260128068914,
+      "lng": 126.97577534746529
+    },
+    "startAt": "2026-10-05T15:00:00.000Z",
+    "endAt": "2026-10-05T15:00:00.000Z",
+    "price": "전석 10,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=5401684558974dddaf8544c52fb46c12&thumb=Y",
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37418&menuNo=200320"
+  },
+  {
+    "_id": "evt-061",
+    "sourceId": "seoul:[세종문화회관] 2026 대한민국국악관현악축제 [평택시립국악관현악단]|2026-10-07 00:00:00.0|세종M씨어터위치보기\t",
+    "title": "2026 대한민국국악관현악축제 [평택시립국악관현악단]",
+    "organizer": "세종문화회관",
+    "category": "국악",
+    "genres": [
+      "국악",
+      "음악",
+      "공연"
+    ],
+    "venue": "세종M씨어터위치보기",
+    "address": "세종M씨어터위치보기",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.57260128068914,
+      "lng": 126.97577534746529
+    },
+    "startAt": "2026-10-06T15:00:00.000Z",
+    "endAt": "2026-10-06T15:00:00.000Z",
+    "price": "전석 10,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=7afd4c1c2eab4df6b3e84bb6dd9c35e2&thumb=Y",
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37421&menuNo=200320"
+  },
+  {
+    "_id": "evt-062",
+    "sourceId": "seoul:국립무용단 [더블빌:시나위]|2026-10-08 00:00:00.0|국립극장 해오름극장",
+    "title": "국립무용단 [더블빌:시나위]",
+    "organizer": "",
+    "category": "무용",
+    "genres": [
+      "무용",
+      "공연"
+    ],
+    "venue": "국립극장 해오름극장",
+    "address": "국립극장 해오름극장",
+    "area": "중구",
+    "coords": {
+      "lat": 37.5519949082942,
+      "lng": 126.999267349473
+    },
+    "startAt": "2026-10-07T15:00:00.000Z",
+    "endAt": "2026-10-10T15:00:00.000Z",
+    "price": "VIP 70,000원 R 50,000원 S 30,000원 A 20,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=3bb7a3a0a0f14cc1a3e7880472287be4&thumb=Y",
+    "detailUrl": "https://www.ntok.go.kr/ntok/pm/prfmng/performanceDetail.do?mi=21008&perfId=267170"
+  },
+  {
+    "_id": "evt-063",
+    "sourceId": "seoul:[마포문화재단] 2026 M 초이스 연극 [욕망이라는 이름의 전차]|2026-10-08 00:00:00.0|마포아트센터 아트홀맥",
+    "title": "2026 M 초이스 연극 [욕망이라는 이름의 전차]",
+    "organizer": "마포문화재단",
+    "category": "연극",
+    "genres": [
+      "연극",
+      "공연"
+    ],
+    "venue": "마포아트센터 아트홀맥",
+    "address": "마포아트센터 아트홀맥",
+    "area": "마포구",
+    "coords": {
+      "lat": 37.54987259578174,
+      "lng": 126.9455874749264
+    },
+    "startAt": "2026-10-07T15:00:00.000Z",
+    "endAt": "2026-10-10T15:00:00.000Z",
+    "price": "R석 70,000원, S석 50,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=23937681cfa34fb6b34a3c9369ffd913&thumb=Y",
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2687&page=1"
+  },
+  {
+    "_id": "evt-064",
+    "sourceId": "seoul:[세종문화회관] 2026 대한민국국악관현악축제 [안산시립국악단]|2026-10-08 00:00:00.0|세종M씨어터",
+    "title": "2026 대한민국국악관현악축제 [안산시립국악단]",
+    "organizer": "세종문화회관",
+    "category": "국악",
+    "genres": [
+      "국악",
+      "음악",
+      "공연"
+    ],
+    "venue": "세종M씨어터",
+    "address": "세종M씨어터",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.57260128068914,
+      "lng": 126.97577534746529
+    },
+    "startAt": "2026-10-07T15:00:00.000Z",
+    "endAt": "2026-10-07T15:00:00.000Z",
+    "price": "전석 10,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=ac03a4127c1a485387c6a23839bdedc7&thumb=Y",
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37422&menuNo=200320"
+  },
+  {
+    "_id": "evt-065",
+    "sourceId": "seoul:[서울돈화문국악당] 2026 소리제전 [소리연애]|2026-10-09 00:00:00.0|서울돈화문국악당",
+    "title": "2026 소리제전 [소리연애]",
+    "organizer": "서울남산국악당",
+    "category": "국악",
+    "genres": [
+      "국악",
+      "음악",
+      "공연"
+    ],
+    "venue": "서울돈화문국악당",
+    "address": "서울돈화문국악당",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.5772502822,
+      "lng": 126.9907306641
+    },
+    "startAt": "2026-10-08T15:00:00.000Z",
+    "endAt": "2026-10-10T15:00:00.000Z",
+    "price": "전석 30,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4d2b11c4ec3446f89b1817b401978b40&thumb=Y",
+    "detailUrl": "https://sgtt.kr/program/detail/7338"
+  },
+  {
+    "_id": "evt-066",
+    "sourceId": "seoul:[세종문화회관] 2026 대한민국국악관현악축제 진주시립국악관현악단|2026-10-09 00:00:00.0|세종M씨어터",
+    "title": "2026 대한민국국악관현악축제 진주시립국악관현악단",
+    "organizer": "세종문화회관",
+    "category": "국악",
+    "genres": [
+      "국악",
+      "음악",
+      "공연"
+    ],
+    "venue": "세종M씨어터",
+    "address": "세종M씨어터",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.57260128068914,
+      "lng": 126.97577534746529
+    },
+    "startAt": "2026-10-08T15:00:00.000Z",
+    "endAt": "2026-10-08T15:00:00.000Z",
+    "price": "전석 10,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=457b0eda7e6a4fe2b144d923ec6619c8&thumb=Y",
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37423&menuNo=200320"
+  },
+  {
+    "_id": "evt-067",
+    "sourceId": "seoul:[은평문화재단] 와이즈발레단 [지젤 GISELLE]_2026 EEBF|2026-10-09 00:00:00.0|은평문화예술회관 공연장 (서울특별시 은평구 녹번로 16)",
+    "title": "와이즈발레단 [지젤 GISELLE]_2026 EEBF",
+    "organizer": "은평문화재단",
+    "category": "무용",
+    "genres": [
+      "무용",
+      "공연"
+    ],
+    "venue": "은평문화예술회관 공연장 (서울특별시 은평구 녹번로 16)",
+    "address": "은평문화예술회관 공연장 (서울특별시 은평구 녹번로 16)",
+    "area": "은평구",
+    "coords": {
+      "lat": 37.6036996869964,
+      "lng": 126.927901672834
+    },
+    "startAt": "2026-10-08T15:00:00.000Z",
+    "endAt": "2026-10-08T15:00:00.000Z",
+    "price": "전석 30,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=809d0a32f87a4fed96d163f894cff648&thumb=Y",
+    "detailUrl": "https://tickets.interpark.com/goods/26012397"
+  },
+  {
+    "_id": "evt-068",
+    "sourceId": "seoul:2026 서울시 마음돌봄 페스티벌 [어서오세요, 마음 정거장입니다.]|2026-10-09 00:00:00.0|덕수궁길 차 없는 거리(대한문 앞 ~ 원형분수대)",
+    "title": "2026 서울시 마음돌봄 페스티벌 [어서오세요, 마음 정거장입니다.]",
+    "organizer": "",
+    "category": "축제-문화/예술",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "덕수궁길 차 없는 거리(대한문 앞 ~ 원형분수대)",
+    "address": "덕수궁길 차 없는 거리(대한문 앞 ~ 원형분수대)",
+    "area": "중구",
+    "coords": {
+      "lat": 37.56486638326198,
+      "lng": 126.97651640148526
+    },
+    "startAt": "2026-10-08T15:00:00.000Z",
+    "endAt": "2026-10-08T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=64295d2b610e4bc2abe0eb29018be5a6&thumb=Y",
+    "detailUrl": "https://app.notion.com/p/2026-3deecebb36ab800eb372c977f40faa6e?"
+  },
+  {
+    "_id": "evt-069",
+    "sourceId": "seoul:제3회 별빛남문시장 1009 별야별축제 : 벼리가 여는 별별식탁|2026-10-09 00:00:00.0|금천구 별빛남문시장 고객지원센터 및 시장 주변 일대",
+    "title": "제3회 별빛남문시장 1009 별야별축제 : 벼리가 여는 별별식탁",
+    "organizer": "",
+    "category": "축제-기타",
+    "genres": [
+      "축제"
+    ],
+    "venue": "금천구 별빛남문시장 고객지원센터 및 시장 주변 일대",
+    "address": "금천구 별빛남문시장 고객지원센터 및 시장 주변 일대",
+    "area": "금천구",
+    "coords": {
+      "lat": 37.4737582256998,
+      "lng": 126.900422458432
+    },
+    "startAt": "2026-10-08T15:00:00.000Z",
+    "endAt": "2026-10-08T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=fefe034bf8db4b25a537a7e367fab458&thumb=Y",
+    "detailUrl": "https://blog.naver.com/nm_mk/224418962453"
+  },
+  {
+    "_id": "evt-070",
+    "sourceId": "seoul:[세종문화회관] 2026 대한민국국악관현악축제 [특별공연] 중앙국악관현악단|2026-10-10 00:00:00.0|세종M씨어터",
+    "title": "2026 대한민국국악관현악축제 [특별공연] 중앙국악관현악단",
+    "organizer": "세종문화회관",
+    "category": "국악",
+    "genres": [
+      "국악",
+      "음악",
+      "공연"
+    ],
+    "venue": "세종M씨어터",
+    "address": "세종M씨어터",
+    "area": "종로구",
+    "coords": {
+      "lat": 37.57260128068914,
+      "lng": 126.97577534746529
+    },
+    "startAt": "2026-10-09T15:00:00.000Z",
+    "endAt": "2026-10-09T15:00:00.000Z",
+    "price": "전석 10,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=deb9adf9f18f42ccace3008bc08ee7aa&thumb=Y",
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37424&menuNo=200320"
+  },
+  {
+    "_id": "evt-071",
+    "sourceId": "seoul:[중랑문화재단] 2026 중랑용마폭포축제|2026-10-10 00:00:00.0|용마폭포공원(중랑구 용마산로 250-12)",
+    "title": "2026 중랑용마폭포축제",
+    "organizer": "중랑문화재단",
+    "category": "축제-자연/경관",
+    "genres": [
+      "축제",
+      "자연"
+    ],
+    "venue": "용마폭포공원(중랑구 용마산로 250-12)",
+    "address": "용마폭포공원(중랑구 용마산로 250-12)",
+    "area": "중랑구",
+    "coords": {
+      "lat": 37.5733520089552,
+      "lng": 127.089122137473
+    },
+    "startAt": "2026-10-09T15:00:00.000Z",
+    "endAt": "2026-10-09T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6219b0843237431896e39eb784c9bb65&thumb=Y",
+    "detailUrl": "https://www.instagram.com/yongma_fe/"
+  },
+  {
+    "_id": "evt-072",
+    "sourceId": "seoul:김진세 클래식 기타 독주회 [사적인 플레이리스트]|2026-10-10 00:00:00.0|예술의전당 리사이틀홀",
+    "title": "김진세 클래식 기타 독주회 [사적인 플레이리스트]",
+    "organizer": "",
+    "category": "독주/독창회",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "예술의전당 리사이틀홀",
+    "address": "예술의전당 리사이틀홀",
+    "area": "서초구",
+    "coords": {
+      "lat": 37.4802401962069,
+      "lng": 127.014215239186
+    },
+    "startAt": "2026-10-09T15:00:00.000Z",
+    "endAt": "2026-10-09T15:00:00.000Z",
+    "price": "50,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=1cba367cad0d40f69b301737962f93d5&thumb=Y",
+    "detailUrl": "https://www.partita.co.kr/11303/?idx=1094"
+  },
+  {
+    "_id": "evt-073",
+    "sourceId": "seoul:2026 어슬렁페스티발|2026-10-10 00:00:00.0|마포구 상수동 카페거리일대 (제비다방~그문화다방)",
+    "title": "2026 어슬렁페스티발",
+    "organizer": "",
+    "category": "축제-기타",
+    "genres": [
+      "축제"
+    ],
+    "venue": "마포구 상수동 카페거리일대 (제비다방~그문화다방)",
+    "address": "마포구 상수동 카페거리일대 (제비다방~그문화다방)",
+    "area": "마포구",
+    "coords": {
+      "lat": 37.54661199536863,
+      "lng": 126.92310495685415
+    },
+    "startAt": "2026-10-09T15:00:00.000Z",
+    "endAt": "2026-10-09T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=1cbf284a7063478491dc1fbd2cb77801&thumb=Y",
+    "detailUrl": "https://www.instagram.com/earthrunfestival"
+  },
+  {
+    "_id": "evt-074",
+    "sourceId": "seoul:[은평문화재단] 오!마이라이프 무브먼트 씨어터 [과일·악기·그림책]_2026 EEBF|2026-10-10 00:00:00.0|은평문화예술회관 숲속극장 (서울특별시 은평구 녹번로 16)",
+    "title": "오!마이라이프 무브먼트 씨어터 [과일·악기·그림책]_2026 EEBF",
+    "organizer": "은평문화재단",
+    "category": "무용",
+    "genres": [
+      "무용",
+      "공연"
+    ],
+    "venue": "은평문화예술회관 숲속극장 (서울특별시 은평구 녹번로 16)",
+    "address": "은평문화예술회관 숲속극장 (서울특별시 은평구 녹번로 16)",
+    "area": "은평구",
+    "coords": {
+      "lat": 37.6036996869964,
+      "lng": 126.927901672834
+    },
+    "startAt": "2026-10-09T15:00:00.000Z",
+    "endAt": "2026-10-09T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6c9fc0bda5b24b6f893a583dc6348bd2&thumb=Y",
+    "detailUrl": "https://www.efac.or.kr/page02/sub01.php?type=view&uid=5298"
+  },
+  {
+    "_id": "evt-075",
+    "sourceId": "seoul:[마포문화재단] 마포 공방 작가들과 함께하는 2026년 제 1회 [공방전]|2026-10-10 00:00:00.0|마포아트센터 앞 광장",
+    "title": "마포 공방 작가들과 함께하는 2026년 제 1회 [공방전]",
+    "organizer": "마포문화재단",
+    "category": "축제-기타",
+    "genres": [
+      "축제"
+    ],
+    "venue": "마포아트센터 앞 광장",
+    "address": "마포아트센터 앞 광장",
+    "area": "마포구",
+    "coords": {
+      "lat": 37.54987259578174,
+      "lng": 126.9455874749264
+    },
+    "startAt": "2026-10-09T15:00:00.000Z",
+    "endAt": "2026-10-09T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=dbde728f06094f74a19c9ed27dece3a5&thumb=Y",
+    "detailUrl": "https://www.mfac.or.kr/communication/notice_all_view.jsp?sc_b_code=BOARD_1207683401&sc_type=1&pk_seq=9180&sc_cond=b_subject&page=1"
+  },
+  {
+    "_id": "evt-076",
+    "sourceId": "seoul:2026 서울 어린이오페라페스티벌|2026-10-11 00:00:00.0|서울시 성동구 소월아트홀",
+    "title": "2026 서울 어린이오페라페스티벌",
+    "organizer": "",
+    "category": "뮤지컬/오페라",
+    "genres": [
+      "뮤지컬",
+      "오페라",
+      "공연"
+    ],
+    "venue": "서울시 성동구 소월아트홀",
+    "address": "서울시 성동구 소월아트홀",
+    "area": "성동구",
+    "coords": {
+      "lat": 37.5593072327953,
+      "lng": 127.036006376334
+    },
+    "startAt": "2026-10-10T15:00:00.000Z",
+    "endAt": "2026-10-10T15:00:00.000Z",
+    "price": "성동구민, 학생,어린이 50%",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=5c422f1209454caea285ac541a838c84&thumb=Y",
+    "detailUrl": "https://blog.naver.com/eroum_culture/224310283139"
+  },
+  {
+    "_id": "evt-077",
+    "sourceId": "seoul:[은평문화재단] 99아트컴퍼니 [에카(Ekah)& 심연(Abyss)]_2026 EEBF|2026-10-11 00:00:00.0|은평문화예술회관 공연장 (서울특별시 은평구 녹번로 16)",
+    "title": "99아트컴퍼니 [에카(Ekah)& 심연(Abyss)]_2026 EEBF",
+    "organizer": "은평문화재단",
+    "category": "무용",
+    "genres": [
+      "무용",
+      "공연"
+    ],
+    "venue": "은평문화예술회관 공연장 (서울특별시 은평구 녹번로 16)",
+    "address": "은평문화예술회관 공연장 (서울특별시 은평구 녹번로 16)",
+    "area": "은평구",
+    "coords": {
+      "lat": 37.6036996869964,
+      "lng": 126.927901672834
+    },
+    "startAt": "2026-10-10T15:00:00.000Z",
+    "endAt": "2026-10-10T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=13d28ea834304f6ca2192fd98d2bcc4f&thumb=Y",
+    "detailUrl": "https://www.efac.or.kr/page02/sub01.php?type=view&uid=5295"
+  },
+  {
+    "_id": "evt-078",
+    "sourceId": "seoul:[강북문화재단] 인형극 [그의 하루]|2026-10-14 00:00:00.0|강북문화예술회관 강북진달래홀",
+    "title": "인형극 [그의 하루]",
+    "organizer": "강북문화재단",
+    "category": "연극",
+    "genres": [
+      "연극",
+      "공연"
+    ],
+    "venue": "강북문화예술회관 강북진달래홀",
+    "address": "강북문화예술회관 강북진달래홀",
+    "area": "강북구",
+    "coords": {
+      "lat": 37.6409897866256,
+      "lng": 127.013878144422
+    },
+    "startAt": "2026-10-13T15:00:00.000Z",
+    "endAt": "2026-10-14T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=c709a0e5c07f497492ae64bdea7aee17&thumb=Y",
+    "detailUrl": "https://www.gbcf.or.kr/load.asp?subPage=110.View&page=1&idx=450"
+  },
+  {
+    "_id": "evt-079",
+    "sourceId": "seoul:[마포문화재단] 제11회 M 클래식 축제 [하나의 울림]|2026-10-14 00:00:00.0|마포아트센터 아트홀맥",
+    "title": "제11회 M 클래식 축제 [하나의 울림]",
+    "organizer": "마포문화재단",
+    "category": "클래식",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "마포아트센터 아트홀맥",
+    "address": "마포아트센터 아트홀맥",
+    "area": "마포구",
+    "coords": {
+      "lat": 37.54987259578174,
+      "lng": 126.9455874749264
+    },
+    "startAt": "2026-10-13T15:00:00.000Z",
+    "endAt": "2026-10-13T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d2372238f9204b199c82a9c803225ece&thumb=Y",
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2672&page=1"
+  },
+  {
+    "_id": "evt-080",
+    "sourceId": "seoul:[서울시] 2026 서울도시농업박람회|2026-10-16 00:00:00.0|서울숲(동부공원여가센터 일원)",
+    "title": "2026 서울도시농업박람회",
+    "organizer": "서울시청",
+    "category": "축제-기타",
+    "genres": [
+      "축제"
+    ],
+    "venue": "서울숲(동부공원여가센터 일원)",
+    "address": "서울숲(동부공원여가센터 일원)",
+    "area": "성동구",
+    "coords": {
+      "lat": 37.5430701468405,
+      "lng": 127.041799099222
+    },
+    "startAt": "2026-10-15T15:00:00.000Z",
+    "endAt": "2026-10-16T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6e16b1cc3037443a938753d7a7c96a0a&thumb=Y",
+    "detailUrl": "https://agro-cityseoul.co.kr/"
+  },
+  {
+    "_id": "evt-081",
+    "sourceId": "seoul:[성북문화재단] 안애순 컴퍼니 [춤이 말하다: 문소리×리아킴]|2026-10-16 00:00:00.0|꿈빛극장",
+    "title": "안애순 컴퍼니 [춤이 말하다: 문소리×리아킴]",
+    "organizer": "성북문화재단",
+    "category": "콘서트",
+    "genres": [
+      "콘서트",
+      "음악",
+      "공연"
+    ],
+    "venue": "꿈빛극장",
+    "address": "꿈빛극장",
+    "area": "성북구",
+    "coords": {
+      "lat": 37.6037552097988,
+      "lng": 127.022203675321
+    },
+    "startAt": "2026-10-15T15:00:00.000Z",
+    "endAt": "2026-10-16T15:00:00.000Z",
+    "price": "전석 30,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0e829f6946df437ea0e0f8adb2f19a94&thumb=Y",
+    "detailUrl": "https://kbt.sbculture.or.kr/?module=Board&action=SiteBoard&sMode=VIEW_FORM&iBrdNo=1&iBrdContNo=199&sBrdContRe=0&sSearchField=&sSearchValue=&CurrentPage=1&year=2026&month=10"
+  },
+  {
+    "_id": "evt-082",
+    "sourceId": "seoul:[마포문화재단] 2026 [인디스커버리 : FESTA] TRACK 01|2026-10-16 00:00:00.0|마포아트센터 아트홀맥",
+    "title": "2026 [인디스커버리 : FESTA] TRACK 01",
+    "organizer": "마포문화재단",
+    "category": "콘서트",
+    "genres": [
+      "콘서트",
+      "음악",
+      "공연"
+    ],
+    "venue": "마포아트센터 아트홀맥",
+    "address": "마포아트센터 아트홀맥",
+    "area": "마포구",
+    "coords": {
+      "lat": 37.54987259578174,
+      "lng": 126.9455874749264
+    },
+    "startAt": "2026-10-15T15:00:00.000Z",
+    "endAt": "2026-10-15T15:00:00.000Z",
+    "price": "R석 66,000원, S석 55,000원, 시야방해석 33,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=3d17bd7f9f0f4814af0c16207bb3a71b&thumb=Y",
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2662&page=1"
+  },
+  {
+    "_id": "evt-083",
+    "sourceId": "seoul:[용산역사박물관] 2026 용산역사박물관 [월간 청음회] 10월|2026-10-17 00:00:00.0|용산역사박물관 1층 로비",
+    "title": "2026 용산역사박물관 [월간 청음회] 10월",
+    "organizer": "용산구청",
+    "category": "콘서트",
+    "genres": [
+      "콘서트",
+      "음악",
+      "공연"
+    ],
+    "venue": "용산역사박물관 1층 로비",
+    "address": "용산역사박물관 1층 로비",
+    "area": "용산구",
+    "coords": {
+      "lat": 37.5256680404431,
+      "lng": 126.965769395985
+    },
+    "startAt": "2026-10-16T15:00:00.000Z",
+    "endAt": "2026-10-16T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=59683b9f2d8f44409b6a75bd95d8903b&thumb=Y",
+    "detailUrl": "https://museum.yongsan.go.kr/edus/view?id=920"
+  },
+  {
+    "_id": "evt-084",
+    "sourceId": "seoul:[광진문화재단] 2026 생활예술축제 [춤추는광진]|2026-10-17 00:00:00.0|서울어린이대공원 열린무대",
+    "title": "2026 생활예술축제 [춤추는광진]",
+    "organizer": "광진문화재단",
+    "category": "축제-시민화합",
+    "genres": [
+      "축제",
+      "문화"
+    ],
+    "venue": "서울어린이대공원 열린무대",
+    "address": "서울어린이대공원 열린무대",
+    "area": "광진구",
+    "coords": {
+      "lat": 37.54895853939875,
+      "lng": 127.077746180044
+    },
+    "startAt": "2026-10-16T15:00:00.000Z",
+    "endAt": "2026-10-16T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=ce6d5915fe4e47d89823a5f7384f4097&thumb=Y",
+    "detailUrl": "https://www.naruart.or.kr/exhibition/program_view.php?idx=10413"
+  },
+  {
+    "_id": "evt-085",
+    "sourceId": "seoul:[은평문화재단] 앰비규어스댄스컴퍼니 [더 벨트(The Belt)]_2026 EEBF|2026-10-17 00:00:00.0|은평문화예술회관 공연장 (서울특별시 은평구 녹번로 16)",
+    "title": "앰비규어스댄스컴퍼니 [더 벨트(The Belt)]_2026 EEBF",
+    "organizer": "은평문화재단",
+    "category": "무용",
+    "genres": [
+      "무용",
+      "공연"
+    ],
+    "venue": "은평문화예술회관 공연장 (서울특별시 은평구 녹번로 16)",
+    "address": "은평문화예술회관 공연장 (서울특별시 은평구 녹번로 16)",
+    "area": "은평구",
+    "coords": {
+      "lat": 37.6036996869964,
+      "lng": 126.927901672834
+    },
+    "startAt": "2026-10-16T15:00:00.000Z",
+    "endAt": "2026-10-16T15:00:00.000Z",
+    "price": "전석 30,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=dc5cae2a23db4203a8dede430acc99d9&thumb=Y",
+    "detailUrl": "https://tickets.interpark.com/goods/26012398"
+  },
+  {
+    "_id": "evt-086",
+    "sourceId": "seoul:[마포문화재단] 2026 [인디스커버리 : FESTA] TRACK 02|2026-10-17 00:00:00.0|마포아트센터 아트홀맥",
+    "title": "2026 [인디스커버리 : FESTA] TRACK 02",
+    "organizer": "마포문화재단",
+    "category": "콘서트",
+    "genres": [
+      "콘서트",
+      "음악",
+      "공연"
+    ],
+    "venue": "마포아트센터 아트홀맥",
+    "address": "마포아트센터 아트홀맥",
+    "area": "마포구",
+    "coords": {
+      "lat": 37.54987259578174,
+      "lng": 126.9455874749264
+    },
+    "startAt": "2026-10-16T15:00:00.000Z",
+    "endAt": "2026-10-16T15:00:00.000Z",
+    "price": "R석 66,000원, S석 55,000원, 시야방해석 33,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=49e49e5ac957439caa32f2e01e720560&thumb=Y",
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2663&page=1"
+  },
+  {
+    "_id": "evt-087",
+    "sourceId": "seoul:[금천문화재단] 찾아가는 금천라이브 - 하반기|2026-10-17 00:00:00.0|금나래중앙공원",
+    "title": "찾아가는 금천라이브 - 하반기",
+    "organizer": "금천문화재단",
+    "category": "콘서트",
+    "genres": [
+      "콘서트",
+      "음악",
+      "공연"
+    ],
+    "venue": "금나래중앙공원",
+    "address": "금나래중앙공원",
+    "area": "금천구",
+    "coords": {
+      "lat": 37.4570656519531,
+      "lng": 126.896036850324
+    },
+    "startAt": "2026-10-16T15:00:00.000Z",
+    "endAt": "2026-10-16T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=3318f8a3d56d4da8862875c02b880d1e&thumb=Y",
+    "detailUrl": "https://m.site.naver.com/2eeRX"
+  },
+  {
+    "_id": "evt-088",
+    "sourceId": "seoul:[서울시어울림플라자] 어울림 스테이지(Stage) - '나는 코다입니다.'|2026-10-18 00:00:00.0|서울시 어울림플라자 B동 지하 1층 공연장",
+    "title": "어울림 스테이지(Stage) - '나는 코다입니다.'",
+    "organizer": "",
+    "category": "연극",
+    "genres": [
+      "연극",
+      "공연"
+    ],
+    "venue": "서울시 어울림플라자 B동 지하 1층 공연장",
+    "address": "서울시 어울림플라자 B동 지하 1층 공연장",
+    "area": "강서구",
+    "coords": {
+      "lat": 37.5535154167762,
+      "lng": 126.861449995331
+    },
+    "startAt": "2026-10-17T15:00:00.000Z",
+    "endAt": "2026-10-17T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=f8ffe74a10f9472bba2dc447c1f92510&thumb=Y",
+    "detailUrl": "https://seouleoullim.or.kr/site/board/board-view?id=622&board_type=notice"
+  },
+  {
+    "_id": "evt-089",
+    "sourceId": "seoul:설지영 바이올린 독주회 - 브람스, 세 개의 시선|2026-10-18 00:00:00.0|금호아트홀 연세",
+    "title": "설지영 바이올린 독주회 - 브람스, 세 개의 시선",
+    "organizer": "",
+    "category": "독주/독창회",
+    "genres": [
+      "클래식",
+      "음악",
+      "공연"
+    ],
+    "venue": "금호아트홀 연세",
+    "address": "금호아트홀 연세",
+    "area": "서대문구",
+    "coords": {
+      "lat": 37.5660508394158,
+      "lng": 126.943916239886
+    },
+    "startAt": "2026-10-17T15:00:00.000Z",
+    "endAt": "2026-10-17T15:00:00.000Z",
+    "price": "20,000원",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d5bca863d8ed467ab958ac9d4f58db61&thumb=Y",
+    "detailUrl": "https://nol.yanolja.com/ticket/products/26010242"
+  },
+  {
+    "_id": "evt-090",
+    "sourceId": "seoul:[동작문화재단] 상도어울마당 아트홀 '아트 박스 콘서트' 10회차 [동작동락-장단으로 만나는 퓨전국악 여행]|2026-10-21 00:00:00.0|상도어울마당 아트홀",
+    "title": "상도어울마당 아트홀 '아트 박스 콘서트' 10회차 [동작동락-장단으로 만나는 퓨전국악 여행]",
+    "organizer": "동작문화재단",
+    "category": "콘서트",
+    "genres": [
+      "콘서트",
+      "음악",
+      "공연"
+    ],
+    "venue": "상도어울마당 아트홀",
+    "address": "상도어울마당 아트홀",
+    "area": "동작구",
+    "coords": {
+      "lat": 37.4992554654409,
+      "lng": 126.940372169449
+    },
+    "startAt": "2026-10-20T15:00:00.000Z",
+    "endAt": "2026-10-20T15:00:00.000Z",
+    "price": "무료",
+    "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d0ce73d1a7c54a9dab3cbd46152622d7&thumb=Y",
+    "detailUrl": "https://www.idfac.or.kr/bbs/board.php?bo_table=gallery_info&wr_id=314"
+  }
+]

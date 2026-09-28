@@ -6,8 +6,10 @@ export const ME = {
   nickname: '현우',
   avatar_emoji: '🌿',
   manner_score: 62,
+  // genres 는 config/onboardingOptions.js 의 선택지이자 Event.genres 와 맞물리는 값이다.
+  // mock/reasons.js 의 "○○ 고르셨어요" 와 어긋나면 화면이 스스로 모순된다.
   preferences: {
-    genres: ['전시', '연극', '클래식'],
+    genres: ['전시', '연극', '국악'],
     hobbies: [],
     personality: [],
     preferredTime: ['평일 저녁', '주말 저녁'],

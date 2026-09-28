@@ -31,6 +31,7 @@ function EventRow({ event, reasons = [] }) {
             <span>{event.area}</span>
             <span>{event.price || '무료'}</span>
           </p>
+          {event.organizer && <p className="mv-micro mv-meta--oneline mb-1">{event.organizer}</p>}
 
           <p className="mv-meta mv-dotsep mb-0">
             <span className="mv-tag">{event.category}</span>
