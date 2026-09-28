@@ -205,7 +205,7 @@ function New() {
                       </option>
                     ))}
                   </select>
-                  <p className="mv-help">선착순입니다.</p>
+                  <p className="mv-help">신청을 받고 호스트가 승인합니다.</p>
                 </div>
               </div>
             </div>

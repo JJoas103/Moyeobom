@@ -4,7 +4,11 @@
 // 끝나고 "어디 갈까요" 하다가 흩어지는 실패를 모이기 전에 막는 기능이다.
 // 행사 좌표를 기준으로 카카오 로컬이 주변 카페를 찾아 주고, 호스트가 한 곳을 고르면 확정된다.
 //
-// 참여는 선착순이다. 승인제는 호스트가 계속 앱을 붙들고 있어야 해서 번개 모임과 맞지 않는다.
+// 참여는 승인제다. 신청을 받고 호스트가 확인해야 참여가 확정된다.
+// 신청만으로는 참여자 목록에 들어가지 않으므로 정원도 늘지 않는다.
+//
+// !! 지금은 화면만 승인제다. 서버(services/meetingService.js)는 아직 선착순 토글이라
+//    신청·승인 API 를 만드는 것이 다음 작업이다.
 
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
@@ -31,7 +35,8 @@ function Detail() {
 
   // 목업 단계라 참여·2차 장소 선택은 화면 안에서만 반영한다.
   // 서버 연결은 다음 단계 — 지금은 동선이 맞는지 확인하는 게 목적이다.
-  const [joined, setJoined] = useState(false)
+  // 신청했는가. 승인 여부는 호스트가 정하므로 이것만으로 참여자가 되지 않는다
+  const [applied, setApplied] = useState(false)
   const [afterPlace, setAfterPlace] = useState(null)
   const [picking, setPicking] = useState(false)
 
@@ -45,7 +50,7 @@ function Detail() {
         if (cancelled) return
         setData(res)
         setAfterPlace(res.meeting.afterPlace || null)
-        setJoined(res.meeting.participants.some((p) => p._id === ME._id))
+        setApplied(res.meeting.participants.some((p) => p._id === ME._id))
       })
       .catch((err) => {
         if (!cancelled) setError(err.message)
@@ -80,7 +85,7 @@ function Detail() {
   const isEnded = meeting.status === 'completed'
 
   const others = meeting.participants.filter((p) => p._id !== ME._id)
-  const joinedCount = others.length + (joined ? 1 : 0)
+  const joinedCount = others.length
   const left = Math.max(0, meeting.maxParticipants - joinedCount)
 
   return (
@@ -244,10 +249,10 @@ function Detail() {
                   <span className="mv-micro mv-num ms-auto">매너 {p.manner_score}</span>
                 </li>
               ))}
-            {joined && (
+            {applied && (
               <li className="d-flex align-items-baseline gap-2 py-2" style={{ borderBottom: '1px solid var(--rule)' }}>
-                <span>{ME.nickname}</span>
-                <span className="mv-micro">나</span>
+                <span style={{ color: 'var(--ink-sub)' }}>{ME.nickname}</span>
+                <span className="mv-micro">나 · 승인 대기</span>
               </li>
             )}
           </ul>
@@ -258,13 +263,17 @@ function Detail() {
             <>
               <button
                 type="button"
-                className={`mv-btn mv-btn--block ${joined ? 'mv-btn--ghost' : ''}`}
-                disabled={!joined && left === 0}
-                onClick={() => setJoined((prev) => !prev)}
+                className={`mv-btn mv-btn--block ${applied ? 'mv-btn--ghost' : ''}`}
+                disabled={!applied && left === 0}
+                onClick={() => setApplied((prev) => !prev)}
               >
-                {joined ? '참여 취소' : left === 0 ? '정원이 찼습니다' : '참여하기'}
+                {applied ? '신청 취소' : left === 0 ? '정원이 찼습니다' : '참여 신청하기'}
               </button>
-              <p className="mv-help text-center mt-2">선착순입니다. 승인 절차는 없습니다.</p>
+              <p className="mv-help text-center mt-2">
+                {applied
+                  ? '호스트가 확인하면 참여가 확정됩니다.'
+                  : '신청을 받고 호스트가 승인합니다.'}
+              </p>
             </>
           )}
         </div>
