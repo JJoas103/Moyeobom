@@ -38,9 +38,7 @@ function New() {
         setEvent(res.event)
         // 행사에서 따라오는 값으로 기본 제목을 채워 둔다. 그대로 써도 되고 고쳐도 된다
         setTitle(`${res.event.title} 보고 이야기해요`)
-        const start = new Date(res.event.startAt)
-        start.setHours(start.getHours() + 2)
-        setMeetAt(toLocalInput(start))
+        setMeetAt(toLocalInput(suggestMeetTime(res.event)))
       })
       .catch((err) => {
         if (!cancelled) setError(err.message)
@@ -189,7 +187,7 @@ function New() {
                     onChange={(e) => setMeetAt(e.target.value)}
                     required
                   />
-                  <p className="mv-help">관람이 끝나는 시각 근처로 제안해 두었습니다.</p>
+                  <p className="mv-help">관람이 끝날 즈음으로 제안해 두었습니다.</p>
                 </div>
               </div>
               <div className="col-5">
@@ -231,6 +229,29 @@ function New() {
       </div>
     </div>
   )
+}
+
+// 만나는 시각의 기본값.
+//
+// 서울 문화행사 API 는 공연 시각을 따로 주지 않아 대부분 자정으로 들어온다.
+// 그걸 그대로 쓰면 "오전 2시에 만나기"가 제안되므로, 시각이 없는 행사는
+// 저녁 7시로 둔다. 시각이 있으면 관람이 끝날 즈음인 두 시간 뒤로 제안한다.
+function suggestMeetTime(event) {
+  const now = new Date()
+  const start = new Date(event.startAt)
+  // 이미 시작한 전시라면 오늘 기준으로 잡는다 — 지난 날짜를 제안할 수는 없다
+  const base = start < now ? now : start
+
+  const hasTime = start.getHours() !== 0 || start.getMinutes() !== 0
+  const suggested = new Date(base)
+  if (hasTime) {
+    suggested.setHours(suggested.getHours() + 2)
+  } else {
+    suggested.setHours(19, 0, 0, 0)
+  }
+  // 그래도 지난 시각이면 다음 날로 민다
+  if (suggested < now) suggested.setDate(suggested.getDate() + 1)
+  return suggested
 }
 
 // <input type="datetime-local"> 은 로컬 시간 문자열을 요구한다 (toISOString은 UTC라 어긋난다)
