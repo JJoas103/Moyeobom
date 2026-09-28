@@ -143,7 +143,7 @@ function List() {
                 </Link>
               )}
 
-              <ul className="mv-list">
+              <ul className="mv-list mv-list--meeting">
                 {group.meetings.map((meeting) => (
                   <MeetingRow key={meeting._id} meeting={meeting} />
                 ))}

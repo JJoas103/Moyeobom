@@ -4,6 +4,8 @@
 export const ME = {
   _id: 'usr-me',
   nickname: '현우',
+  // 시안의 모임 행에 "호스트 새벽산책"처럼 붙는 별명
+  handle: '늦은산책',
   avatar_emoji: '🌿',
   manner_score: 62,
   // genres 는 config/onboardingOptions.js 의 선택지이자 Event.genres 와 맞물리는 값이다.
@@ -20,13 +22,14 @@ export const ME = {
 
 export const USERS = {
   'usr-me': ME,
-  'usr-jisu': { _id: 'usr-jisu', nickname: '지수', avatar_emoji: '🎐', manner_score: 64 },
-  'usr-minjae': { _id: 'usr-minjae', nickname: '민재', avatar_emoji: '🍋', manner_score: 58 },
-  'usr-hayun': { _id: 'usr-hayun', nickname: '하윤', avatar_emoji: '🫧', manner_score: 71 },
-  'usr-seoyeon': { _id: 'usr-seoyeon', nickname: '서연', avatar_emoji: '🌙', manner_score: 55 },
-  'usr-doyul': { _id: 'usr-doyul', nickname: '도율', avatar_emoji: '🧭', manner_score: 60 },
-  'usr-eunbi': { _id: 'usr-eunbi', nickname: '은비', avatar_emoji: '🌾', manner_score: 67 },
-  'usr-taeho': { _id: 'usr-taeho', nickname: '태호', avatar_emoji: '🪵', manner_score: 53 },
+  'usr-jisu': { _id: 'usr-jisu', nickname: '지수', handle: '새벽산책', avatar_emoji: '🎐', manner_score: 64 },
+  'usr-minjae': { _id: 'usr-minjae', nickname: '민재', handle: '필름로그', avatar_emoji: '🍋', manner_score: 58 },
+  'usr-hayun': { _id: 'usr-hayun', nickname: '하윤', handle: '오후네시', avatar_emoji: '🫧', manner_score: 71 },
+  'usr-seoyeon': { _id: 'usr-seoyeon', nickname: '서연', handle: '무대뒤', avatar_emoji: '🌙', manner_score: 55 },
+  'usr-doyul': { _id: 'usr-doyul', nickname: '도율', handle: '한밤의라디오', avatar_emoji: '🧭', manner_score: 60 },
+  'usr-eunbi': { _id: 'usr-eunbi', nickname: '은비', handle: '조용한자리', avatar_emoji: '🌾', manner_score: 67 },
+  'usr-taeho': { _id: 'usr-taeho', nickname: '태호', handle: '전시메모', avatar_emoji: '🪵', manner_score: 53 },
 }
 
-export const user = (id) => USERS[id] || { _id: id, nickname: '알 수 없음', avatar_emoji: '👤', manner_score: 50 }
+export const user = (id) =>
+  USERS[id] || { _id: id, nickname: '알 수 없음', handle: '', avatar_emoji: '👤', manner_score: 50 }

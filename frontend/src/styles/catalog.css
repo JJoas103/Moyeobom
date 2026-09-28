@@ -16,16 +16,30 @@
      · 이모지를 아이콘으로 쓰지 않는다
    ═══════════════════════════════════════════════════════════════ */
 
+/* 시안 v2 의 토큰을 따르되, 주황 계열(--brand #FF5A3C · --primary #D14127)만
+   초록과 먹색으로 바꿨다. 중성색은 시안과 거의 같은 값이었다. */
 :root {
-  --paper: #fbfaf8; /* 종이 — 차가운 회색 대신 따뜻한 흰색 */
-  --paper-2: #f4f2ed; /* 한 단 가라앉은 면 */
-  --ink: #17150f; /* 본문 */
-  --ink-sub: #6b665c; /* 보조 */
-  --ink-dim: #a39d92; /* 레이블·메타 */
-  --rule: #e5e0d7; /* 괘선 */
-  --rule-strong: #cfc8bb;
-  --accent: #1d9e75; /* 상태·링크·활성. 그 외에는 쓰지 않는다 */
+  --paper: #fbfaf7; /* 종이 — 차가운 회색 대신 따뜻한 흰색 */
+  --paper-2: #f4f2ec; /* 한 단 가라앉은 면 */
+  --surface: #ffffff; /* 입력칸·카드 바닥 */
+  --ink: #26221e; /* 본문 */
+  --ink-body: #5e5850; /* 문단 */
+  --ink-sub: #736d64; /* 보조 */
+  --ink-dim: #b8b2a8; /* 레이블·메타 */
+  --rule: #e6e1d7; /* 괘선 */
+  --rule-strong: #26221e; /* 표제 아래 굵은 선 */
+
+  /* 시안의 주황 자리. 강조·활성·선택은 초록이 받고, 주 버튼은 먹색이 받는다 */
+  --accent: #1d9e75;
+  --accent-strong: #17805e;
   --accent-soft: #eaf6f1;
+
+  /* 정원 진행바 — 남은 자리에 따라 색이 바뀐다 */
+  --gauge-open: #1d9e75;
+  --gauge-soon: #b8860b;
+  --gauge-closed: #b8b2a8;
+
+  --img-edge: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
 }
 
 body {
@@ -143,7 +157,7 @@ body {
   justify-content: space-between;
   gap: 16px;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule);
   margin-bottom: 4px;
 }
 .mv-section__note {
@@ -202,6 +216,10 @@ a.mv-row:hover .mv-row__title {
 }
 .mv-row__poster {
   width: 68px;
+}
+/* 모임 행은 3번째 칸이 포스터가 아니라 상태다. 칩이 줄바꿈되지 않게 폭을 준다 */
+.mv-list--meeting .mv-row {
+  grid-template-columns: 96px minmax(0, 1fr) 76px;
 }
 
 @media (max-width: 639.98px) {
@@ -428,7 +446,7 @@ a.mv-feature:hover .mv-feature__title {
 .mv-btn--ghost {
   background: transparent;
   color: var(--ink);
-  border-color: var(--rule-strong);
+  border-color: var(--rule);
 }
 .mv-btn--ghost:hover {
   color: var(--ink);
@@ -481,7 +499,7 @@ a.mv-feature:hover .mv-feature__title {
   color: var(--ink);
   background: transparent;
   border: 0;
-  border-bottom: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule);
   padding: 4px 18px 4px 2px;
   border-radius: 0;
   cursor: pointer;
@@ -538,23 +556,28 @@ a.mv-feature:hover .mv-feature__title {
   margin-bottom: 7px;
 }
 .mv-input,
-.mv-textarea {
+.mv-textarea,
+.mv-pick-select {
   width: 100%;
-  border: 0;
-  border-bottom: 1px solid var(--rule-strong);
-  background: transparent;
+  box-sizing: border-box;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
   font: inherit;
   font-size: 16px;
-  padding: 6px 0;
-  border-radius: 0;
+  padding: 0 14px;
+  height: 48px;
 }
 .mv-textarea {
-  border: 1px solid var(--rule-strong);
-  padding: 10px 12px;
+  height: 104px;
+  padding: 12px 14px;
+  line-height: 1.6;
   resize: vertical;
 }
 .mv-input:focus,
-.mv-textarea:focus {
+.mv-textarea:focus,
+.mv-pick-select:focus {
   outline: none;
   border-color: var(--ink);
 }
@@ -598,7 +621,7 @@ a.mv-feature:hover .mv-feature__title {
   border-left-color: var(--accent);
 }
 .mv-note--dim {
-  border-left-color: var(--rule-strong);
+  border-left-color: var(--rule);
 }
 
 /* ───────────────────────── 빈 상태 ───────────────────────── */
@@ -768,4 +791,225 @@ a.mv-feature:hover .mv-feature__title {
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
+}
+
+/* ═════════ 시안 v2 에서 들어온 것들 ═════════ */
+
+/* ── 표제 아래 굵은 선 ──
+   시안은 연한 괘선(--rule)과 표제용 먹색 선(--rule-strong)을 나눠 쓴다. */
+.mv-headline {
+  padding-bottom: 20px;
+  border-bottom: 1.5px solid var(--rule-strong);
+}
+
+/* ── 정원 진행바 ──
+   숫자만으로는 "얼마나 찼나"가 한눈에 안 온다. 얇은 막대를 옆에 둔다. */
+.mv-gauge {
+  /* span 으로 쓰이므로 block 을 명시해야 width/height 가 먹는다 */
+  display: block;
+  width: 64px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--rule);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.mv-gauge__fill {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--gauge-open);
+}
+.mv-gauge__fill--soon {
+  background: var(--gauge-soon);
+}
+.mv-gauge__fill--closed {
+  background: var(--gauge-closed);
+}
+
+/* ── 선택 토글 (술 없음/있음, 회차 필터) ──
+   시안에서 선택된 쪽이 주황이었다. 초록으로 받는다. */
+.mv-choice {
+  display: flex;
+  gap: 8px;
+}
+.mv-choice__item {
+  flex-grow: 1;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  background: var(--paper-2);
+  color: var(--ink-body);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.mv-choice__item input {
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  position: absolute;
+}
+.mv-choice__item[data-on="true"] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+/* 회차 필터처럼 폭이 내용에 맞는 칩 */
+.mv-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.mv-chips .mv-choice__item {
+  flex-grow: 0;
+  height: 36px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+/* ── 찜 ── */
+.mv-like {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-width: 56px;
+  height: 52px;
+  padding: 0 12px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink-sub);
+  font-size: 12px;
+  cursor: pointer;
+}
+.mv-like:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.mv-like[data-on="true"] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+/* 포스터 위에 겹치는 동그란 찜 */
+.mv-like--float {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  flex-direction: row;
+  min-width: 0;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+/* ── 요약 사이드바 (행사 상세) ── */
+.mv-aside {
+  padding: 24px;
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  background: var(--surface);
+}
+.mv-aside__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  font-size: 14px;
+}
+.mv-aside__row strong {
+  font-weight: 600;
+}
+
+/* ── 가져온 정보 패널 (모임 만들기 왼쪽) ── */
+.mv-panel {
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--paper-2);
+}
+
+/* ── 접이식 묶음 (관람도 함께) ── */
+.mv-fieldset {
+  margin: 0;
+  padding: 20px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.mv-fieldset > legend {
+  padding: 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ── 가로로 흐르는 포스터 목록 (홈 하단) ── */
+.mv-rail {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.mv-rail::-webkit-scrollbar {
+  display: none;
+}
+.mv-rail > * {
+  flex: 0 0 168px;
+}
+
+/* ── 상단 네비 우측 (알림·아바타) ── */
+.mv-nav__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: var(--ink-body);
+  cursor: pointer;
+}
+.mv-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  background: var(--paper-2);
+  flex-shrink: 0;
+}
+
+/* ── 폼 묶음 (이야기 자리 / 신청 전에 공개할 조건) ──
+   fieldset 의 기본 테두리를 지우고 제목만 남긴다. 괘선 대신 여백으로 나눈다. */
+.mv-group {
+  border: 0;
+  padding: 0;
+  margin: 0 0 32px;
+}
+.mv-group__title {
+  padding: 0 0 16px;
+  font-size: 16px;
+  font-weight: 700;
+  float: none;
+  width: auto;
+}
+/* label 이 아닌 곳(라디오 묶음)에 쓰는 레이블 — .mv-field label 과 같은 모양 */
+.mv-field__label {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--ink-dim);
+  margin-bottom: 7px;
 }

@@ -12,32 +12,47 @@ import Masthead from '../components/common/Masthead'
 import SectionHead from '../components/common/SectionHead'
 import EmptyState from '../components/common/EmptyState'
 import Poster from '../components/common/Poster'
+import LikeButton from '../components/common/LikeButton'
 import Status from '../components/common/Status'
 import EventRow from '../components/event/EventRow'
 import ReasonLine from '../components/event/ReasonLine'
 import MeetingRow from '../components/meeting/MeetingRow'
-import { fetchRecommendedEvents } from '../data/events'
+import { fetchEvents, fetchRecommendedEvents } from '../data/events'
 import { fetchMeetings } from '../data/meetings'
+import { ME } from '../data/me'
+import { useAuth } from '../context/AuthContext'
 import { eventTimingBadge, formatEventPeriod, todayLabel } from '../utils/formatEventDate'
 
 function Home() {
+  const { user } = useAuth()
+  const displayName = user?.nickname || ME.nickname
+
   const [recommended, setRecommended] = useState([])
   const [isColdStart, setColdStart] = useState(false)
   const [upcoming, setUpcoming] = useState([])
   const [openCount, setOpenCount] = useState(null)
+  const [openMeetingCount, setOpenMeetingCount] = useState(0)
+  const [browse, setBrowse] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   useEffect(() => {
     let cancelled = false
 
-    Promise.all([fetchRecommendedEvents({ limit: 5 }), fetchMeetings({ status: 'recruit' })])
-      .then(([rec, meet]) => {
+    Promise.all([
+      fetchRecommendedEvents({ limit: 5 }),
+      fetchMeetings({ status: 'recruit' }),
+      fetchEvents({ limit: 10 }),
+    ])
+      .then(([rec, meet, ev]) => {
         if (cancelled) return
         setRecommended(rec.items)
         setColdStart(rec.isColdStart)
         setOpenCount(rec.totalOpenEvents ?? null)
-        setUpcoming(meet.groups.flatMap((g) => g.meetings).slice(0, 4))
+        const flat = meet.groups.flatMap((g) => g.meetings)
+        setOpenMeetingCount(flat.length)
+        setUpcoming(flat.slice(0, 4))
+        setBrowse(ev.events)
       })
       .catch((err) => {
         if (!cancelled) setError(err.message)
@@ -55,7 +70,24 @@ function Home() {
 
   return (
     <div>
-      <Masthead title={todayLabel()} aside={openCount === null ? '' : `열려 있는 행사 ${openCount}`} />
+      <header className="mv-masthead">
+        <div className="mv-masthead__line">
+          <div>
+            <h1 className="mv-display">{todayLabel()}</h1>
+            <p className="mv-meta mt-1 mb-0">오늘 본 행사가 있다면, 여운이 남아 있을 때 이야기해요.</p>
+          </div>
+          {openCount !== null && (
+            <p className="mv-micro mv-dotsep mb-0">
+              <span className="mv-num">
+                열려 있는 행사 <strong style={{ color: 'var(--ink)' }}>{openCount}</strong>
+              </span>
+              <span className="mv-num">
+                모집 중인 모임 <strong style={{ color: 'var(--ink)' }}>{openMeetingCount}</strong>
+              </span>
+            </p>
+          )}
+        </div>
+      </header>
 
       {error && (
         <p className="mv-note mv-note--dim mv-meta mb-4">{error}</p>
@@ -93,28 +125,45 @@ function Home() {
         ) : (
           <>
             {/* 1위는 포스터를 크게 펼친다 — 순위가 있다는 걸 레이아웃으로 말한다 */}
-            <Link to={`/event/${lead.event._id}`} className="mv-feature">
-              <Poster src={lead.event.posterUrl} category={lead.event.category} title={lead.event.title} />
+            <div className="mv-feature">
+              <Link to={`/event/${lead.event._id}`} style={{ position: 'relative', display: 'block' }}>
+                <Poster src={lead.event.posterUrl} category={lead.event.category} title={lead.event.title} />
+                <LikeButton count={lead.event.likeCount ?? 0} float label="이 행사 찜" />
+              </Link>
               <div>
+                <p className="mv-micro mb-2">{displayName}님께 추천하는 행사</p>
                 <p className="mv-meta mv-dotsep mb-0">
-                  <span className="mv-tag">{lead.event.category}</span>
                   {eventTimingBadge(lead.event.startAt, lead.event.endAt) && (
                     <Status>{eventTimingBadge(lead.event.startAt, lead.event.endAt).label}</Status>
                   )}
+                  <span className="mv-tag">{lead.event.category}</span>
                 </p>
-                <h3 className="mv-feature__title">{lead.event.title}</h3>
+                <h3 className="mv-feature__title">
+                  <Link to={`/event/${lead.event._id}`} style={{ color: 'inherit' }}>
+                    {lead.event.title}
+                  </Link>
+                </h3>
                 <p className="mv-meta mv-dotsep mb-3">
                   <span className="mv-num">{formatEventPeriod(lead.event.startAt, lead.event.endAt)}</span>
-                  <span>{lead.event.venue}</span>
                   <span>{lead.event.area}</span>
+                  <span>{lead.event.venue}</span>
+                  {lead.event.runtimeMin && <span className="mv-num">러닝타임 {lead.event.runtimeMin}분</span>}
                 </p>
                 <ReasonLine reasons={lead.reasons} max={4} />
-                <p className="mv-meta mv-dotsep mt-3 mb-0">
-                  <span className="mv-num">모임 {lead.openMeetingCount}</span>
-                  <span className="mv-num">감상 {lead.event.impressionCount ?? 0}</span>
+                <p className="mv-meta mt-3 mb-3">
+                  이 행사로 열린 모임 <strong style={{ color: 'var(--ink)' }}>{lead.openMeetingCount}</strong>
+                  {lead.event.impressionCount > 0 && ` · 감상 ${lead.event.impressionCount}`}
                 </p>
+                <div className="d-flex flex-wrap gap-2">
+                  <Link to={`/meeting?event=${lead.event._id}`} className="mv-btn mv-btn--sm">
+                    이 행사 모임 보기
+                  </Link>
+                  <Link to={`/event/${lead.event._id}`} className="mv-btn mv-btn--sm mv-btn--ghost">
+                    행사 정보
+                  </Link>
+                </div>
               </div>
-            </Link>
+            </div>
 
             <ul className="mv-list">
               {rest.map((item) => (
@@ -128,10 +177,11 @@ function Home() {
       {/* ── 곧 열리는 모임 ── */}
       <section className="mv-section">
         <SectionHead
-          label="곧 열리는 모임"
+          label="이번 주 모임"
+          count={upcoming.length}
           action={
             <Link to="/meeting" className="mv-link mv-micro">
-              모임 전체
+              모임 전체 ›
             </Link>
           }
         />
@@ -149,13 +199,45 @@ function Home() {
             }
           />
         ) : (
-          <ul className="mv-list">
+          <ul className="mv-list mv-list--meeting">
             {upcoming.map((meeting) => (
               <MeetingRow key={meeting._id} meeting={meeting} showEvent />
             ))}
           </ul>
         )}
       </section>
+
+      {/* ── 지금 열려 있는 행사 ── */}
+      {browse.length > 0 && (
+        <section className="mv-section">
+          <SectionHead
+            label="지금 열려 있는 행사"
+            count={openCount ?? undefined}
+            action={
+              <Link to="/event" className="mv-link mv-micro">
+                행사 전체
+              </Link>
+            }
+          />
+          {/* 가로로 흘려 둔다. 세로로 쌓으면 아래 루프 안내가 화면 밖으로 밀린다 */}
+          <div className="mv-rail mt-3">
+            {browse.map((event) => (
+              <Link key={event._id} to={`/event/${event._id}`} style={{ color: 'inherit' }}>
+                <div style={{ position: 'relative' }}>
+                  <Poster src={event.posterUrl} category={event.category} title={event.title} />
+                  <LikeButton count={event.likeCount ?? 0} float label={`${event.title} 찜`} />
+                </div>
+                <p className="mv-meta mv-truncate mt-2 mb-0" style={{ fontWeight: 600, color: 'var(--ink)' }}>
+                  {event.title}
+                </p>
+                <p className="mv-micro mv-truncate mb-0">
+                  {event.category} · {event.area}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* ── 한 바퀴 ── */}
       <section className="mv-section">

@@ -29,6 +29,12 @@ const at = (dayOffset, hour = 21, minute = 30) => {
 
 const eventOf = (id) => MOCK_EVENTS.find((e) => e._id === id)
 
+// 모임이 신청 전에 공개하는 조건. 시안 v2 에서 들어온 값들이다.
+//   withViewing  관람부터 함께할지 / 이야기 자리만
+//   drinking     술 없음 / 있음
+//   budget       대략 예산
+//   whereLabel   목록에 보이는 대략 위치. 정확한 장소는 승인된 참여자에게만 보인다
+//   endAt        종료 예정 시각 — 신청 전에 공개된다
 const makeMeeting = (m) => {
   const event = eventOf(m.event)
   const participants = m.participants || []
@@ -39,6 +45,11 @@ const makeMeeting = (m) => {
     content: '',
     tags: [],
     afterPlace: null,
+    withViewing: false,
+    drinking: '없음',
+    budget: '1~2만 원',
+    whereLabel: '',
+    endAt: null,
     completedAt: past ? m.meetingDate : null,
     ...m,
     // 화면에서 바로 쓰도록 행사를 펼쳐 둔다 (서버에서는 populate('event') 결과와 같은 모양)
@@ -52,6 +63,11 @@ const makeMeeting = (m) => {
 export const MOCK_MEETINGS = [
   makeMeeting({
     _id: 'mtg-001',
+    withViewing: false,
+    drinking: '없음',
+    budget: '1~2만 원',
+    whereLabel: '성수역 근처',
+    endAt: at(2, 16, 30),
     event: 'evt-009',
     title: '섬유전 보고 성수에서 커피',
     content: '우란1경부터 천천히 보고, 끝나고 근처에서 30분만 얘기하고 헤어져요. 처음 오셔도 괜찮습니다.',
@@ -63,6 +79,11 @@ export const MOCK_MEETINGS = [
   }),
   makeMeeting({
     _id: 'mtg-002',
+    withViewing: true,
+    drinking: '있음',
+    budget: '2~3만 원',
+    whereLabel: '성수역 근처',
+    endAt: at(4, 21, 30),
     event: 'evt-009',
     title: '평일 저녁 관람 같이 가실 분',
     content: '퇴근하고 바로 갑니다. 관람부터 같이 하고 성수에서 가볍게 한 잔.',
@@ -74,6 +95,11 @@ export const MOCK_MEETINGS = [
   }),
   makeMeeting({
     _id: 'mtg-003',
+    withViewing: false,
+    drinking: '있음',
+    budget: '2~3만 원',
+    whereLabel: '혜화역 근처',
+    endAt: at(3, 23, 30),
     event: 'evt-010',
     title: '연극 끝나고 여운 나누기',
     content: '세종M씨어터에서 보고 근처 맥주집으로 이동합니다. 결말 얘기 하고 싶어서 만듭니다.',
@@ -85,6 +111,11 @@ export const MOCK_MEETINGS = [
   }),
   makeMeeting({
     _id: 'mtg-004',
+    withViewing: true,
+    drinking: '없음',
+    budget: '1만 원 이하',
+    whereLabel: '돈화문 근처',
+    endAt: at(5, 22, 0),
     event: 'evt-030',
     title: '해금 듣고 돈화문 골목 산책',
     content: '공연 한 시간 반, 끝나고 익선동까지 걸으면서 얘기해요.',
@@ -96,6 +127,11 @@ export const MOCK_MEETINGS = [
   }),
   makeMeeting({
     _id: 'mtg-005',
+    withViewing: true,
+    drinking: '없음',
+    budget: '1만 원 이하',
+    whereLabel: '안국역 근처',
+    endAt: at(9, 13, 30),
     event: 'evt-033',
     title: '아트페어 같이 돌 사람',
     content: '인사동 한 바퀴 천천히 돌고 점심 먹고 헤어져요. 여섯 명까지 받습니다.',
@@ -107,6 +143,11 @@ export const MOCK_MEETINGS = [
   }),
   makeMeeting({
     _id: 'mtg-006',
+    withViewing: false,
+    drinking: '없음',
+    budget: '1~2만 원',
+    whereLabel: '이촌역 근처',
+    endAt: at(1, 23, 0),
     event: 'evt-015',
     title: '뮤지컬 보고 용산에서 한 마디씩',
     content: '공연 끝나고 로비에서 짧게 얘기하고 헤어지는 모임입니다.',
@@ -118,6 +159,11 @@ export const MOCK_MEETINGS = [
   }),
   makeMeeting({
     _id: 'mtg-007',
+    withViewing: false,
+    drinking: '있음',
+    budget: '2~3만 원',
+    whereLabel: '교대역 근처',
+    endAt: at(7, 23, 30),
     event: 'evt-031',
     title: '재즈 듣고 서초 걷기',
     content: '공연 끝나고 한 바퀴. 늦어도 11시엔 해산합니다.',
@@ -129,6 +175,11 @@ export const MOCK_MEETINGS = [
   }),
   makeMeeting({
     _id: 'mtg-008',
+    withViewing: true,
+    drinking: '없음',
+    budget: '1만 원 이하',
+    whereLabel: '동대문역사문화공원역 근처',
+    endAt: at(4, 16, 0),
     event: 'evt-014',
     title: 'DDP 전시 같이 보실 분',
     content: '갤러리문 쪽부터 보고 DDP 안에서 커피 한 잔 하려고요.',
@@ -140,6 +191,11 @@ export const MOCK_MEETINGS = [
   }),
   makeMeeting({
     _id: 'mtg-009',
+    withViewing: false,
+    drinking: '없음',
+    budget: '1만 원 이하',
+    whereLabel: '동대문역사문화공원역 근처',
+    endAt: at(0, 13, 10),
     event: 'evt-014',
     title: '무료 전시, 점심시간에 잠깐',
     content: '동대문 근처 직장인분들 환영합니다. 40분 보고 커피 한 잔.',
@@ -152,6 +208,11 @@ export const MOCK_MEETINGS = [
   // 이미 끝난 모임 — 감상 남기기 / 상호 매칭 진입점이 여기서 생긴다
   makeMeeting({
     _id: 'mtg-010',
+    withViewing: true,
+    drinking: '없음',
+    budget: '1~2만 원',
+    whereLabel: '안국역 근처',
+    endAt: at(-1, 17, 30),
     event: 'evt-013',
     title: '달항아리 보고 삼청동 한 바퀴',
     content: '천천히 보고 나와서 차 마셨어요.',

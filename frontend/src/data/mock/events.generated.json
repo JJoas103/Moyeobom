@@ -20,7 +20,11 @@
     "endAt": "2026-09-28T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4901f82244094a848e52b5c3d671c818&thumb=Y",
-    "detailUrl": "https://www.seoulwomen.or.kr/sfwf/contents/sfwf-notice.do?&schM=view&page=1&viewCount=10&id=31376&schBdcode=&schGroupCode="
+    "detailUrl": "https://www.seoulwomen.or.kr/sfwf/contents/sfwf-notice.do?&schM=view&page=1&viewCount=10&id=31376&schBdcode=&schGroupCode=",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 163
   },
   {
     "_id": "evt-002",
@@ -43,7 +47,11 @@
     "endAt": "2026-09-29T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=c57f8f80679b4f1d9cc0ef1c20d6b692&thumb=Y",
-    "detailUrl": "https://www.gbcf.or.kr/load.asp?subPage=110.View&cate=B&page=1&idx=440"
+    "detailUrl": "https://www.gbcf.or.kr/load.asp?subPage=110.View&cate=B&page=1&idx=440",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 52
   },
   {
     "_id": "evt-003",
@@ -66,7 +74,11 @@
     "endAt": "2026-09-29T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6fd2045f8bb94ae59a8fb7196f9563c3&thumb=Y",
-    "detailUrl": "https://nowonarts.kr/channels/exhibition/programs/1048"
+    "detailUrl": "https://nowonarts.kr/channels/exhibition/programs/1048",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 103
   },
   {
     "_id": "evt-004",
@@ -89,7 +101,11 @@
     "endAt": "2026-09-29T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=2be92ae1d2004e65ab6a2e5db5a41924&thumb=Y",
-    "detailUrl": "https://www.eplib.or.kr/jslib/menu/10457/program/30028/eventLectureDetail.do?currentPageNo=1&lectureIdx=225296&manageCd=MB&searchTarget=&searchStatus=OPEN"
+    "detailUrl": "https://www.eplib.or.kr/jslib/menu/10457/program/30028/eventLectureDetail.do?currentPageNo=1&lectureIdx=225296&manageCd=MB&searchTarget=&searchStatus=OPEN",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 24
   },
   {
     "_id": "evt-005",
@@ -112,7 +128,11 @@
     "endAt": "2026-09-29T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=347d574d5a9e46c5b5c5c84fbd8f2935&thumb=Y",
-    "detailUrl": "https://btheb.sba.kr/"
+    "detailUrl": "https://btheb.sba.kr/",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 53
   },
   {
     "_id": "evt-006",
@@ -135,7 +155,11 @@
     "endAt": "2026-09-29T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=5bdf4cf0b36d4cfcb91822678092bfa0&thumb=Y",
-    "detailUrl": "http://www.imhs.co.kr/index.html"
+    "detailUrl": "http://www.imhs.co.kr/index.html",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 227
   },
   {
     "_id": "evt-007",
@@ -158,7 +182,11 @@
     "endAt": "2026-09-29T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=fdc9077da2cc4801b891f62f5eefab98&thumb=Y",
-    "detailUrl": "https://mplib.mapo.go.kr/sglib/PGM3028/eventDetail.do?eventSn=12767"
+    "detailUrl": "https://mplib.mapo.go.kr/sglib/PGM3028/eventDetail.do?eventSn=12767",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 264
   },
   {
     "_id": "evt-008",
@@ -181,7 +209,11 @@
     "endAt": "2026-10-01T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=27c9edc71cc84d3db6f8d5f711c1eaf5&thumb=Y",
-    "detailUrl": "https://ggrappe.com/exhibitions/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=173216341&t=board"
+    "detailUrl": "https://ggrappe.com/exhibitions/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=173216341&t=board",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 126
   },
   {
     "_id": "evt-009",
@@ -204,7 +236,11 @@
     "endAt": "2026-10-01T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6cd09d6c58bb4c5ab2d963489874ec5b&thumb=Y",
-    "detailUrl": "https://wooranfdn.org/program/exhibition_view.jsp?idx=206"
+    "detailUrl": "https://wooranfdn.org/program/exhibition_view.jsp?idx=206",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 38
   },
   {
     "_id": "evt-010",
@@ -227,7 +263,11 @@
     "endAt": "2026-10-02T15:00:00.000Z",
     "price": "R석 80,000원 S석 60,000원 A석 40,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=cabf72f0c90446f1a43cbf195664aa4b&thumb=Y",
-    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=36787&menuNo=200320"
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=36787&menuNo=200320",
+    "runtimeMin": 110,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 233
   },
   {
     "_id": "evt-011",
@@ -250,7 +290,11 @@
     "endAt": "2026-10-03T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0895161c947b4390abfc4a27c1625c7e&thumb=Y",
-    "detailUrl": "https://www.instagram.com/p/DdVeYUhGXXz/"
+    "detailUrl": "https://www.instagram.com/p/DdVeYUhGXXz/",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 238
   },
   {
     "_id": "evt-012",
@@ -273,7 +317,11 @@
     "endAt": "2026-10-05T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=cbc6a8a7ce5b42f6b2e62d72f6d5fdbb&thumb=Y",
-    "detailUrl": "https://ydpartsquare.com/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EB%B0%8F-%EC%98%88%EC%95%BD/view/6263723"
+    "detailUrl": "https://ydpartsquare.com/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EB%B0%8F-%EC%98%88%EC%95%BD/view/6263723",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 222
   },
   {
     "_id": "evt-013",
@@ -296,7 +344,11 @@
     "endAt": "2026-10-07T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=cf61edff919340a4ab18df35ad0bd5af&thumb=Y",
-    "detailUrl": "https://rhogallery.com/ko/kang-minsoo/"
+    "detailUrl": "https://rhogallery.com/ko/kang-minsoo/",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 129
   },
   {
     "_id": "evt-014",
@@ -319,7 +371,11 @@
     "endAt": "2026-10-08T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d1643501c18c49ac939272ac8bb18ebf&thumb=Y",
-    "detailUrl": "https://ddp.or.kr/index.html?menuno=239&siteno=2&bbsno=613&boardno=15&bbstopno=613&act=view&subno="
+    "detailUrl": "https://ddp.or.kr/index.html?menuno=239&siteno=2&bbsno=613&boardno=15&bbstopno=613&act=view&subno=",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 224
   },
   {
     "_id": "evt-015",
@@ -343,7 +399,11 @@
     "endAt": "2026-10-17T15:00:00.000Z",
     "price": "VIP석 77,000원 R석 66,000원 S석 44,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e5097d04bed64dc8b9df3f8aa24e1981&thumb=Y",
-    "detailUrl": "https://tickets.interpark.com/goods/26008690"
+    "detailUrl": "https://tickets.interpark.com/goods/26008690",
+    "runtimeMin": 150,
+    "isSeries": true,
+    "schedule": "목–금 19:30 · 토 14:00, 18:00 · 일 15:00",
+    "likeCount": 122
   },
   {
     "_id": "evt-016",
@@ -365,7 +425,11 @@
     "endAt": "2026-10-22T15:00:00.000Z",
     "price": "10,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=a94ee41ea14b41bda393f1a3c213fd1a&thumb=Y",
-    "detailUrl": "https://forms.gle/v5478N7ZQ1BdXq5G7"
+    "detailUrl": "https://forms.gle/v5478N7ZQ1BdXq5G7",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 267
   },
   {
     "_id": "evt-017",
@@ -389,7 +453,11 @@
     "endAt": "2026-10-22T15:00:00.000Z",
     "price": "전석 1만원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=890bf017ac7e4b08a4241594ac57416d&thumb=Y",
-    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2683&page=1"
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2683&page=1",
+    "runtimeMin": 120,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 241
   },
   {
     "_id": "evt-018",
@@ -412,7 +480,11 @@
     "endAt": "2026-10-30T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=30761e9c3ac048e1bcbe66f2f305da36&thumb=Y",
-    "detailUrl": "https://nodeul.org/program/%ec%98%a4%ed%94%88%eb%85%b8%eb%93%a4/"
+    "detailUrl": "https://nodeul.org/program/%ec%98%a4%ed%94%88%eb%85%b8%eb%93%a4/",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 168
   },
   {
     "_id": "evt-019",
@@ -435,7 +507,11 @@
     "endAt": "2026-10-31T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=005bb45c0890482db8ac967068006793&thumb=Y",
-    "detailUrl": "https://seouloutdoorlibrary.kr/"
+    "detailUrl": "https://seouloutdoorlibrary.kr/",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 106
   },
   {
     "_id": "evt-020",
@@ -459,7 +535,11 @@
     "endAt": "2026-10-31T15:00:00.000Z",
     "price": "VIP석 160,000원┃R석 130,000원 S석 100,000원┃A석 70,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=19fb5eb0e087415984110cf261bd84bb&thumb=Y",
-    "detailUrl": "https://www.caci.or.kr/product/ko/performance/2532"
+    "detailUrl": "https://www.caci.or.kr/product/ko/performance/2532",
+    "runtimeMin": 150,
+    "isSeries": true,
+    "schedule": "화–금 19:30 · 토·일 14:00, 18:30",
+    "likeCount": 16
   },
   {
     "_id": "evt-021",
@@ -483,7 +563,11 @@
     "endAt": "2026-11-04T15:00:00.000Z",
     "price": "전석30,000원(예술인/재관람 50% 할인)",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e48c405cee664482b645890a4cb1c348&thumb=Y",
-    "detailUrl": "https://soorimcf.or.kr/content/program/view?code=PRO261961970HPDAU4417"
+    "detailUrl": "https://soorimcf.or.kr/content/program/view?code=PRO261961970HPDAU4417",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "화–금 19:30 · 토·일 14:00, 18:30",
+    "likeCount": 128
   },
   {
     "_id": "evt-022",
@@ -507,7 +591,11 @@
     "endAt": "2026-11-16T15:00:00.000Z",
     "price": "1회 30,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=2f7c72a745924f20b94f7b740965ba1b&thumb=Y",
-    "detailUrl": "https://www.rayularthall.com/concerts/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=173475338&t=board"
+    "detailUrl": "https://www.rayularthall.com/concerts/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=173475338&t=board",
+    "runtimeMin": 100,
+    "isSeries": true,
+    "schedule": "화–금 19:30 · 토·일 14:00, 18:30",
+    "likeCount": 236
   },
   {
     "_id": "evt-023",
@@ -530,7 +618,11 @@
     "endAt": "2026-11-28T15:00:00.000Z",
     "price": "각 공연 / 축제별 상이",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=367ad7c8294340e1a81fbb48f8832cdd&thumb=Y",
-    "detailUrl": "https://www.sfac.or.kr/seoulautumnfesta/"
+    "detailUrl": "https://www.sfac.or.kr/seoulautumnfesta/",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 206
   },
   {
     "_id": "evt-024",
@@ -554,7 +646,11 @@
     "endAt": "2026-09-28T15:00:00.000Z",
     "price": "전석 3만원(학생할인50%)",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=b99dcb88cf2642c4b822c47d97c55c38&thumb=Y",
-    "detailUrl": "https://www.sac.or.kr/site/main/show/show_view?SN=77678"
+    "detailUrl": "https://www.sac.or.kr/site/main/show/show_view?SN=77678",
+    "runtimeMin": 100,
+    "isSeries": true,
+    "schedule": "화–금 19:30 · 토·일 14:00, 18:30",
+    "likeCount": 252
   },
   {
     "_id": "evt-025",
@@ -578,7 +674,11 @@
     "endAt": "2026-09-28T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=237219eae3e44fdba423fad5b5a443bc&thumb=Y",
-    "detailUrl": "https://www.seochocf.or.kr/site/main/seocho/show/view?show_idx=995"
+    "detailUrl": "https://www.seochocf.or.kr/site/main/seocho/show/view?show_idx=995",
+    "runtimeMin": 100,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 29
   },
   {
     "_id": "evt-026",
@@ -601,7 +701,11 @@
     "endAt": "2026-09-28T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e22883bd4fcb4f90b93e025f34b12bd2&thumb=Y",
-    "detailUrl": "https://www.springday.or.kr/niabbs5/inc.php?inc=sub2-2_list_img_in2&cat=%EB%AC%B4%EC%9A%A9&k_gubun2=3&kkno=9766527f2b5d3e95d4a733fcfb77bd7e&gubun2="
+    "detailUrl": "https://www.springday.or.kr/niabbs5/inc.php?inc=sub2-2_list_img_in2&cat=%EB%AC%B4%EC%9A%A9&k_gubun2=3&kkno=9766527f2b5d3e95d4a733fcfb77bd7e&gubun2=",
+    "runtimeMin": 80,
+    "isSeries": true,
+    "schedule": "금 19:30 · 토·일 14:00",
+    "likeCount": 103
   },
   {
     "_id": "evt-027",
@@ -625,7 +729,11 @@
     "endAt": "2026-10-01T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e5f605d3c8d24b2d8338a93e772cd876&thumb=Y",
-    "detailUrl": "https://www.springday.or.kr/niabbs5/inc.php?inc=sub2-2_list_img_in2&cat=%EC%9D%8C%EC%95%85&k_gubun2=2&kkno=2a79ea27c279e471f4d180b08d62b00a&gubun2="
+    "detailUrl": "https://www.springday.or.kr/niabbs5/inc.php?inc=sub2-2_list_img_in2&cat=%EC%9D%8C%EC%95%85&k_gubun2=2&kkno=2a79ea27c279e471f4d180b08d62b00a&gubun2=",
+    "runtimeMin": 150,
+    "isSeries": true,
+    "schedule": "금 19:30 · 토·일 14:00",
+    "likeCount": 179
   },
   {
     "_id": "evt-028",
@@ -649,7 +757,11 @@
     "endAt": "2026-09-29T15:00:00.000Z",
     "price": "전석 20,000원 ※ 학생 50%, 예술인패스 30%, 사전 예매 10% 할인",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=ffe2ba24a262403ca5c5fddc4ed76b04&thumb=Y",
-    "detailUrl": "https://booking.naver.com/booking/12/bizes/1720232"
+    "detailUrl": "https://booking.naver.com/booking/12/bizes/1720232",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "목–금 19:30 · 토 14:00, 18:00 · 일 15:00",
+    "likeCount": 30
   },
   {
     "_id": "evt-029",
@@ -673,7 +785,11 @@
     "endAt": "2026-09-29T15:00:00.000Z",
     "price": "전석 20,000원[패키지권 구매 시 20% 할인]",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=fa3ffc13a923427b959e4a2e97695728&thumb=Y",
-    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2677&page=1"
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2677&page=1",
+    "runtimeMin": 100,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 141
   },
   {
     "_id": "evt-030",
@@ -697,7 +813,11 @@
     "endAt": "2026-09-29T15:00:00.000Z",
     "price": "전석 30,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4fde3b53fa3342cbb4442a772fe1fdea&thumb=Y",
-    "detailUrl": "https://nol.yanolja.com/ticket/products/26012274"
+    "detailUrl": "https://nol.yanolja.com/ticket/products/26012274",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "목–금 19:30 · 토 14:00, 18:00 · 일 15:00",
+    "likeCount": 178
   },
   {
     "_id": "evt-031",
@@ -721,7 +841,11 @@
     "endAt": "2026-10-28T15:00:00.000Z",
     "price": "20,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6f8aeb88d1784c5e9d297e42167ef6dd&thumb=Y",
-    "detailUrl": "https://www.groove.kr/jamsession"
+    "detailUrl": "https://www.groove.kr/jamsession",
+    "runtimeMin": 120,
+    "isSeries": true,
+    "schedule": "목–금 19:30 · 토 14:00, 18:00 · 일 15:00",
+    "likeCount": 218
   },
   {
     "_id": "evt-032",
@@ -744,7 +868,11 @@
     "endAt": "2026-10-10T15:00:00.000Z",
     "price": "정가 39,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6d31b6a21e064cb193079567de36aaba&thumb=Y",
-    "detailUrl": "https://linktr.ee/pg_nacta?utm_source=linktree_profile_share&ltsid=2e40453f-c0df-49ef-bba9-ed6e1dfe3afe"
+    "detailUrl": "https://linktr.ee/pg_nacta?utm_source=linktree_profile_share&ltsid=2e40453f-c0df-49ef-bba9-ed6e1dfe3afe",
+    "runtimeMin": 110,
+    "isSeries": true,
+    "schedule": "화–금 19:30 · 토·일 14:00, 18:30",
+    "likeCount": 32
   },
   {
     "_id": "evt-033",
@@ -767,7 +895,11 @@
     "endAt": "2026-10-03T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=467396e36da347099415c3b621bab272&thumb=Y",
-    "detailUrl": "http://www.hiinsa.com"
+    "detailUrl": "http://www.hiinsa.com",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 69
   },
   {
     "_id": "evt-034",
@@ -790,7 +922,11 @@
     "endAt": "2026-10-03T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=09a09f467b694c6ba260829bfe82ef2f&thumb=Y",
-    "detailUrl": "https://www.gwangjinlib.seoul.kr/gjinfo/20003/bbsPostDetail.do?postIdx=52383"
+    "detailUrl": "https://www.gwangjinlib.seoul.kr/gjinfo/20003/bbsPostDetail.do?postIdx=52383",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 106
   },
   {
     "_id": "evt-035",
@@ -813,7 +949,11 @@
     "endAt": "2026-10-02T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=cb3fed5d689f47709392c9f2a06f41f3&thumb=Y",
-    "detailUrl": "https://www.sfac.or.kr/seoulautumnfesta/festival/create/209"
+    "detailUrl": "https://www.sfac.or.kr/seoulautumnfesta/festival/create/209",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 143
   },
   {
     "_id": "evt-036",
@@ -836,7 +976,11 @@
     "endAt": "2026-10-02T15:00:00.000Z",
     "price": "전석 20,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=62034cda11ad4980b153d529b313106f&thumb=Y",
-    "detailUrl": "https://m.site.naver.com/2efd0"
+    "detailUrl": "https://m.site.naver.com/2efd0",
+    "runtimeMin": 110,
+    "isSeries": true,
+    "schedule": "화–금 19:30 · 토·일 14:00, 18:30",
+    "likeCount": 180
   },
   {
     "_id": "evt-037",
@@ -860,7 +1004,11 @@
     "endAt": "2026-09-30T15:00:00.000Z",
     "price": "VIP석 90,000원 R석 70,000원 S석 60,000원 A석 40,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=bc03b24355a84ea4ab264a8ec4122214&thumb=Y",
-    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37503&menuNo=200320"
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37503&menuNo=200320",
+    "runtimeMin": 100,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 217
   },
   {
     "_id": "evt-038",
@@ -884,7 +1032,11 @@
     "endAt": "2026-09-30T15:00:00.000Z",
     "price": "전석 20,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=e4eded2e9f7d44afbb6553f54fdd3075&thumb=Y",
-    "detailUrl": "https://www.seoulphil.or.kr/perf/view?perfNo=7615"
+    "detailUrl": "https://www.seoulphil.or.kr/perf/view?perfNo=7615",
+    "runtimeMin": 100,
+    "isSeries": true,
+    "schedule": "목–금 19:30 · 토 14:00, 18:00 · 일 15:00",
+    "likeCount": 254
   },
   {
     "_id": "evt-039",
@@ -908,7 +1060,11 @@
     "endAt": "2026-09-30T15:00:00.000Z",
     "price": "전석30,000원(예술인/재관람 50% 할인)",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0b58a923224242e5bde21c7e4f2d993f&thumb=Y",
-    "detailUrl": "https://nol.yanolja.com/ticket/products/26010645"
+    "detailUrl": "https://nol.yanolja.com/ticket/products/26010645",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "금 19:30 · 토·일 14:00",
+    "likeCount": 31
   },
   {
     "_id": "evt-040",
@@ -931,7 +1087,11 @@
     "endAt": "2026-10-31T15:00:00.000Z",
     "price": "전석 20,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=85a183a5841a44d080d1a37c95929324&thumb=Y",
-    "detailUrl": "https://jct.jfac.or.kr/site/child/childProgram/view?pgIdx=375&pgCatCode="
+    "detailUrl": "https://jct.jfac.or.kr/site/child/childProgram/view?pgIdx=375&pgCatCode=",
+    "runtimeMin": 110,
+    "isSeries": true,
+    "schedule": "목–금 19:30 · 토 14:00, 18:00 · 일 15:00",
+    "likeCount": 146
   },
   {
     "_id": "evt-041",
@@ -954,7 +1114,11 @@
     "endAt": "2026-10-24T15:00:00.000Z",
     "price": "전석 50,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=479ab06a4eb7461794b0f727eda40340&thumb=Y",
-    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2685&page=1"
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2685&page=1",
+    "runtimeMin": 110,
+    "isSeries": true,
+    "schedule": "화–금 19:30 · 토·일 14:00, 18:30",
+    "likeCount": 220
   },
   {
     "_id": "evt-042",
@@ -978,7 +1142,11 @@
     "endAt": "2026-10-22T15:00:00.000Z",
     "price": "전석 30,000원(10월 23일 무료공연)",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=185954a79be341919622f288baa3448d&thumb=Y",
-    "detailUrl": "https://www.hanokmaeul.co.kr/performance/?bmode=view&idx=173212714&back_url=Lw%3D%3D&t=board&page=1"
+    "detailUrl": "https://www.hanokmaeul.co.kr/performance/?bmode=view&idx=173212714&back_url=Lw%3D%3D&t=board&page=1",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 257
   },
   {
     "_id": "evt-043",
@@ -1001,7 +1169,11 @@
     "endAt": "2026-10-10T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=c156a8a732ba4da186a80ffbc40acab1&thumb=Y",
-    "detailUrl": "https://bitseomfestival.com"
+    "detailUrl": "https://bitseomfestival.com",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 34
   },
   {
     "_id": "evt-044",
@@ -1025,7 +1197,11 @@
     "endAt": "2026-10-09T15:00:00.000Z",
     "price": "전석 89,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=8c32a9c9c09944b8aa67faaf070b3f17&thumb=Y",
-    "detailUrl": "https://www.rayularthall.com/concerts/?bmode=view&idx=174463478&back_url=Lw%3D%3D&t=board&page="
+    "detailUrl": "https://www.rayularthall.com/concerts/?bmode=view&idx=174463478&back_url=Lw%3D%3D&t=board&page=",
+    "runtimeMin": 100,
+    "isSeries": true,
+    "schedule": "금 19:30 · 토·일 14:00",
+    "likeCount": 71
   },
   {
     "_id": "evt-045",
@@ -1048,7 +1224,11 @@
     "endAt": "2026-10-02T15:00:00.000Z",
     "price": "전석 30,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=5a5130aaeca849528e23195d63258fc1&thumb=Y",
-    "detailUrl": "https://www.moduarttheater.or.kr/product/performance/253026"
+    "detailUrl": "https://www.moduarttheater.or.kr/product/performance/253026",
+    "runtimeMin": 110,
+    "isSeries": true,
+    "schedule": "화–금 19:30 · 토·일 14:00, 18:30",
+    "likeCount": 108
   },
   {
     "_id": "evt-046",
@@ -1072,7 +1252,11 @@
     "endAt": "2026-10-01T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0f7c5585ebd74d6fb78b0c77a9cbadee&thumb=Y",
-    "detailUrl": "https://www.gdfac.or.kr/product/ko/performance/258470"
+    "detailUrl": "https://www.gdfac.or.kr/product/ko/performance/258470",
+    "runtimeMin": 100,
+    "isSeries": true,
+    "schedule": "금 19:30 · 토·일 14:00",
+    "likeCount": 219
   },
   {
     "_id": "evt-047",
@@ -1096,7 +1280,11 @@
     "endAt": "2026-10-01T15:00:00.000Z",
     "price": "30,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d9d52f1ade2649cea6a87293d165bd38&thumb=Y",
-    "detailUrl": "https://www.sac.or.kr/site/main/show/show_view?SN=77711"
+    "detailUrl": "https://www.sac.or.kr/site/main/show/show_view?SN=77711",
+    "runtimeMin": 100,
+    "isSeries": true,
+    "schedule": "화–금 19:30 · 토·일 14:00, 18:30",
+    "likeCount": 256
   },
   {
     "_id": "evt-048",
@@ -1119,7 +1307,11 @@
     "endAt": "2026-10-03T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=2c31e04bfa3b46fbb3e49502d2ef504d&thumb=Y",
-    "detailUrl": "https://www.instagram.com/bukchonjebi"
+    "detailUrl": "https://www.instagram.com/bukchonjebi",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 147
   },
   {
     "_id": "evt-049",
@@ -1142,7 +1334,11 @@
     "endAt": "2026-10-03T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=463668deb155441e9442d623fbc0113b&thumb=Y",
-    "detailUrl": "https://k-wavedance.co.kr/"
+    "detailUrl": "https://k-wavedance.co.kr/",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 184
   },
   {
     "_id": "evt-050",
@@ -1166,7 +1362,11 @@
     "endAt": "2026-10-02T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=275f68e6cdbf43a0bc8e18c4f1eb65a1&thumb=Y",
-    "detailUrl": "https://www.sgtt.kr/program/detail/7372"
+    "detailUrl": "https://www.sgtt.kr/program/detail/7372",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 221
   },
   {
     "_id": "evt-051",
@@ -1189,7 +1389,11 @@
     "endAt": "2026-10-02T15:00:00.000Z",
     "price": "전석 20,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=3c72498c8cba4db8a2fe8ecff711b437&thumb=Y",
-    "detailUrl": "https://nol.yanolja.com/ticket/products/26013179"
+    "detailUrl": "https://nol.yanolja.com/ticket/products/26013179",
+    "runtimeMin": 110,
+    "isSeries": true,
+    "schedule": "금 19:30 · 토·일 14:00",
+    "likeCount": 35
   },
   {
     "_id": "evt-052",
@@ -1212,7 +1416,11 @@
     "endAt": "2026-10-02T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=593f0f67f16341b3b9f16d54fb2a865e&thumb=Y",
-    "detailUrl": "https://ddmf.co.kr/"
+    "detailUrl": "https://ddmf.co.kr/",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 72
   },
   {
     "_id": "evt-053",
@@ -1236,7 +1444,11 @@
     "endAt": "2026-10-02T15:00:00.000Z",
     "price": "블라인드 티켓 : 30,000원 / 온라인 예매가 : 40,000원 / 현장판매가 : 44,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=49b8b1fa0d8440b58a08768bd2316922&thumb=Y",
-    "detailUrl": "https://gfac.or.kr/site/main/performance/PERFORMANCE/view/324"
+    "detailUrl": "https://gfac.or.kr/site/main/performance/PERFORMANCE/view/324",
+    "runtimeMin": 120,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 109
   },
   {
     "_id": "evt-054",
@@ -1259,7 +1471,11 @@
     "endAt": "2026-10-05T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=b0632fc186cd4a089005e7f1c4b63493&thumb=Y",
-    "detailUrl": "https://www.interballet.co.kr/bbs/bbs_view.php?idx=374&page=1&code=notice&s_opt=All&s_key="
+    "detailUrl": "https://www.interballet.co.kr/bbs/bbs_view.php?idx=374&page=1&code=notice&s_opt=All&s_key=",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 185
   },
   {
     "_id": "evt-055",
@@ -1283,7 +1499,11 @@
     "endAt": "2026-10-03T15:00:00.000Z",
     "price": "VIP석 120,000원 R석 100,000원 S석 80,000원 A석 60,000원 B석 50,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=b110184a6e1a417986ed0cae1249be7c&thumb=Y",
-    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=36788&menuNo=200320"
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=36788&menuNo=200320",
+    "runtimeMin": 100,
+    "isSeries": true,
+    "schedule": "목–금 19:30 · 토 14:00, 18:00 · 일 15:00",
+    "likeCount": 222
   },
   {
     "_id": "evt-056",
@@ -1306,7 +1526,11 @@
     "endAt": "2026-10-03T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=73b0be048f7442708ea7844ff3dba545&thumb=Y",
-    "detailUrl": "https://blog.naver.com/geumcheon1/224413886805"
+    "detailUrl": "https://blog.naver.com/geumcheon1/224413886805",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 259
   },
   {
     "_id": "evt-057",
@@ -1328,7 +1552,11 @@
     "endAt": "2026-10-07T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4f2b97e50a0f4f228552f9140769c012&thumb=Y",
-    "detailUrl": "https://slw.kr/kor/main.do"
+    "detailUrl": "https://slw.kr/kor/main.do",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 260
   },
   {
     "_id": "evt-058",
@@ -1351,7 +1579,11 @@
     "endAt": "2026-10-06T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=f89841e9f5d1491787c567a2af08d6e2&thumb=Y",
-    "detailUrl": "https://kavrdfair.com/"
+    "detailUrl": "https://kavrdfair.com/",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 37
   },
   {
     "_id": "evt-059",
@@ -1375,7 +1607,11 @@
     "endAt": "2026-10-05T15:00:00.000Z",
     "price": "관람료 선택제 1,000원 3,000원 5,000원 10,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=036442da5ae445f99275d36365f5efd7&thumb=Y",
-    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=36850&menuNo=200320"
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=36850&menuNo=200320",
+    "runtimeMin": 100,
+    "isSeries": true,
+    "schedule": "목–금 19:30 · 토 14:00, 18:00 · 일 15:00",
+    "likeCount": 74
   },
   {
     "_id": "evt-060",
@@ -1399,7 +1635,11 @@
     "endAt": "2026-10-05T15:00:00.000Z",
     "price": "전석 10,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=5401684558974dddaf8544c52fb46c12&thumb=Y",
-    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37418&menuNo=200320"
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37418&menuNo=200320",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "금 19:30 · 토·일 14:00",
+    "likeCount": 111
   },
   {
     "_id": "evt-061",
@@ -1423,7 +1663,11 @@
     "endAt": "2026-10-06T15:00:00.000Z",
     "price": "전석 10,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=7afd4c1c2eab4df6b3e84bb6dd9c35e2&thumb=Y",
-    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37421&menuNo=200320"
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37421&menuNo=200320",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "금 19:30 · 토·일 14:00",
+    "likeCount": 223
   },
   {
     "_id": "evt-062",
@@ -1446,7 +1690,11 @@
     "endAt": "2026-10-10T15:00:00.000Z",
     "price": "VIP 70,000원 R 50,000원 S 30,000원 A 20,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=3bb7a3a0a0f14cc1a3e7880472287be4&thumb=Y",
-    "detailUrl": "https://www.ntok.go.kr/ntok/pm/prfmng/performanceDetail.do?mi=21008&perfId=267170"
+    "detailUrl": "https://www.ntok.go.kr/ntok/pm/prfmng/performanceDetail.do?mi=21008&perfId=267170",
+    "runtimeMin": 80,
+    "isSeries": true,
+    "schedule": "금 19:30 · 토·일 14:00",
+    "likeCount": 187
   },
   {
     "_id": "evt-063",
@@ -1469,7 +1717,11 @@
     "endAt": "2026-10-10T15:00:00.000Z",
     "price": "R석 70,000원, S석 50,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=23937681cfa34fb6b34a3c9369ffd913&thumb=Y",
-    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2687&page=1"
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2687&page=1",
+    "runtimeMin": 110,
+    "isSeries": true,
+    "schedule": "화–금 19:30 · 토·일 14:00, 18:30",
+    "likeCount": 224
   },
   {
     "_id": "evt-064",
@@ -1493,7 +1745,11 @@
     "endAt": "2026-10-07T15:00:00.000Z",
     "price": "전석 10,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=ac03a4127c1a485387c6a23839bdedc7&thumb=Y",
-    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37422&menuNo=200320"
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37422&menuNo=200320",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 261
   },
   {
     "_id": "evt-065",
@@ -1517,7 +1773,11 @@
     "endAt": "2026-10-10T15:00:00.000Z",
     "price": "전석 30,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4d2b11c4ec3446f89b1817b401978b40&thumb=Y",
-    "detailUrl": "https://sgtt.kr/program/detail/7338"
+    "detailUrl": "https://sgtt.kr/program/detail/7338",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "금 19:30 · 토·일 14:00",
+    "likeCount": 151
   },
   {
     "_id": "evt-066",
@@ -1541,7 +1801,11 @@
     "endAt": "2026-10-08T15:00:00.000Z",
     "price": "전석 10,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=457b0eda7e6a4fe2b144d923ec6619c8&thumb=Y",
-    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37423&menuNo=200320"
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37423&menuNo=200320",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "화–금 19:30 · 토·일 14:00, 18:30",
+    "likeCount": 188
   },
   {
     "_id": "evt-067",
@@ -1564,7 +1828,11 @@
     "endAt": "2026-10-08T15:00:00.000Z",
     "price": "전석 30,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=809d0a32f87a4fed96d163f894cff648&thumb=Y",
-    "detailUrl": "https://tickets.interpark.com/goods/26012397"
+    "detailUrl": "https://tickets.interpark.com/goods/26012397",
+    "runtimeMin": 80,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 225
   },
   {
     "_id": "evt-068",
@@ -1587,7 +1855,11 @@
     "endAt": "2026-10-08T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=64295d2b610e4bc2abe0eb29018be5a6&thumb=Y",
-    "detailUrl": "https://app.notion.com/p/2026-3deecebb36ab800eb372c977f40faa6e?"
+    "detailUrl": "https://app.notion.com/p/2026-3deecebb36ab800eb372c977f40faa6e?",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 39
   },
   {
     "_id": "evt-069",
@@ -1609,7 +1881,11 @@
     "endAt": "2026-10-08T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=fefe034bf8db4b25a537a7e367fab458&thumb=Y",
-    "detailUrl": "https://blog.naver.com/nm_mk/224418962453"
+    "detailUrl": "https://blog.naver.com/nm_mk/224418962453",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 113
   },
   {
     "_id": "evt-070",
@@ -1633,7 +1909,11 @@
     "endAt": "2026-10-09T15:00:00.000Z",
     "price": "전석 10,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=deb9adf9f18f42ccace3008bc08ee7aa&thumb=Y",
-    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37424&menuNo=200320"
+    "detailUrl": "https://www.sejongpac.or.kr/portal/performance/performance/performTicket.do?performIdx=37424&menuNo=200320",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "목–금 19:30 · 토 14:00, 18:00 · 일 15:00",
+    "likeCount": 78
   },
   {
     "_id": "evt-071",
@@ -1656,7 +1936,11 @@
     "endAt": "2026-10-09T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6219b0843237431896e39eb784c9bb65&thumb=Y",
-    "detailUrl": "https://www.instagram.com/yongma_fe/"
+    "detailUrl": "https://www.instagram.com/yongma_fe/",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 115
   },
   {
     "_id": "evt-072",
@@ -1680,7 +1964,11 @@
     "endAt": "2026-10-09T15:00:00.000Z",
     "price": "50,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=1cba367cad0d40f69b301737962f93d5&thumb=Y",
-    "detailUrl": "https://www.partita.co.kr/11303/?idx=1094"
+    "detailUrl": "https://www.partita.co.kr/11303/?idx=1094",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "화–금 19:30 · 토·일 14:00, 18:30",
+    "likeCount": 152
   },
   {
     "_id": "evt-073",
@@ -1702,7 +1990,11 @@
     "endAt": "2026-10-09T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=1cbf284a7063478491dc1fbd2cb77801&thumb=Y",
-    "detailUrl": "https://www.instagram.com/earthrunfestival"
+    "detailUrl": "https://www.instagram.com/earthrunfestival",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 189
   },
   {
     "_id": "evt-074",
@@ -1725,7 +2017,11 @@
     "endAt": "2026-10-09T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6c9fc0bda5b24b6f893a583dc6348bd2&thumb=Y",
-    "detailUrl": "https://www.efac.or.kr/page02/sub01.php?type=view&uid=5298"
+    "detailUrl": "https://www.efac.or.kr/page02/sub01.php?type=view&uid=5298",
+    "runtimeMin": 80,
+    "isSeries": true,
+    "schedule": "금 19:30 · 토·일 14:00",
+    "likeCount": 263
   },
   {
     "_id": "evt-075",
@@ -1747,7 +2043,11 @@
     "endAt": "2026-10-09T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=dbde728f06094f74a19c9ed27dece3a5&thumb=Y",
-    "detailUrl": "https://www.mfac.or.kr/communication/notice_all_view.jsp?sc_b_code=BOARD_1207683401&sc_type=1&pk_seq=9180&sc_cond=b_subject&page=1"
+    "detailUrl": "https://www.mfac.or.kr/communication/notice_all_view.jsp?sc_b_code=BOARD_1207683401&sc_type=1&pk_seq=9180&sc_cond=b_subject&page=1",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 77
   },
   {
     "_id": "evt-076",
@@ -1771,7 +2071,11 @@
     "endAt": "2026-10-10T15:00:00.000Z",
     "price": "성동구민, 학생,어린이 50%",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=5c422f1209454caea285ac541a838c84&thumb=Y",
-    "detailUrl": "https://blog.naver.com/eroum_culture/224310283139"
+    "detailUrl": "https://blog.naver.com/eroum_culture/224310283139",
+    "runtimeMin": 150,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 153
   },
   {
     "_id": "evt-077",
@@ -1794,7 +2098,11 @@
     "endAt": "2026-10-10T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=13d28ea834304f6ca2192fd98d2bcc4f&thumb=Y",
-    "detailUrl": "https://www.efac.or.kr/page02/sub01.php?type=view&uid=5295"
+    "detailUrl": "https://www.efac.or.kr/page02/sub01.php?type=view&uid=5295",
+    "runtimeMin": 80,
+    "isSeries": true,
+    "schedule": "목–금 19:30 · 토 14:00, 18:00 · 일 15:00",
+    "likeCount": 190
   },
   {
     "_id": "evt-078",
@@ -1817,7 +2125,11 @@
     "endAt": "2026-10-14T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=c709a0e5c07f497492ae64bdea7aee17&thumb=Y",
-    "detailUrl": "https://www.gbcf.or.kr/load.asp?subPage=110.View&page=1&idx=450"
+    "detailUrl": "https://www.gbcf.or.kr/load.asp?subPage=110.View&page=1&idx=450",
+    "runtimeMin": 110,
+    "isSeries": true,
+    "schedule": "금 19:30 · 토·일 14:00",
+    "likeCount": 191
   },
   {
     "_id": "evt-079",
@@ -1841,7 +2153,11 @@
     "endAt": "2026-10-13T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d2372238f9204b199c82a9c803225ece&thumb=Y",
-    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2672&page=1"
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2672&page=1",
+    "runtimeMin": 100,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 265
   },
   {
     "_id": "evt-080",
@@ -1863,7 +2179,11 @@
     "endAt": "2026-10-16T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6e16b1cc3037443a938753d7a7c96a0a&thumb=Y",
-    "detailUrl": "https://agro-cityseoul.co.kr/"
+    "detailUrl": "https://agro-cityseoul.co.kr/",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 44
   },
   {
     "_id": "evt-081",
@@ -1887,7 +2207,11 @@
     "endAt": "2026-10-16T15:00:00.000Z",
     "price": "전석 30,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0e829f6946df437ea0e0f8adb2f19a94&thumb=Y",
-    "detailUrl": "https://kbt.sbculture.or.kr/?module=Board&action=SiteBoard&sMode=VIEW_FORM&iBrdNo=1&iBrdContNo=199&sBrdContRe=0&sSearchField=&sSearchValue=&CurrentPage=1&year=2026&month=10"
+    "detailUrl": "https://kbt.sbculture.or.kr/?module=Board&action=SiteBoard&sMode=VIEW_FORM&iBrdNo=1&iBrdContNo=199&sBrdContRe=0&sSearchField=&sSearchValue=&CurrentPage=1&year=2026&month=10",
+    "runtimeMin": 120,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 81
   },
   {
     "_id": "evt-082",
@@ -1911,7 +2235,11 @@
     "endAt": "2026-10-15T15:00:00.000Z",
     "price": "R석 66,000원, S석 55,000원, 시야방해석 33,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=3d17bd7f9f0f4814af0c16207bb3a71b&thumb=Y",
-    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2662&page=1"
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2662&page=1",
+    "runtimeMin": 120,
+    "isSeries": true,
+    "schedule": "금 19:30 · 토·일 14:00",
+    "likeCount": 155
   },
   {
     "_id": "evt-083",
@@ -1935,7 +2263,11 @@
     "endAt": "2026-10-16T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=59683b9f2d8f44409b6a75bd95d8903b&thumb=Y",
-    "detailUrl": "https://museum.yongsan.go.kr/edus/view?id=920"
+    "detailUrl": "https://museum.yongsan.go.kr/edus/view?id=920",
+    "runtimeMin": 120,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 45
   },
   {
     "_id": "evt-084",
@@ -1958,7 +2290,11 @@
     "endAt": "2026-10-16T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=ce6d5915fe4e47d89823a5f7384f4097&thumb=Y",
-    "detailUrl": "https://www.naruart.or.kr/exhibition/program_view.php?idx=10413"
+    "detailUrl": "https://www.naruart.or.kr/exhibition/program_view.php?idx=10413",
+    "runtimeMin": null,
+    "isSeries": false,
+    "schedule": "",
+    "likeCount": 82
   },
   {
     "_id": "evt-085",
@@ -1981,7 +2317,11 @@
     "endAt": "2026-10-16T15:00:00.000Z",
     "price": "전석 30,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=dc5cae2a23db4203a8dede430acc99d9&thumb=Y",
-    "detailUrl": "https://tickets.interpark.com/goods/26012398"
+    "detailUrl": "https://tickets.interpark.com/goods/26012398",
+    "runtimeMin": 80,
+    "isSeries": true,
+    "schedule": "화–금 19:30 · 토·일 14:00, 18:30",
+    "likeCount": 156
   },
   {
     "_id": "evt-086",
@@ -2005,7 +2345,11 @@
     "endAt": "2026-10-16T15:00:00.000Z",
     "price": "R석 66,000원, S석 55,000원, 시야방해석 33,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=49e49e5ac957439caa32f2e01e720560&thumb=Y",
-    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2663&page=1"
+    "detailUrl": "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2663&page=1",
+    "runtimeMin": 120,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 193
   },
   {
     "_id": "evt-087",
@@ -2029,7 +2373,11 @@
     "endAt": "2026-10-16T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=3318f8a3d56d4da8862875c02b880d1e&thumb=Y",
-    "detailUrl": "https://m.site.naver.com/2eeRX"
+    "detailUrl": "https://m.site.naver.com/2eeRX",
+    "runtimeMin": 120,
+    "isSeries": true,
+    "schedule": "목–금 19:30 · 토 14:00, 18:00 · 일 15:00",
+    "likeCount": 230
   },
   {
     "_id": "evt-088",
@@ -2052,7 +2400,11 @@
     "endAt": "2026-10-17T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=f8ffe74a10f9472bba2dc447c1f92510&thumb=Y",
-    "detailUrl": "https://seouleoullim.or.kr/site/board/board-view?id=622&board_type=notice"
+    "detailUrl": "https://seouleoullim.or.kr/site/board/board-view?id=622&board_type=notice",
+    "runtimeMin": 110,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 269
   },
   {
     "_id": "evt-089",
@@ -2076,7 +2428,11 @@
     "endAt": "2026-10-17T15:00:00.000Z",
     "price": "20,000원",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d5bca863d8ed467ab958ac9d4f58db61&thumb=Y",
-    "detailUrl": "https://nol.yanolja.com/ticket/products/26010242"
+    "detailUrl": "https://nol.yanolja.com/ticket/products/26010242",
+    "runtimeMin": 90,
+    "isSeries": true,
+    "schedule": "목–금 19:30 · 토 14:00, 18:00 · 일 15:00",
+    "likeCount": 46
   },
   {
     "_id": "evt-090",
@@ -2100,6 +2456,10 @@
     "endAt": "2026-10-20T15:00:00.000Z",
     "price": "무료",
     "posterUrl": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=d0ce73d1a7c54a9dab3cbd46152622d7&thumb=Y",
-    "detailUrl": "https://www.idfac.or.kr/bbs/board.php?bo_table=gallery_info&wr_id=314"
+    "detailUrl": "https://www.idfac.or.kr/bbs/board.php?bo_table=gallery_info&wr_id=314",
+    "runtimeMin": 120,
+    "isSeries": true,
+    "schedule": "수–금 20:00 · 주말 15:00, 19:00",
+    "likeCount": 121
   }
 ]

@@ -98,3 +98,23 @@ export function formatMeetingDateLines(date) {
   const d = new Date(date)
   return { day: md(d), sub: `${DAYS[d.getDay()]} ${hm(d)}` }
 }
+
+/**
+ * 행사의 예상 종료 시각 — "약 22:00".
+ *
+ * 서울 문화행사 API 는 종료 시각을 주지 않아 시작 시각에 러닝타임을 더해 계산한다.
+ * 추정값이므로 화면에서도 "(시작 시각 + 러닝타임 예상값)"이라고 밝힌다.
+ * 시각이 없는 행사(자정으로 들어온다)는 저녁 공연을 가정해 19:30 기준으로 잡는다.
+ */
+export function expectedEndLabel(event) {
+  if (!event?.runtimeMin || !event.startAt) return '—'
+  const start = new Date(event.startAt)
+  if (start.getHours() === 0 && start.getMinutes() === 0) start.setHours(19, 30, 0, 0)
+  const end = new Date(start.getTime() + event.runtimeMin * 60 * 1000)
+  return `약 ${hm(end)}`
+}
+
+/** <input type="time"> 이 요구하는 형식 — "21:30" */
+export function toTimeInput(date) {
+  return hm(date)
+}

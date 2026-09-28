@@ -1,9 +1,12 @@
-// 모임 한 줄.
+// 모임 한 줄. 시안 v2 의 모임 행을 따른다.
 //
-// 정원을 진행 막대로 그리지 않는다. 막대는 "얼마나 찼나"를 보여주지만 여기서 중요한 건
-// "들어갈 자리가 있나"다. 숫자와 상태 한 줄이면 충분하고, 목록이 훨씬 조용해진다.
+//   날짜 | 제목 · 조건 한 줄 · 정원바+정원+위치+호스트 | 상태
 //
-// 기존 components/meeting/MeetingCard.jsx 는 이전 기획(혼잡도)의 것이라 쓰지 않는다.
+// 조건 한 줄이 이 서비스의 핵심이다 — 관람부터 함께인지, 술이 있는지, 예산이 얼마인지를
+// 신청하기 전에 알 수 있어야 한다. 시안이 "관람부터 함께 가능 · 술 없음 · 1~2만 원"
+// 형태로 쓰고 있어 그대로 옮겼다.
+//
+// 정확한 장소는 승인된 참여자에게만 보이므로 목록에는 대략 위치(whereLabel)만 쓴다.
 
 import { Link } from 'react-router-dom'
 import Status from '../common/Status'
@@ -15,12 +18,32 @@ const STATUS = {
   completed: { label: '종료', tone: 'done' },
 }
 
+// 시각만 — "23:00 종료 예정"
+function endLabel(iso) {
+  if (!iso) return ''
+  const d = new Date(iso)
+  const pad = (n) => String(n).padStart(2, '0')
+  return `${pad(d.getHours())}:${pad(d.getMinutes())} 종료 예정`
+}
+
 function MeetingRow({ meeting, showEvent = false }) {
   const status = STATUS[meeting.status] || STATUS.recruit
-  const { day, sub } = formatMeetingDateLines(meeting.meetingDate)
   const joined = meeting.participants?.length || 0
   const max = meeting.maxParticipants || 1
+  const ratio = Math.min(100, Math.round((joined / max) * 100))
   const left = Math.max(0, max - joined)
+  const { day, sub } = formatMeetingDateLines(meeting.meetingDate)
+
+  // 남은 자리에 따라 막대 색이 바뀐다 — 숫자를 읽기 전에 상태가 보인다
+  const fillTone = left === 0 ? 'closed' : left <= 1 ? 'soon' : 'open'
+
+  // 신청 전에 공개되는 조건
+  const terms = [
+    meeting.withViewing ? '관람부터 함께 가능' : '이야기 자리만',
+    `술 ${meeting.drinking || '없음'}`,
+    meeting.budget,
+    endLabel(meeting.endAt),
+  ].filter(Boolean)
 
   return (
     <li>
@@ -31,37 +54,29 @@ function MeetingRow({ meeting, showEvent = false }) {
         </div>
 
         <div>
-          {showEvent && meeting.event && (
-            <p className="mv-micro mv-truncate mb-1">{meeting.event.title}</p>
-          )}
-
           <p className="mv-row__title">{meeting.title}</p>
 
-          {meeting.content && (
-            <p className="mv-meta mb-1" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-              {meeting.content}
-            </p>
-          )}
-
-          <p className="mv-meta mv-dotsep mb-0">
-            <Status tone={status.tone}>{status.label}</Status>
-            <span className="mv-num">
-              {joined} / {max}
-            </span>
-            {meeting.status === 'recruit' && left > 0 && <span>{left}자리 남음</span>}
-            <span>{meeting.area}</span>
+          <p className="mv-meta mv-meta--oneline mb-2">
+            {showEvent && meeting.event && <span>〈{meeting.event.title}〉 보고 · </span>}
+            {terms.join(' · ')}
           </p>
 
-          {meeting.afterPlace?.name && (
-            <p className="mv-meta mb-0 mt-1">
-              <span className="mv-micro me-2">2차</span>
-              {meeting.afterPlace.name}
-            </p>
-          )}
+          <p className="mv-meta mb-0 d-flex align-items-center gap-2 flex-wrap">
+            <span className="mv-gauge" aria-hidden="true">
+              <span className={`mv-gauge__fill mv-gauge__fill--${fillTone}`} style={{ width: `${ratio}%` }} />
+            </span>
+            <span className="mv-num">
+              {joined}/{max}
+            </span>
+            <span className="mv-dotsep">
+              {meeting.whereLabel && <span>{meeting.whereLabel}</span>}
+              {meeting.author?.handle && <span>호스트 {meeting.author.handle}</span>}
+            </span>
+          </p>
         </div>
 
-        <div className="mv-micro text-end">
-          {meeting.author?.nickname}
+        <div className="text-end">
+          <Status tone={status.tone}>{status.label}</Status>
         </div>
       </Link>
     </li>

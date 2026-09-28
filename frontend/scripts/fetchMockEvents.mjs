@@ -120,6 +120,39 @@ function isRedundant(organizer, venue) {
   return p.includes(o) || o.includes(p)
 }
 
+// 러닝타임과 회차는 서울 문화행사 API 가 주지 않는다.
+// 시안 v2 가 "150분", "화~금 19:30 · 토·일 14:00, 18:30" 처럼 쓰고 있어
+// 카테고리별 그럴듯한 기본값으로 채운다. 실제 값은 KOPIS 같은 공연 API 를
+// 붙여야 나오므로, 목업이라는 점을 화면에서도 숨기지 않는다.
+const RUNTIME_BY_CATEGORY = {
+  연극: 110,
+  '뮤지컬/오페라': 150,
+  클래식: 100,
+  국악: 90,
+  무용: 80,
+  콘서트: 120,
+  영화: 105,
+  '독주/독창회': 90,
+}
+
+// 회차형(같은 공연을 여러 번) 인 분류. 전시·축제는 상시 관람이라 회차가 없다.
+const SERIES_CATEGORIES = new Set([
+  '연극',
+  '뮤지컬/오페라',
+  '클래식',
+  '국악',
+  '무용',
+  '콘서트',
+  '독주/독창회',
+])
+
+const SCHEDULE_SAMPLES = [
+  '화–금 19:30 · 토·일 14:00, 18:30',
+  '수–금 20:00 · 주말 15:00, 19:00',
+  '목–금 19:30 · 토 14:00, 18:00 · 일 15:00',
+  '금 19:30 · 토·일 14:00',
+]
+
 function mapRow(row, index) {
   const codename = row.CODENAME || '기타'
   const { lat, lng } = normalizeCoords(row.LOT, row.LAT)
@@ -147,6 +180,15 @@ function mapRow(row, index) {
     price: row.IS_FREE === '무료' ? '무료' : (row.USE_FEE || '').trim(),
     posterUrl: (row.MAIN_IMG || '').trim(),
     detailUrl: (row.ORG_LINK || row.HMPG_ADDR || '').trim(),
+
+    // ── 아래는 API 에 없는 값이라 목업으로 채운다 ──
+    runtimeMin: RUNTIME_BY_CATEGORY[codename] || null,
+    isSeries: SERIES_CATEGORIES.has(codename),
+    schedule: SERIES_CATEGORIES.has(codename)
+      ? SCHEDULE_SAMPLES[index % SCHEDULE_SAMPLES.length]
+      : '',
+    // 찜 수 — 화면에 숫자가 있어야 버튼이 비어 보이지 않는다
+    likeCount: 12 + ((index * 37) % 260),
   }
 }
 
