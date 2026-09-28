@@ -282,22 +282,59 @@ a.mv-feature:hover .mv-feature__title {
 .mv-poster {
   container-type: inline-size;
 }
+/* 이미지가 없을 때 — 타이포 포스터.
+   34px 썸네일부터 196px 피처까지 같은 컴포넌트가 쓰이므로, 폭에 따라 보이는 것을 바꾼다.
+   좁으면 카테고리 약자만, 넓으면 제목까지. */
 .mv-poster__fallback {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 6%;
+  gap: 8%;
+  padding: 8%;
   text-align: center;
-  /* 34px 썸네일부터 196px 피처까지 같은 컴포넌트를 쓴다.
-     고정 크기로 두면 작은 쪽에서 글자가 끊긴다. */
-  font-size: clamp(9px, 17cqw, 13px);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  line-height: 1.3;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.94);
   word-break: keep-all;
+  overflow: hidden;
+}
+.mv-poster__cat {
+  font-size: clamp(9px, 17cqw, 12px);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+}
+/* 좁은 썸네일에서는 제목을 아예 빼 둔다 — 두세 글자만 보이면 오히려 읽히지 않는다 */
+.mv-poster__name {
+  display: none;
+}
+
+/* 넓어지면 실제 포스터처럼 — 카테고리를 위에, 제목을 아래에 왼쪽으로 앉힌다.
+   가운데로 몰아 두면 아래가 텅 비어 "덜 그려진 자리"로 읽힌다. */
+@container (min-width: 120px) {
+  .mv-poster__fallback {
+    align-items: stretch;
+    justify-content: space-between;
+    text-align: left;
+    gap: 0;
+    padding: 9%;
+  }
+  .mv-poster__cat {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    opacity: 0.7;
+  }
+  .mv-poster__name {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: clamp(13px, 9cqw, 19px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.35;
+  }
 }
 
 /* ───────────────────────── 상태 ─────────────────────────

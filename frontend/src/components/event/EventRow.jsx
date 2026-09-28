@@ -47,7 +47,7 @@ function EventRow({ event, reasons = [] }) {
         </div>
 
         <div className="mv-row__poster">
-          <Poster src={event.posterUrl} category={event.category} alt={event.title} />
+          <Poster src={event.posterUrl} category={event.category} title={event.title} />
         </div>
       </Link>
     </li>

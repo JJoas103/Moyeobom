@@ -107,7 +107,7 @@ function New() {
 
           <div className="d-flex gap-3 mb-4">
             <div style={{ width: 72, flexShrink: 0 }}>
-              <Poster src={event.posterUrl} category={event.category} alt={event.title} />
+              <Poster src={event.posterUrl} category={event.category} title={event.title} />
             </div>
             <div className="min-width-0">
               <p className="mv-micro mb-1">{event.category}</p>

@@ -129,7 +129,7 @@ function List() {
                   style={{ borderBottom: '1px solid var(--ink)', color: 'inherit' }}
                 >
                   <div style={{ width: 34, flexShrink: 0 }}>
-                    <Poster src={group.event.posterUrl} category={group.event.category} alt="" />
+                    <Poster src={group.event.posterUrl} category={group.event.category} title={group.event.title} />
                   </div>
                   <div className="mv-truncate flex-grow-1">
                     <p className="mv-micro mb-0">{group.event.category}</p>

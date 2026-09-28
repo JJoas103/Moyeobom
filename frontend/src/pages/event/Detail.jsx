@@ -85,7 +85,7 @@ function Detail() {
       {/* ── 표제 ── */}
       <header className="row g-4 g-lg-5 pb-5 align-items-start" style={{ borderBottom: '1px solid var(--ink)' }}>
         <div className="col-7 col-md-4 col-lg-3">
-          <Poster src={event.posterUrl} category={event.category} alt={event.title} />
+          <Poster src={event.posterUrl} category={event.category} title={event.title} />
         </div>
 
         <div className="col-12 col-md-8 col-lg-9">

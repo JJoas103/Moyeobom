@@ -129,7 +129,7 @@ function Index() {
                   <li key={item.meetingId}>
                     <Link to={`/meeting/${item.meetingId}`} className="mv-row" style={{ gridTemplateColumns: '48px minmax(0,1fr) auto' }}>
                       <div style={{ width: 48 }}>
-                        <Poster src={item.event?.posterUrl} category={item.event?.category} alt="" />
+                        <Poster src={item.event?.posterUrl} category={item.event?.category} title={item.event?.title} />
                       </div>
                       <div>
                         <p className="mv-micro mb-1 mv-truncate">{item.event?.title}</p>

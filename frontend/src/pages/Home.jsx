@@ -18,14 +18,9 @@ import ReasonLine from '../components/event/ReasonLine'
 import MeetingRow from '../components/meeting/MeetingRow'
 import { fetchRecommendedEvents } from '../data/events'
 import { fetchMeetings } from '../data/meetings'
-import { ME } from '../data/me'
-import { useAuth } from '../context/AuthContext'
 import { eventTimingBadge, formatEventPeriod, todayLabel } from '../utils/formatEventDate'
 
 function Home() {
-  const { user } = useAuth()
-  const displayName = user?.nickname || ME.nickname
-
   const [recommended, setRecommended] = useState([])
   const [isColdStart, setColdStart] = useState(false)
   const [upcoming, setUpcoming] = useState([])
@@ -60,14 +55,7 @@ function Home() {
 
   return (
     <div>
-      <Masthead
-        title="오늘, 서울"
-        aside={
-          openCount === null
-            ? todayLabel()
-            : `${todayLabel()} · 열려 있는 행사 ${openCount}`
-        }
-      />
+      <Masthead title={todayLabel()} aside={openCount === null ? '' : `열려 있는 행사 ${openCount}`} />
 
       {error && (
         <p className="mv-note mv-note--dim mv-meta mb-4">{error}</p>
@@ -76,13 +64,12 @@ function Home() {
       {/* ── 추천 ── */}
       <section className="mv-section">
         <SectionHead
-          label={`${displayName}님에게 맞는 행사`}
+          label="추천 행사"
           action={
             <Link to="/event" className="mv-link mv-micro">
               행사 전체
             </Link>
           }
-          note="같은 화면이라도 사람마다 순서가 다릅니다. 왜 떴는지를 항목마다 함께 적었습니다."
         />
 
         {isColdStart && (
@@ -107,7 +94,7 @@ function Home() {
           <>
             {/* 1위는 포스터를 크게 펼친다 — 순위가 있다는 걸 레이아웃으로 말한다 */}
             <Link to={`/event/${lead.event._id}`} className="mv-feature">
-              <Poster src={lead.event.posterUrl} category={lead.event.category} alt={lead.event.title} />
+              <Poster src={lead.event.posterUrl} category={lead.event.category} title={lead.event.title} />
               <div>
                 <p className="mv-meta mv-dotsep mb-0">
                   <span className="mv-tag">{lead.event.category}</span>

@@ -215,7 +215,7 @@ function Detail() {
               style={{ borderBottom: '1px solid var(--rule)', color: 'inherit' }}
             >
               <div style={{ width: 62, flexShrink: 0 }}>
-                <Poster src={meeting.event.posterUrl} category={meeting.event.category} alt="" />
+                <Poster src={meeting.event.posterUrl} category={meeting.event.category} title={meeting.event.title} />
               </div>
               <div className="min-width-0">
                 <p className="mv-micro mb-1">이 모임이 시작된 행사</p>
