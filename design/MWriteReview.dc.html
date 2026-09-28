@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Noto Sans KR", -apple-system, sans-serif; background: #f4f6f9; color: #1e293b; -webkit-font-smoothing: antialiased; }
+    a { color: #1d9e75; } a:hover { color: #16a34a; }
+  </style>
+</helmet>
+
+<div style="width: 390px; height: 896px; display: flex; flex-direction: column; background: #f4f6f9;">
+
+  <div style="display: flex; align-items: center; gap: 8px; padding: 13px 16px; background: #1d9e75; flex-shrink: 0;">
+    <span style="font-size: 10.5px; font-weight: 700; color: #1d9e75; background: #ffffff; padding: 3px 9px; border-radius: 100px; white-space: nowrap;">핵심</span>
+    <span style="font-size: 11.5px; font-weight: 500; color: #e6f9f4; line-height: 1.35;">모임이 끝나도 남는 것 &mdash; 루프가 시작되는 지점</span>
+  </div>
+
+  <div style="flex-grow: 1; overflow: hidden; display: flex; flex-direction: column;">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: #ffffff; border-bottom: 1px solid #e2e8f0; flex-shrink: 0;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      <span style="font-size: 15px; font-weight: 700;">한 줄 남기기</span>
+      <span style="font-size: 14px; font-weight: 700; color: #cbd5e1;">완료</span>
+    </div>
+
+    <div style="flex-grow: 1; overflow: hidden;">
+
+      <div style="background: #ffffff; padding: 14px 16px; border-bottom: 8px solid #f4f6f9; display: flex; gap: 12px; align-items: center;">
+        <div style="width: 52px; height: 66px; border-radius: 8px; background: linear-gradient(150deg, #0f766e 0%, #1d9e75 60%, #6ee7c7 100%); flex-shrink: 0;"></div>
+        <div style="flex-grow: 1;">
+          <div style="font-size: 10px; font-weight: 700; color: #065f46; background: #e6f9f4; padding: 3px 8px; border-radius: 100px; display: inline-block; margin-bottom: 5px;">전시</div>
+          <div style="font-size: 14.5px; font-weight: 700; letter-spacing: -0.2px;">사물의 재구성</div>
+          <div style="font-size: 11.5px; color: #64748b; margin-top: 3px;">2026.09.11 (수) 관람</div>
+        </div>
+      </div>
+
+      <div style="background: #ffffff; padding: 16px; border-bottom: 8px solid #f4f6f9;">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">보고 나서 어떠셨어요?</div>
+        <div style="font-size: 11.5px; color: #94a3b8; margin-bottom: 11px;">점수는 매기지 않습니다. 한 줄이면 충분해요.</div>
+
+        <div style="border: 2px solid #1d9e75; border-radius: 11px; padding: 13px; background: #ffffff; min-height: 118px;">
+          <div style="font-size: 13.5px; line-height: 1.65; color: #1e293b;">2층 마지막 방이 진짜입니다. 사람 없을 때 가서 오래 앉아 있었어요.<span style="display: inline-block; width: 1.5px; height: 16px; background: #1d9e75; vertical-align: -3px; margin-left: 1px;"></span></div>
+        </div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 6px;">
+          <span style="font-size: 11px; color: #94a3b8;">38 / 200</span>
+        </div>
+      </div>
+
+      <div style="background: #ffffff; padding: 16px; border-bottom: 8px solid #f4f6f9;">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px;">같이 본 사람</div>
+        <div style="display: flex; gap: 8px;">
+          <div style="flex-grow: 1; border: 2px solid #1d9e75; background: #e6f9f4; border-radius: 10px; padding: 10px 8px; text-align: center;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: #ffffff; border: 1px solid #6ee7c7; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #2563eb; margin: 0 auto 6px;">지</div>
+            <div style="font-size: 11.5px; font-weight: 600; color: #065f46;">지수</div>
+          </div>
+          <div style="flex-grow: 1; border: 2px solid #1d9e75; background: #e6f9f4; border-radius: 10px; padding: 10px 8px; text-align: center;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: #ffffff; border: 1px solid #6ee7c7; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #ca8a04; margin: 0 auto 6px;">민</div>
+            <div style="font-size: 11.5px; font-weight: 600; color: #065f46;">민재</div>
+          </div>
+          <div style="flex-grow: 1; border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px 8px; text-align: center;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: #f8fafc; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #94a3b8; margin: 0 auto 6px;">현</div>
+            <div style="font-size: 11.5px; font-weight: 500; color: #94a3b8;">현우</div>
+          </div>
+        </div>
+        <div style="font-size: 11px; color: #94a3b8; margin-top: 9px; line-height: 1.5;">서로 태그하면 &lsquo;또 보고 싶어요&rsquo;를 보낼 수 있습니다</div>
+      </div>
+
+      <div style="background: #ffffff; padding: 16px; border-bottom: 8px solid #f4f6f9;">
+        <div style="display: flex; gap: 9px;">
+          <div style="width: 68px; height: 68px; border-radius: 10px; border: 1px dashed #cbd5e1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; flex-shrink: 0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+            <span style="font-size: 10px; color: #94a3b8;">사진</span>
+          </div>
+          <div style="width: 68px; height: 68px; border-radius: 10px; background: linear-gradient(140deg, #cbd5e1, #94a3b8); flex-shrink: 0;"></div>
+        </div>
+      </div>
+
+      <div style="background: #ffffff; padding: 16px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+          <div>
+            <div style="font-size: 12.5px; font-weight: 600;">행사 페이지에 공개</div>
+            <div style="font-size: 11px; color: #94a3b8; margin-top: 2px;">다음에 이 행사를 볼 사람에게 보입니다</div>
+          </div>
+          <div style="width: 42px; height: 24px; border-radius: 100px; background: #1d9e75; position: relative; flex-shrink: 0;">
+            <div style="position: absolute; top: 2px; right: 2px; width: 20px; height: 20px; border-radius: 50%; background: #ffffff;"></div>
+          </div>
+        </div>
+        <button style="width: 100%; padding: 14px; background: #1d9e75; color: #ffffff; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; font-family: inherit; min-height: 48px;">남기기</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

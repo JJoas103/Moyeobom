@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Noto Sans KR", -apple-system, sans-serif; background: #ffffff; color: #1e293b; -webkit-font-smoothing: antialiased; }
+    a { color: #1d9e75; } a:hover { color: #16a34a; }
+  </style>
+</helmet>
+
+<div style="width: 1720px; height: 520px; background: #ffffff; padding: 36px 44px; display: flex; flex-direction: column; gap: 22px;">
+
+  <div style="display: flex; align-items: baseline; gap: 14px;">
+    <div style="font-size: 24px; font-weight: 900; letter-spacing: -0.5px;">교수님 지적의 정체</div>
+    <div style="font-size: 15px; color: #64748b; font-weight: 500;">&ldquo;모임에서 끝나고 그 뒤가 없다&rdquo; &mdash; 기능이 부족한 게 아니라 <strong style="color:#1e293b;">구조가 직선</strong>이다</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; flex-grow: 1;">
+
+    <!-- 지금: 직선 -->
+    <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 16px; padding: 26px 28px; display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 11px; font-weight: 700; color: #ffffff; background: #dc2626; padding: 4px 10px; border-radius: 100px;">지금</span>
+        <span style="font-size: 17px; font-weight: 700; color: #991b1b;">직선 &mdash; 끝이 낭떠러지</span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: nowrap;">
+        <div style="flex-grow: 1; text-align: center; background: #ffffff; border: 1px solid #fecaca; border-radius: 10px; padding: 14px 6px; font-size: 13px; font-weight: 600;">행사 발견</div>
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="#dc2626" stroke-width="1.6"><path d="M1 6h14M11 2l4 4-4 4"/></svg>
+        <div style="flex-grow: 1; text-align: center; background: #ffffff; border: 1px solid #fecaca; border-radius: 10px; padding: 14px 6px; font-size: 13px; font-weight: 600;">모임 개설</div>
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="#dc2626" stroke-width="1.6"><path d="M1 6h14M11 2l4 4-4 4"/></svg>
+        <div style="flex-grow: 1; text-align: center; background: #ffffff; border: 1px solid #fecaca; border-radius: 10px; padding: 14px 6px; font-size: 13px; font-weight: 600;">참여 &middot; 관람</div>
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="#dc2626" stroke-width="1.6"><path d="M1 6h14M11 2l4 4-4 4"/></svg>
+        <div style="flex-grow: 1; text-align: center; background: #dc2626; color: #ffffff; border-radius: 10px; padding: 14px 6px; font-size: 13px; font-weight: 700;">끝</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 9px; margin-top: 2px;">
+        <div style="display: flex; gap: 9px; align-items: flex-start;">
+          <span style="color: #dc2626; font-weight: 900; font-size: 13px; line-height: 1.5;">&times;</span>
+          <span style="font-size: 13.5px; line-height: 1.5; color: #7f1d1d;">사용자가 <strong>다시 올 이유가 없다</strong> &mdash; 한 번 쓰고 끝</span>
+        </div>
+        <div style="display: flex; gap: 9px; align-items: flex-start;">
+          <span style="color: #dc2626; font-weight: 900; font-size: 13px; line-height: 1.5;">&times;</span>
+          <span style="font-size: 13.5px; line-height: 1.5; color: #7f1d1d;"><strong>아무것도 쌓이지 않는다</strong> &mdash; 지나간 모임은 죽은 데이터</span>
+        </div>
+        <div style="display: flex; gap: 9px; align-items: flex-start;">
+          <span style="color: #dc2626; font-weight: 900; font-size: 13px; line-height: 1.5;">&times;</span>
+          <span style="font-size: 13.5px; line-height: 1.5; color: #7f1d1d;"><strong>서버가 할 일이 없다</strong> &mdash; 요청 오면 응답, 그게 전부</span>
+        </div>
+      </div>
+      <div style="font-size: 12.5px; color: #991b1b; background: #ffffff; border-radius: 8px; padding: 10px 12px; line-height: 1.5;">세 가지가 같은 원인입니다. 그래서 &ldquo;백엔드가 없어 보인다&rdquo;는 말이 나옵니다.</div>
+    </div>
+
+    <!-- 제안: 원 -->
+    <div style="background: #e6f9f4; border: 1px solid #6ee7c7; border-radius: 16px; padding: 26px 28px; display: flex; gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 16px; flex-grow: 1;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 11px; font-weight: 700; color: #ffffff; background: #1d9e75; padding: 4px 10px; border-radius: 100px;">제안</span>
+          <span style="font-size: 17px; font-weight: 700; color: #065f46;">원 &mdash; 끝이 다음 시작</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          <div style="display: flex; gap: 9px; align-items: flex-start;">
+            <span style="color: #1d9e75; font-weight: 900; font-size: 13px; line-height: 1.5;">&check;</span>
+            <span style="font-size: 13.5px; line-height: 1.5; color: #065f46;">관람이 끝나면 <strong>감상이 남고</strong>, 그게 행사 페이지에 쌓인다</span>
+          </div>
+          <div style="display: flex; gap: 9px; align-items: flex-start;">
+            <span style="color: #1d9e75; font-weight: 900; font-size: 13px; line-height: 1.5;">&check;</span>
+            <span style="font-size: 13.5px; line-height: 1.5; color: #065f46;">쌓인 기록이 <strong>취향</strong>이 되고, 취향이 <strong>추천</strong>이 된다</span>
+          </div>
+          <div style="display: flex; gap: 9px; align-items: flex-start;">
+            <span style="color: #1d9e75; font-weight: 900; font-size: 13px; line-height: 1.5;">&check;</span>
+            <span style="font-size: 13.5px; line-height: 1.5; color: #065f46;">그 사이를 <strong>스케줄러가 돌린다</strong> &mdash; 서버가 먼저 말을 건다</span>
+          </div>
+        </div>
+        <div style="font-size: 13px; color: #065f46; background: #ffffff; border-radius: 8px; padding: 11px 13px; line-height: 1.55; margin-top: auto;">
+          <strong style="font-size: 14px;">&ldquo;모임은 하루면 끝나지만, 기록은 남습니다.&rdquo;</strong><br>
+          <span style="color: #047857;">모임 서비스가 아니라, 혼자 본 것들이 쌓이는 서비스</span>
+        </div>
+      </div>
+
+      <svg width="270" height="270" viewBox="0 0 270 270" fill="none" style="flex-shrink: 0; align-self: center;">
+        <circle cx="135" cy="135" r="97" stroke="#6ee7c7" stroke-width="2" stroke-dasharray="5 6"/>
+        <path d="M135 38 a97 97 0 0 1 68.6 28.4" stroke="#1d9e75" stroke-width="2.5" fill="none"/>
+        <path d="M198 61 l9 7 -8 8" stroke="#1d9e75" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <g>
+          <circle cx="135" cy="38" r="27" fill="#1d9e75"/>
+          <text x="135" y="35" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700" font-family="Noto Sans KR, sans-serif">행사</text>
+          <text x="135" y="47" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700" font-family="Noto Sans KR, sans-serif">발견</text>
+        </g>
+        <g>
+          <circle cx="217" cy="106" r="27" fill="#ffffff" stroke="#6ee7c7" stroke-width="1.5"/>
+          <text x="217" y="103" text-anchor="middle" fill="#065f46" font-size="11" font-weight="700" font-family="Noto Sans KR, sans-serif">모임</text>
+          <text x="217" y="115" text-anchor="middle" fill="#065f46" font-size="11" font-weight="700" font-family="Noto Sans KR, sans-serif">관람</text>
+        </g>
+        <g>
+          <circle cx="186" cy="212" r="27" fill="#ffffff" stroke="#6ee7c7" stroke-width="1.5"/>
+          <text x="186" y="209" text-anchor="middle" fill="#065f46" font-size="11" font-weight="700" font-family="Noto Sans KR, sans-serif">감상</text>
+          <text x="186" y="221" text-anchor="middle" fill="#065f46" font-size="11" font-weight="700" font-family="Noto Sans KR, sans-serif">기록</text>
+        </g>
+        <g>
+          <circle cx="84" cy="212" r="27" fill="#ffffff" stroke="#6ee7c7" stroke-width="1.5"/>
+          <text x="84" y="209" text-anchor="middle" fill="#065f46" font-size="11" font-weight="700" font-family="Noto Sans KR, sans-serif">취향</text>
+          <text x="84" y="221" text-anchor="middle" fill="#065f46" font-size="11" font-weight="700" font-family="Noto Sans KR, sans-serif">프로필</text>
+        </g>
+        <g>
+          <circle cx="53" cy="106" r="27" fill="#ffffff" stroke="#6ee7c7" stroke-width="1.5"/>
+          <text x="53" y="110" text-anchor="middle" fill="#065f46" font-size="11" font-weight="700" font-family="Noto Sans KR, sans-serif">추천</text>
+        </g>
+
+        <text x="135" y="131" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="500" font-family="Noto Sans KR, sans-serif">스케줄러가</text>
+        <text x="135" y="145" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="500" font-family="Noto Sans KR, sans-serif">돌린다</text>
+      </svg>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

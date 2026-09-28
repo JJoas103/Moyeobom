@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Noto Sans KR", -apple-system, sans-serif; background: #f4f6f9; color: #1e293b; -webkit-font-smoothing: antialiased; }
+    a { color: #1d9e75; text-decoration: none; } a:hover { color: #16a34a; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; height: 900px; display: flex; flex-direction: column; background: #f4f6f9;">
+
+  <div style="display: flex; align-items: center; gap: 10px; padding: 12px 24px; background: #2563eb; flex-shrink: 0;">
+    <span style="font-size: 11px; font-weight: 700; color: #2563eb; background: #ffffff; padding: 3px 10px; border-radius: 100px;">오늘 제안</span>
+    <span style="font-size: 12.5px; font-weight: 500; color: #eff6ff;">&ldquo;그거 필터링이랑 뭐가 다르냐&rdquo;에 대한 답 &mdash; 걸러낸 목록이 아니라 <strong style="color: #ffffff;">점수로 매긴 순위</strong>이고, 왜 떴는지가 카드마다 붙습니다</span>
+  </div>
+
+  <nav style="background: #ffffff; border-bottom: 1px solid #e2e8f0; flex-shrink: 0;">
+    <div style="max-width: 1140px; margin: 0 auto; display: flex; align-items: center; height: 58px; padding: 0 12px;">
+      <span style="font-size: 20px; font-weight: 700; color: #1d9e75; margin-right: 30px;">🌿 모여봄</span>
+      <div style="display: flex; gap: 24px;">
+        <span style="font-size: 14px; font-weight: 500; color: #64748b;">지도 탐색</span>
+        <span style="font-size: 14px; font-weight: 500; color: #1d9e75;">행사 탐색</span>
+        <span style="font-size: 14px; font-weight: 500; color: #64748b;">모임 게시판</span>
+        <span style="font-size: 14px; font-weight: 500; color: #64748b;">실시간 제보</span>
+      </div>
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 16px;">
+        <span style="font-size: 14px; color: #64748b;">🌿 현우님</span>
+        <span style="font-size: 14px; color: #64748b;">로그아웃</span>
+      </div>
+    </div>
+  </nav>
+
+  <div style="flex-grow: 1; overflow: hidden; padding: 22px 0;">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 0 12px; display: flex; gap: 24px; align-items: flex-start;">
+
+      <div style="width: 740px; flex-shrink: 0;">
+
+        <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px;">
+          <span style="font-size: 22px; font-weight: 800; letter-spacing: -0.4px;">현우님에게 맞는 행사</span>
+          <span style="font-size: 12.5px; color: #94a3b8;">9월 11일 기준 &middot; 매주 월요일 새로 계산합니다</span>
+        </div>
+        <div style="font-size: 13px; color: #64748b; margin-bottom: 15px;">같은 화면이라도 사람마다 순서가 다릅니다.</div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+
+          <div style="background: #ffffff; border: 2px solid #1d9e75; border-radius: 12px; padding: 16px; display: flex; gap: 15px;">
+            <div style="width: 92px; height: 118px; border-radius: 9px; background: linear-gradient(145deg, #0f766e 0%, #1d9e75 60%, #6ee7c7 100%); flex-shrink: 0;"></div>
+            <div style="flex-grow: 1;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 10.5px; font-weight: 700; color: #065f46; background: #e6f9f4; padding: 3px 9px; border-radius: 100px;">전시</span>
+                <span style="font-size: 11.5px; color: #94a3b8;">성동구 &middot; 9.14 ~ 10.26</span>
+                <span style="margin-left: auto; font-size: 11.5px; font-weight: 700; color: #1d9e75;">추천 점수 87</span>
+              </div>
+              <div style="font-size: 17.5px; font-weight: 700; margin-top: 7px; letter-spacing: -0.2px;">빛과 물질 &mdash; 소재의 시간</div>
+              <div style="font-size: 12.5px; color: #64748b; margin-top: 3px;">성수동 어라운드랩</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px;">
+                <span style="font-size: 11.5px; font-weight: 600; color: #065f46; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 7px; padding: 5px 9px;">취향 &middot; 전시 고르셨어요</span>
+                <span style="font-size: 11.5px; font-weight: 600; color: #1e40af; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 7px; padding: 5px 9px;">이력 &middot; 지난 전시 모임에 만족</span>
+                <span style="font-size: 11.5px; font-weight: 600; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 7px; padding: 5px 9px;">동네 &middot; 성동구</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; display: flex; gap: 15px;">
+            <div style="width: 92px; height: 118px; border-radius: 9px; background: linear-gradient(145deg, #7c2d12 0%, #c2410c 60%, #fdba74 100%); flex-shrink: 0;"></div>
+            <div style="flex-grow: 1;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 10.5px; font-weight: 700; color: #9a3412; background: #ffedd5; padding: 3px 9px; border-radius: 100px;">연극</span>
+                <span style="font-size: 11.5px; color: #94a3b8;">종로구 &middot; 9.19 (금) 19:30</span>
+                <span style="margin-left: auto; font-size: 11.5px; font-weight: 700; color: #1d9e75;">추천 점수 81</span>
+              </div>
+              <div style="font-size: 17.5px; font-weight: 700; margin-top: 7px; letter-spacing: -0.2px;">밤의 끝에서</div>
+              <div style="font-size: 12.5px; color: #64748b; margin-top: 3px;">대학로 소극장 다온</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px;">
+                <span style="font-size: 11.5px; font-weight: 600; color: #065f46; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 7px; padding: 5px 9px;">취향 &middot; 연극 고르셨어요</span>
+                <span style="font-size: 11.5px; font-weight: 700; color: #7c3aed; background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 7px; padding: 5px 9px;">친구 &middot; 지수님이 참여 중</span>
+                <span style="font-size: 11.5px; font-weight: 600; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 7px; padding: 5px 9px;">시간 &middot; 평일 저녁</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; display: flex; gap: 15px;">
+            <div style="width: 92px; height: 118px; border-radius: 9px; background: linear-gradient(145deg, #1e3a8a 0%, #2563eb 60%, #bfdbfe 100%); flex-shrink: 0;"></div>
+            <div style="flex-grow: 1;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 10.5px; font-weight: 700; color: #1e40af; background: #eff6ff; padding: 3px 9px; border-radius: 100px;">클래식</span>
+                <span style="font-size: 11.5px; color: #94a3b8;">종로구 &middot; 9.21 (일) 17:00</span>
+                <span style="margin-left: auto; font-size: 11.5px; font-weight: 700; color: #1d9e75;">추천 점수 74</span>
+              </div>
+              <div style="font-size: 17.5px; font-weight: 700; margin-top: 7px; letter-spacing: -0.2px;">일요일 오후의 실내악</div>
+              <div style="font-size: 12.5px; color: #64748b; margin-top: 3px;">서촌 예술의 뜰</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px;">
+                <span style="font-size: 11.5px; font-weight: 600; color: #065f46; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 7px; padding: 5px 9px;">취향 &middot; 클래식 고르셨어요</span>
+                <span style="font-size: 11.5px; font-weight: 600; color: #64748b; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 7px; padding: 5px 9px;">시간 &middot; 주말 저녁</span>
+                <span style="font-size: 11.5px; font-weight: 600; color: #047857; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 7px; padding: 5px 9px;">여유 &middot; 서촌 일대 한산함</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="width: 352px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px;">
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 19px 20px;">
+          <div style="font-size: 14.5px; font-weight: 700;">이 순서는 어떻게 나왔나</div>
+          <div style="font-size: 12px; color: #94a3b8; margin-top: 4px; margin-bottom: 15px; line-height: 1.5;">여섯 가지에 가중치를 줘서 행사마다 점수를 냅니다. 서버가 계산합니다.</div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 4px;"><span style="font-weight: 600;">취향</span><span style="color: #94a3b8;">30</span></div>
+              <div style="height: 6px; border-radius: 100px; background: #f1f5f9;"><div style="width: 100%; height: 6px; border-radius: 100px; background: #1d9e75;"></div></div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 4px;"><span style="font-weight: 600;">지난 만족 이력</span><span style="color: #94a3b8;">25</span></div>
+              <div style="height: 6px; border-radius: 100px; background: #f1f5f9;"><div style="width: 83%; height: 6px; border-radius: 100px; background: #1d9e75;"></div></div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 4px;"><span style="font-weight: 600;">친구 참여</span><span style="color: #94a3b8;">20</span></div>
+              <div style="height: 6px; border-radius: 100px; background: #f1f5f9;"><div style="width: 67%; height: 6px; border-radius: 100px; background: #7c3aed;"></div></div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 4px;"><span style="font-weight: 600;">동네</span><span style="color: #94a3b8;">12</span></div>
+              <div style="height: 6px; border-radius: 100px; background: #f1f5f9;"><div style="width: 40%; height: 6px; border-radius: 100px; background: #cbd5e1;"></div></div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 4px;"><span style="font-weight: 600;">시간대</span><span style="color: #94a3b8;">8</span></div>
+              <div style="height: 6px; border-radius: 100px; background: #f1f5f9;"><div style="width: 27%; height: 6px; border-radius: 100px; background: #cbd5e1;"></div></div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 4px;"><span style="font-weight: 600;">혼잡도 여유</span><span style="color: #94a3b8;">5</span></div>
+              <div style="height: 6px; border-radius: 100px; background: #f1f5f9;"><div style="width: 17%; height: 6px; border-radius: 100px; background: #cbd5e1;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #fefce8; border: 1px solid #fde68a; border-radius: 12px; padding: 16px 18px;">
+          <div style="font-size: 13px; font-weight: 700; color: #854d0e;">처음 온 사람은요?</div>
+          <div style="font-size: 12.5px; color: #854d0e; margin-top: 5px; line-height: 1.6;">이력도 친구도 없으면 그 두 개를 <strong>0으로 두고</strong> 나머지만으로 다시 계산합니다. 빈 화면은 안 나옵니다.</div>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 18px;">
+          <div style="font-size: 13px; font-weight: 700; margin-bottom: 8px;">내 취향 프로필</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span style="font-size: 11.5px; font-weight: 600; color: #065f46; background: #e6f9f4; border-radius: 7px; padding: 5px 9px;">전시 2.8</span>
+            <span style="font-size: 11.5px; font-weight: 600; color: #065f46; background: #e6f9f4; border-radius: 7px; padding: 5px 9px;">연극 1.9</span>
+            <span style="font-size: 11.5px; font-weight: 600; color: #64748b; background: #f8fafc; border-radius: 7px; padding: 5px 9px;">클래식 0.9</span>
+          </div>
+          <div style="font-size: 11.5px; color: #94a3b8; margin-top: 9px; line-height: 1.5;">모임에 만족했다고 답할 때마다 그 장르가 올라갑니다.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

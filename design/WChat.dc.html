@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Noto Sans KR", -apple-system, sans-serif; background: #f4f6f9; color: #1e293b; -webkit-font-smoothing: antialiased; }
+    a { color: #1d9e75; text-decoration: none; } a:hover { color: #16a34a; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; height: 900px; display: flex; flex-direction: column; background: #f4f6f9;">
+
+  <div style="display: flex; align-items: center; gap: 10px; padding: 12px 24px; background: #2563eb; flex-shrink: 0;">
+    <span style="font-size: 11px; font-weight: 700; color: #2563eb; background: #ffffff; padding: 3px 10px; border-radius: 100px;">오늘 제안</span>
+    <span style="font-size: 12.5px; font-weight: 500; color: #eff6ff;">가장 논쟁적인 화면 &mdash; 카카오 오픈채팅은 <strong style="color: #ffffff;">모임 단체방</strong>, 이건 <strong style="color: #ffffff;">친구 간 1:1</strong>. 역할이 겹치는지 오늘 같이 판단해 주세요</span>
+  </div>
+
+  <nav style="background: #ffffff; border-bottom: 1px solid #e2e8f0; flex-shrink: 0;">
+    <div style="max-width: 1140px; margin: 0 auto; display: flex; align-items: center; height: 58px; padding: 0 12px;">
+      <span style="font-size: 20px; font-weight: 700; color: #1d9e75; margin-right: 30px;">🌿 모여봄</span>
+      <div style="display: flex; gap: 24px;">
+        <span style="font-size: 14px; font-weight: 500; color: #64748b;">지도 탐색</span>
+        <span style="font-size: 14px; font-weight: 500; color: #64748b;">행사 탐색</span>
+        <span style="font-size: 14px; font-weight: 500; color: #64748b;">모임 게시판</span>
+        <span style="font-size: 14px; font-weight: 500; color: #64748b;">실시간 제보</span>
+      </div>
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 16px;">
+        <span style="font-size: 14px; color: #64748b;">🌿 현우님</span>
+        <span style="font-size: 14px; color: #64748b;">로그아웃</span>
+      </div>
+    </div>
+  </nav>
+
+  <div style="flex-grow: 1; overflow: hidden; padding: 22px 0;">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 0 12px; display: flex; gap: 24px; align-items: flex-start;">
+
+      <div style="width: 740px; flex-shrink: 0; height: 736px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; display: flex;">
+
+        <div style="width: 246px; flex-shrink: 0; border-right: 1px solid #e2e8f0; display: flex; flex-direction: column;">
+          <div style="padding: 16px 16px 12px; border-bottom: 1px solid #e2e8f0;">
+            <div style="font-size: 15px; font-weight: 700;">대화</div>
+            <div style="font-size: 11.5px; color: #94a3b8; margin-top: 3px;">친구가 된 사람만 보입니다</div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 11px; padding: 13px 15px; background: #e6f9f4; border-left: 3px solid #1d9e75;">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: #ffffff; border: 1px solid #bfdbfe; display: flex; align-items: center; justify-content: center; font-size: 13.5px; font-weight: 700; color: #2563eb; flex-shrink: 0;">지</div>
+            <div style="flex-grow: 1; min-width: 0;">
+              <div style="font-size: 13.5px; font-weight: 700; color: #065f46;">지수</div>
+              <div style="font-size: 11.5px; color: #047857; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">좋아요, 같이 가요</div>
+            </div>
+            <span style="font-size: 10.5px; color: #94a3b8; flex-shrink: 0;">방금</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 11px; padding: 13px 15px; border-bottom: 1px solid #f1f5f9;">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: #fefce8; border: 1px solid #fde68a; display: flex; align-items: center; justify-content: center; font-size: 13.5px; font-weight: 700; color: #ca8a04; flex-shrink: 0;">민</div>
+            <div style="flex-grow: 1; min-width: 0;">
+              <div style="font-size: 13.5px; font-weight: 600;">민재</div>
+              <div style="font-size: 11.5px; color: #94a3b8; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">그 소극장 의자가 좀 불편하더라고요</div>
+            </div>
+            <span style="font-size: 10.5px; color: #cbd5e1; flex-shrink: 0;">3주 전</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 11px; padding: 13px 15px;">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: #f5f3ff; border: 1px solid #ddd6fe; display: flex; align-items: center; justify-content: center; font-size: 13.5px; font-weight: 700; color: #7c3aed; flex-shrink: 0;">하</div>
+            <div style="flex-grow: 1; min-width: 0;">
+              <div style="font-size: 13.5px; font-weight: 600;">하윤</div>
+              <div style="font-size: 11.5px; color: #94a3b8; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">재즈 페스티벌 잘 들어갔어요?</div>
+            </div>
+            <span style="font-size: 10.5px; color: #cbd5e1; flex-shrink: 0;">2개월</span>
+          </div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column;">
+
+          <div style="display: flex; align-items: center; gap: 11px; padding: 13px 18px; border-bottom: 1px solid #e2e8f0; flex-shrink: 0;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; background: #eff6ff; border: 1px solid #bfdbfe; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #2563eb;">지</div>
+            <div style="flex-grow: 1;">
+              <div style="font-size: 14.5px; font-weight: 700;">지수</div>
+              <div style="font-size: 11.5px; color: #94a3b8; margin-top: 1px;">매너 점수 64 &middot; 같이 본 행사 1개</div>
+            </div>
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9l-8 13.9A2 2 0 004 20.8h16a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+          </div>
+
+          <div style="flex-grow: 1; overflow: hidden; padding: 18px; display: flex; flex-direction: column; gap: 12px; background: #f8fafc;">
+
+            <div style="display: flex; justify-content: center;">
+              <span style="font-size: 11.5px; font-weight: 600; color: #065f46; background: #e6f9f4; border: 1px solid #6ee7c7; border-radius: 100px; padding: 6px 15px;">9월 11일 &middot; 빛과 물질 모임에서 친구가 되었습니다</span>
+            </div>
+
+            <div style="display: flex; gap: 9px; align-items: flex-end;">
+              <div style="width: 30px; height: 30px; border-radius: 50%; background: #eff6ff; border: 1px solid #bfdbfe; display: flex; align-items: center; justify-content: center; font-size: 11.5px; font-weight: 700; color: #2563eb; flex-shrink: 0;">지</div>
+              <div style="max-width: 320px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 4px 13px 13px 13px; padding: 11px 14px;">
+                <div style="font-size: 13.5px; line-height: 1.6;">어제 전시 좋았어요. 2층 그 방 오래 보시더라고요</div>
+              </div>
+              <span style="font-size: 10.5px; color: #cbd5e1; flex-shrink: 0;">21:04</span>
+            </div>
+
+            <div style="display: flex; gap: 9px; align-items: flex-end; justify-content: flex-end;">
+              <span style="font-size: 10.5px; color: #cbd5e1; flex-shrink: 0;">21:06</span>
+              <div style="max-width: 320px; background: #1d9e75; border-radius: 13px 4px 13px 13px; padding: 11px 14px;">
+                <div style="font-size: 13.5px; line-height: 1.6; color: #ffffff;">저도요. 사람 빠지고 나서 한참 앉아 있었어요</div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 9px; align-items: flex-end;">
+              <div style="width: 30px; height: 30px; border-radius: 50%; background: #eff6ff; border: 1px solid #bfdbfe; display: flex; align-items: center; justify-content: center; font-size: 11.5px; font-weight: 700; color: #2563eb; flex-shrink: 0;">지</div>
+              <div style="max-width: 320px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 4px 13px 13px 13px; padding: 11px 14px;">
+                <div style="font-size: 13.5px; line-height: 1.6;">다음 주 대학로 연극도 추천에 떴던데 가세요?</div>
+              </div>
+              <span style="font-size: 10.5px; color: #cbd5e1; flex-shrink: 0;">21:08</span>
+            </div>
+
+            <div style="display: flex; gap: 9px; align-items: flex-end; justify-content: flex-end;">
+              <span style="font-size: 10.5px; color: #cbd5e1; flex-shrink: 0;">21:09</span>
+              <div style="width: 300px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 13px 4px 13px 13px; padding: 11px; display: flex; gap: 11px;">
+                <div style="width: 46px; height: 58px; border-radius: 7px; background: linear-gradient(145deg, #7c2d12, #c2410c 60%, #fdba74); flex-shrink: 0;"></div>
+                <div style="flex-grow: 1; min-width: 0;">
+                  <div style="font-size: 10px; font-weight: 700; color: #9a3412; background: #ffedd5; padding: 2px 7px; border-radius: 100px; display: inline-block;">연극</div>
+                  <div style="font-size: 13px; font-weight: 700; margin-top: 4px;">밤의 끝에서</div>
+                  <div style="font-size: 11px; color: #94a3b8; margin-top: 2px;">9.19 (금) 19:30 &middot; 대학로</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 9px; align-items: flex-end; justify-content: flex-end;">
+              <span style="font-size: 10.5px; color: #cbd5e1; flex-shrink: 0;">21:09</span>
+              <div style="max-width: 320px; background: #1d9e75; border-radius: 13px 4px 13px 13px; padding: 11px 14px;">
+                <div style="font-size: 13.5px; line-height: 1.6; color: #ffffff;">이거요. 같이 가실래요?</div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 9px; align-items: flex-end;">
+              <div style="width: 30px; height: 30px; border-radius: 50%; background: #eff6ff; border: 1px solid #bfdbfe; display: flex; align-items: center; justify-content: center; font-size: 11.5px; font-weight: 700; color: #2563eb; flex-shrink: 0;">지</div>
+              <div style="max-width: 320px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 4px 13px 13px 13px; padding: 11px 14px;">
+                <div style="font-size: 13.5px; line-height: 1.6;">좋아요, 같이 가요</div>
+              </div>
+              <span style="font-size: 10.5px; color: #cbd5e1; flex-shrink: 0;">21:11</span>
+            </div>
+
+          </div>
+
+          <div style="flex-shrink: 0; padding: 13px 18px; border-top: 1px solid #e2e8f0; display: flex; align-items: center; gap: 10px;">
+            <div style="flex-grow: 1; border: 1px solid #e2e8f0; border-radius: 100px; padding: 11px 17px; font-size: 13px; color: #cbd5e1;">메시지를 입력하세요</div>
+            <button style="width: 42px; height: 42px; border-radius: 50%; background: #1d9e75; border: none; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="width: 352px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px;">
+
+        <div style="background: #fefce8; border: 1px solid #fde68a; border-radius: 12px; padding: 19px 20px;">
+          <div style="font-size: 14.5px; font-weight: 700; color: #854d0e;">&ldquo;카톡 두고 왜 이걸 쓰나&rdquo;</div>
+          <div style="font-size: 12.5px; color: #854d0e; margin-top: 8px; line-height: 1.7;">팀원이 가장 먼저 물어볼 질문입니다. 준비한 답은 하나뿐입니다 &mdash; <strong>친구가 되기 전엔 번호도 카톡도 주고 싶지 않다.</strong></div>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 19px 20px;">
+          <div style="font-size: 14px; font-weight: 700; margin-bottom: 13px;">역할을 이렇게 나눕니다</div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 12px 13px;">
+              <div style="font-size: 12.5px; font-weight: 700; color: #64748b;">카카오 오픈채팅</div>
+              <div style="font-size: 12px; color: #94a3b8; margin-top: 5px; line-height: 1.55;">모임 단체방. 당일 약속 잡고 끝나면 흩어집니다.</div>
+            </div>
+            <div style="border: 2px solid #1d9e75; background: #f0fdf4; border-radius: 10px; padding: 12px 13px;">
+              <div style="font-size: 12.5px; font-weight: 700; color: #065f46;">모여봄 1:1</div>
+              <div style="font-size: 12px; color: #065f46; margin-top: 5px; line-height: 1.55;">친구가 된 뒤의 대화. 다음 행사를 같이 갈지 정하는 자리입니다.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 19px 20px;">
+          <div style="font-size: 14px; font-weight: 700; margin-bottom: 11px;">안전장치</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; gap: 9px; align-items: flex-start;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><path d="M12 2l8 4v6c0 5-3.4 8.9-8 10-4.6-1.1-8-5-8-10V6l8-4z"/></svg>
+              <span style="font-size: 12.5px; color: #64748b; line-height: 1.55;">번호·카톡 아이디를 주고받지 않습니다</span>
+            </div>
+            <div style="display: flex; gap: 9px; align-items: flex-start;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><path d="M10.3 3.9l-8 13.9A2 2 0 004 20.8h16a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+              <span style="font-size: 12.5px; color: #64748b; line-height: 1.55;">신고하면 대화가 근거로 남고 매너 점수가 깎입니다</span>
+            </div>
+            <div style="display: flex; gap: 9px; align-items: flex-start;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              <span style="font-size: 12.5px; color: #64748b; line-height: 1.55;">친구를 끊으면 방도 같이 닫힙니다</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 18px;">
+          <div style="font-size: 13px; font-weight: 700; margin-bottom: 6px;">만드는 비용</div>
+          <div style="font-size: 12px; color: #64748b; line-height: 1.7;">Socket.IO는 이미 돌고 있고 개인 방 구조도 있습니다. 새로 만드는 건 <strong style="color: #1e293b;">메시지를 DB에 쌓는 부분</strong>입니다.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

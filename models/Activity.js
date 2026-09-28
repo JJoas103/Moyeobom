@@ -8,7 +8,7 @@ const activitySchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ['meeting_join', 'meeting_create', 'visit_verify', 'feed_write', 'favorite_add', 'like_received', 'comment_write'],
+        enum: ['meeting_join', 'meeting_create', 'visit_verify', 'feed_write', 'favorite_add', 'like_received', 'comment_write', 'review_submit', 'friend_matched'],
         required: true
     },
     message: {

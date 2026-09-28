@@ -12,7 +12,7 @@
 <main class="container my-5 text-center">
     <h1 class="display-1 fw-bold text-warning">400</h1>
     <h2 class="mb-4">잘못된 요청입니다</h2>
-    <p class="lead mb-5 text-muted">입력하신 정보를 다시 확인해 주세요.</p>
+    <p class="lead mb-5 text-muted"><%= (typeof message !== 'undefined' && message) ? message : '입력하신 정보를 다시 확인해 주세요.' %></p>
     <a href="/" class="btn btn-brand btn-lg">홈으로 돌아가기</a>
 </main>
 <%- include('../partials/footer') %>

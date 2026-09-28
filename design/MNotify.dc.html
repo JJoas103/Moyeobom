@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Noto Sans KR", -apple-system, sans-serif; background: #f4f6f9; color: #1e293b; -webkit-font-smoothing: antialiased; }
+    a { color: #1d9e75; } a:hover { color: #16a34a; }
+  </style>
+</helmet>
+
+<div style="width: 390px; height: 896px; display: flex; flex-direction: column; background: #f4f6f9;">
+
+  <div style="display: flex; align-items: center; gap: 8px; padding: 13px 16px; background: #2563eb; flex-shrink: 0;">
+    <span style="font-size: 10.5px; font-weight: 700; color: #2563eb; background: #ffffff; padding: 3px 9px; border-radius: 100px; white-space: nowrap;">스케줄러</span>
+    <span style="font-size: 11.5px; font-weight: 500; color: #dbeafe; line-height: 1.35;">서버가 먼저 말을 건다 &mdash; &ldquo;백엔드가 없다&rdquo;에 대한 답</span>
+  </div>
+
+  <div style="flex-grow: 1; overflow: hidden; display: flex; flex-direction: column;">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: #ffffff; border-bottom: 1px solid #e2e8f0; flex-shrink: 0;">
+      <span style="font-size: 15px; font-weight: 700;">알림</span>
+      <span style="font-size: 12px; color: #64748b;">모두 읽음</span>
+    </div>
+
+    <div style="flex-grow: 1; overflow: hidden; padding: 14px 16px; display: flex; flex-direction: column; gap: 11px;">
+
+      <div style="font-size: 11px; font-weight: 700; color: #94a3b8; letter-spacing: 0.3px;">오늘</div>
+
+      <div style="background: #ffffff; border: 2px solid #1d9e75; border-radius: 13px; padding: 15px; box-shadow: 0 3px 12px rgba(29,158,117,0.13);">
+        <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 10px;">
+          <div style="width: 24px; height: 24px; border-radius: 7px; background: #1d9e75; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <span style="font-size: 12.5px; font-weight: 700;">모여봄</span>
+          <span style="font-size: 10.5px; color: #94a3b8;">오전 9:00</span>
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: #1d9e75; margin-left: auto;"></span>
+        </div>
+
+        <div style="font-size: 14.5px; font-weight: 700; line-height: 1.45; margin-bottom: 6px;">어제 본 &lsquo;사물의 재구성&rsquo;,<br>한 줄 남겨보실래요?</div>
+        <div style="font-size: 12px; color: #64748b; line-height: 1.55;">기억이 남아 있을 때 적어두면 나중에 내 기록이 됩니다. 지수님, 민재님도 아직 안 남겼어요.</div>
+
+        <div style="display: flex; gap: 8px; margin-top: 13px;">
+          <button style="flex-grow: 1; padding: 11px; background: #1d9e75; color: #ffffff; border: none; border-radius: 9px; font-size: 13px; font-weight: 700; font-family: inherit; min-height: 44px;">한 줄 남기기</button>
+          <button style="padding: 11px 15px; background: #ffffff; color: #64748b; border: 1px solid #e2e8f0; border-radius: 9px; font-size: 13px; font-weight: 600; font-family: inherit; min-height: 44px;">나중에</button>
+        </div>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 11px 13px;">
+        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 5px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span style="font-size: 11px; font-weight: 700; color: #475569;">이 알림은 사람이 보내지 않습니다</span>
+        </div>
+        <div style="font-size: 11px; color: #64748b; line-height: 1.55;">모임 종료 스케줄러가 지난 모임을 <strong style="color:#334155;">completed</strong>로 바꾸면서 참여자 전원에게 자동 발송</div>
+      </div>
+
+      <div style="font-size: 11px; font-weight: 700; color: #94a3b8; letter-spacing: 0.3px; margin-top: 4px;">어제</div>
+
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 13px;">
+        <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 7px;">
+          <div style="width: 22px; height: 22px; border-radius: 6px; background: #eff6ff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3L4.9 4.9M19.1 19.1l-1.4-1.4M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <span style="font-size: 12px; font-weight: 600; color: #64748b;">오늘의 모임 브리핑</span>
+          <span style="font-size: 10.5px; color: #94a3b8;">오전 8:00</span>
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.55; color: #334155;">오늘 저녁 7시 모임이 있어요. 서소문 일대 <strong>맑음 24&deg;C</strong>, 지금 혼잡도는 <strong style="color:#16a34a;">여유</strong>입니다.</div>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 13px;">
+        <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 7px;">
+          <div style="width: 22px; height: 22px; border-radius: 6px; background: #fefce8; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 8l7-5 7 5"/></svg>
+          </div>
+          <span style="font-size: 12px; font-weight: 600; color: #64748b;">찜한 행사 마감 임박</span>
+          <span style="font-size: 10.5px; color: #94a3b8;">오후 6:00</span>
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.55; color: #334155;">&lsquo;서울숲 재즈 페스티벌&rsquo;이 <strong>3일 뒤</strong> 종료됩니다. 아직 안 다녀오셨어요.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

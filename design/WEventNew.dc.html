@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Noto Sans KR", -apple-system, sans-serif; background: #f4f6f9; color: #1e293b; -webkit-font-smoothing: antialiased; }
+    a { color: #1d9e75; text-decoration: none; } a:hover { color: #16a34a; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; height: 900px; display: flex; flex-direction: column; background: #f4f6f9;">
+
+  <div style="display: flex; align-items: center; gap: 10px; padding: 12px 24px; background: #1e293b; flex-shrink: 0;">
+    <span style="font-size: 11px; font-weight: 700; color: #ffffff; background: #1d9e75; padding: 3px 10px; border-radius: 100px;">신규 화면</span>
+    <span style="font-size: 12.5px; font-weight: 500; color: #cbd5e1;">&ldquo;초기에 모임이 하나도 없으면요?&rdquo;에 대한 답 &mdash; 모임이 0개여도 행사 목록은 처음부터 꽉 차 있다</span>
+  </div>
+
+  <nav style="background: #ffffff; border-bottom: 1px solid #e2e8f0; flex-shrink: 0;">
+    <div style="max-width: 1140px; margin: 0 auto; display: flex; align-items: center; height: 58px; padding: 0 12px;">
+      <span style="font-size: 20px; font-weight: 700; color: #1d9e75; margin-right: 30px;">🌿 모여봄</span>
+      <div style="display: flex; gap: 24px;">
+        <span style="font-size: 14px; font-weight: 500; color: #64748b;">지도 탐색</span>
+        <span style="font-size: 14px; font-weight: 500; color: #1d9e75;">행사 탐색</span>
+        <span style="font-size: 14px; font-weight: 500; color: #64748b;">모임 게시판</span>
+        <span style="font-size: 14px; font-weight: 500; color: #64748b;">실시간 제보</span>
+      </div>
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 16px;">
+        <span style="font-size: 14px; color: #64748b;">🌿 현우님</span>
+        <span style="font-size: 14px; color: #64748b;">로그아웃</span>
+      </div>
+    </div>
+  </nav>
+
+  <div style="flex-grow: 1; overflow: hidden; padding: 22px 0;">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 0 12px;">
+
+      <div style="font-size: 12.5px; color: #94a3b8; margin-bottom: 14px;">행사 탐색 &nbsp;&rsaquo;&nbsp; 전시 &nbsp;&rsaquo;&nbsp; <span style="color: #64748b;">사물의 재구성</span></div>
+
+      <div style="display: flex; gap: 24px; align-items: flex-start;">
+
+        <div style="width: 740px; flex-shrink: 0; display: flex; flex-direction: column; gap: 16px;">
+
+          <div style="height: 216px; border-radius: 12px; background: linear-gradient(120deg, #0f766e 0%, #1d9e75 55%, #6ee7c7 100%); position: relative; display: flex; align-items: flex-end; padding: 24px;">
+            <span style="position: absolute; top: 18px; left: 24px; font-size: 11px; font-weight: 700; color: #065f46; background: rgba(255,255,255,0.94); padding: 5px 12px; border-radius: 100px;">전시</span>
+            <span style="position: absolute; top: 18px; right: 24px; font-size: 11px; font-weight: 600; color: #ffffff; background: rgba(0,0,0,0.22); padding: 5px 12px; border-radius: 100px;">서울시 문화행사 API &middot; 오늘 수집됨</span>
+            <div style="color: #ffffff;">
+              <div style="font-size: 30px; font-weight: 800; letter-spacing: -0.6px;">사물의 재구성</div>
+              <div style="font-size: 14px; font-weight: 500; opacity: 0.92; margin-top: 7px;">서울시립미술관 서소문본관 &middot; 2026.09.01 &ndash; 11.30 &middot; 무료</div>
+            </div>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 20px; display: flex; gap: 34px;">
+            <div>
+              <div style="font-size: 11.5px; color: #94a3b8; margin-bottom: 5px;">기간</div>
+              <div style="font-size: 13.5px; font-weight: 500;">2026.09.01 &ndash; 11.30</div>
+            </div>
+            <div>
+              <div style="font-size: 11.5px; color: #94a3b8; margin-bottom: 5px;">장소</div>
+              <div style="font-size: 13.5px; font-weight: 500;">중구 덕수궁길 61</div>
+            </div>
+            <div>
+              <div style="font-size: 11.5px; color: #94a3b8; margin-bottom: 5px;">관람료</div>
+              <div style="font-size: 13.5px; font-weight: 500;">무료</div>
+            </div>
+            <div>
+              <div style="font-size: 11.5px; color: #94a3b8; margin-bottom: 5px;">평균 관람 시간</div>
+              <div style="font-size: 13.5px; font-weight: 500; color: #94a3b8;">기록이 쌓이면 표시</div>
+            </div>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+              <span style="font-size: 16px; font-weight: 700;">이 행사를 본 사람들</span>
+              <span style="font-size: 14px; font-weight: 700; color: #cbd5e1;">0</span>
+            </div>
+            <div style="border: 1px dashed #e2e8f0; border-radius: 12px; padding: 40px 20px; text-align: center; background: #f8fafc;">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 12px;"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              <div style="font-size: 14px; font-weight: 600; color: #64748b;">아직 남겨진 감상이 없어요</div>
+              <div style="font-size: 12.5px; color: #94a3b8; margin-top: 6px; line-height: 1.6;">보고 나서 한 줄 남기면 이 자리에 쌓입니다.<br>다음에 이 전시를 고르는 사람이 보게 됩니다.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="width: 352px; flex-shrink: 0; display: flex; flex-direction: column; gap: 16px;">
+
+          <div style="background: #e6f9f4; border: 1px solid #6ee7c7; border-radius: 12px; padding: 20px;">
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+              <span style="font-size: 15px; font-weight: 700; color: #065f46;">같이 갈 모임</span>
+              <span style="font-size: 14px; font-weight: 700; color: #6ee7c7;">0</span>
+            </div>
+            <div style="font-size: 13px; color: #047857; line-height: 1.65; margin-bottom: 16px;">아직 이 행사에 모임이 없습니다.<br>첫 모임을 열면 같이 갈 사람을 찾을 수 있어요.</div>
+            <button style="width: 100%; padding: 13px; background: #1d9e75; color: #ffffff; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; font-family: inherit;">이 행사 첫 모임 만들기</button>
+            <div style="margin-top: 13px; padding-top: 13px; border-top: 1px solid #6ee7c7; font-size: 12px; color: #047857; line-height: 1.6;">
+              제목 &middot; 날짜 &middot; 장소 &middot; 좌표 &middot; 포스터가<br>이미 채워진 상태로 열립니다
+            </div>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 20px;">
+            <div style="font-size: 14px; font-weight: 700; margin-bottom: 4px;">언제 가면 한산할까</div>
+            <div style="font-size: 11.5px; color: #94a3b8; margin-bottom: 14px;">서울시 실시간 도시데이터 기준</div>
+            <div style="display: flex; flex-direction: column; gap: 9px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 12px; color: #64748b; width: 62px;">토 오후</span>
+                <div style="flex-grow: 1; height: 7px; background: #fef2f2; border-radius: 100px; overflow: hidden;"><div style="width: 88%; height: 100%; background: #dc2626;"></div></div>
+                <span style="font-size: 11px; font-weight: 600; color: #dc2626; width: 30px;">붐빔</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 12px; color: #64748b; width: 62px;">일 오전</span>
+                <div style="flex-grow: 1; height: 7px; background: #fefce8; border-radius: 100px; overflow: hidden;"><div style="width: 55%; height: 100%; background: #ca8a04;"></div></div>
+                <span style="font-size: 11px; font-weight: 600; color: #ca8a04; width: 30px;">보통</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 12px; color: #1e293b; width: 62px; font-weight: 600;">목 저녁</span>
+                <div style="flex-grow: 1; height: 7px; background: #f0fdf4; border-radius: 100px; overflow: hidden;"><div style="width: 22%; height: 100%; background: #16a34a;"></div></div>
+                <span style="font-size: 11px; font-weight: 700; color: #16a34a; width: 30px;">여유</span>
+              </div>
+            </div>
+            <div style="margin-top: 13px; font-size: 11.5px; color: #64748b; background: #f8fafc; border-radius: 8px; padding: 10px 12px; line-height: 1.55;">혼자 조용히 보고 싶다면 <strong style="color:#16a34a;">목요일 저녁</strong>을 추천해요</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
