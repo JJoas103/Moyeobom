@@ -1,7 +1,10 @@
 // 행사 필터.
 //
-// 선택값은 컴포넌트 state가 아니라 URL 쿼리에 싣는다 (meeting/List.jsx 와 같은 방식).
-// 새로고침·뒤로가기가 동작하고, 필터가 걸린 목록을 그대로 공유할 수 있어야 하기 때문이다.
+// 선택값은 컴포넌트 state 가 아니라 URL 쿼리에 싣는다. 새로고침·뒤로가기가 동작하고,
+// 필터가 걸린 목록을 그대로 공유할 수 있어야 하기 때문이다.
+//
+// 버튼 무리를 늘어놓지 않는다. 카테고리는 밑줄 탭, 나머지는 밑줄만 있는 셀렉트로 둬서
+// 필터가 목록보다 시각적으로 앞서지 않게 한다.
 
 import { EVENT_AREAS, EVENT_CATEGORIES } from '../../data/mock/events'
 
@@ -14,13 +17,13 @@ const PERIODS = [
 
 function EventFilterBar({ category, area, period, onChange }) {
   return (
-    <div className="d-flex flex-column gap-2">
-      {/* 카테고리는 가장 많이 쓰는 축이라 토글 버튼으로 바로 보이게 둔다.
-          좁은 화면에서는 줄바꿈 대신 가로 스크롤이 낫다 — 버튼이 3줄로 쌓이면 화면을 다 먹는다 */}
-      <div className="filter-scroll d-flex gap-2 pb-1">
+    <div>
+      <div className="mv-tabs" role="tablist" aria-label="행사 분류">
         <button
           type="button"
-          className={`btn btn-sm flex-shrink-0 ${!category ? 'btn-brand' : 'btn-outline-brand'}`}
+          role="tab"
+          className="mv-tab"
+          aria-current={!category}
           onClick={() => onChange({ category: '' })}
         >
           전체
@@ -29,7 +32,9 @@ function EventFilterBar({ category, area, period, onChange }) {
           <button
             key={c}
             type="button"
-            className={`btn btn-sm flex-shrink-0 ${category === c ? 'btn-brand' : 'btn-outline-brand'}`}
+            role="tab"
+            className="mv-tab"
+            aria-current={category === c}
             onClick={() => onChange({ category: category === c ? '' : c })}
           >
             {c}
@@ -37,11 +42,9 @@ function EventFilterBar({ category, area, period, onChange }) {
         ))}
       </div>
 
-      {/* 지역·기간은 선택지가 많아 드롭다운으로 접어 둔다 */}
-      <div className="d-flex gap-2">
+      <div className="d-flex gap-4 mt-3">
         <select
-          className="form-select form-select-sm"
-          style={{ maxWidth: 160 }}
+          className="mv-select"
           value={area || ''}
           onChange={(e) => onChange({ area: e.target.value })}
           aria-label="지역 선택"
@@ -55,8 +58,7 @@ function EventFilterBar({ category, area, period, onChange }) {
         </select>
 
         <select
-          className="form-select form-select-sm"
-          style={{ maxWidth: 160 }}
+          className="mv-select"
           value={period || ''}
           onChange={(e) => onChange({ period: e.target.value })}
           aria-label="기간 선택"

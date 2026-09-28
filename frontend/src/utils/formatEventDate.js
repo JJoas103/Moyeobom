@@ -3,24 +3,43 @@
 // 모임(formatMeetingDate)은 "언제 만나나"라 시각이 중요하지만, 행사는 기간이 중요하다.
 // 전시처럼 두 달 열리는 것과 하루짜리 공연을 같은 형식으로 쓰면 둘 다 읽기 나빠진다.
 
-const pad = (n) => String(n).padStart(2, '0')
-const md = (d) => `${d.getMonth() + 1}.${d.getDate()}`
-const ymd = (d) => `${d.getFullYear()}.${pad(d.getMonth() + 1)}.${pad(d.getDate())}`
+const DAYS = ['일', '월', '화', '수', '목', '금', '토']
 
-/** "9.14 ~ 10.26" / "9.19 (금) 19:30" */
+const pad = (n) => String(n).padStart(2, '0')
+const md = (d) => `${pad(d.getMonth() + 1)}.${pad(d.getDate())}`
+const ymd = (d) => `${d.getFullYear()}.${pad(d.getMonth() + 1)}.${pad(d.getDate())}`
+const hm = (d) => `${pad(d.getHours())}:${pad(d.getMinutes())}`
+const hasTime = (d) => d.getHours() !== 0 || d.getMinutes() !== 0
+
+/**
+ * 목록 왼쪽 날짜 열에 쓰는 두 줄.
+ * 기간 행사는 시작일 + "— 종료일", 하루짜리는 날짜 + 요일·시각.
+ * 두 줄로 나눠야 자리가 고정돼 목록에서 세로로 줄이 선다.
+ * @returns {{day: string, sub: string}}
+ */
+export function formatEventDateLines(startAt, endAt) {
+  if (!startAt) return { day: '', sub: '' }
+  const start = new Date(startAt)
+  const end = endAt ? new Date(endAt) : null
+
+  if (!end || start.toDateString() === end.toDateString()) {
+    // 서울 API 는 공연 시각을 따로 주지 않아 대부분 00:00 으로 들어온다.
+    // 자정을 "00:00" 이라고 적으면 새벽에 하는 행사처럼 읽히므로 요일만 쓴다.
+    return { day: md(start), sub: hasTime(start) ? `${DAYS[start.getDay()]} ${hm(start)}` : DAYS[start.getDay()] }
+  }
+  return { day: md(start), sub: `— ${md(end)}` }
+}
+
+/** "09.14 — 10.26" / "10.01 (수) 19:30" — 한 줄로 쓸 때 */
 export function formatEventPeriod(startAt, endAt) {
   if (!startAt) return ''
   const start = new Date(startAt)
   const end = endAt ? new Date(endAt) : null
 
-  const sameDay = end && start.toDateString() === end.toDateString()
-  if (!end || sameDay) {
-    const dayNames = ['일', '월', '화', '수', '목', '금', '토']
-    const time = start.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', hour12: false })
-    return `${md(start)} (${dayNames[start.getDay()]}) ${time}`
+  if (!end || start.toDateString() === end.toDateString()) {
+    return `${md(start)} (${DAYS[start.getDay()]})${hasTime(start) ? ` ${hm(start)}` : ''}`
   }
-
-  return `${md(start)} ~ ${md(end)}`
+  return `${md(start)} — ${md(end)}`
 }
 
 /** 상세 화면용 — 연도까지 */
@@ -28,12 +47,14 @@ export function formatEventPeriodFull(startAt, endAt) {
   if (!startAt) return ''
   const start = new Date(startAt)
   const end = endAt ? new Date(endAt) : null
-  if (!end || start.toDateString() === end.toDateString()) return ymd(start)
-  return `${ymd(start)} – ${ymd(end)}`
+  if (!end || start.toDateString() === end.toDateString()) {
+    return `${ymd(start)} (${DAYS[start.getDay()]})${hasTime(start) ? ` ${hm(start)}` : ''}`
+  }
+  return `${ymd(start)} — ${ymd(end)}`
 }
 
 /**
- * 지금 이 행사가 어떤 상태인지. 카드 구석의 작은 뱃지에 쓴다.
+ * 지금 이 행사가 어떤 상태인지.
  * @returns {{tone: 'now'|'soon'|'later'|'ended', label: string} | null}
  */
 export function eventTimingBadge(startAt, endAt) {
@@ -48,7 +69,7 @@ export function eventTimingBadge(startAt, endAt) {
   const daysToEnd = Math.ceil((end - now) / DAY)
 
   if (start <= now) {
-    // 이미 시작해서 진행 중. 곧 끝나는 건 따로 알려 준다.
+    // 이미 시작해서 진행 중. 곧 끝나는 건 따로 알려 준다
     if (daysToEnd <= 7) return { tone: 'soon', label: `${daysToEnd}일 남음` }
     return { tone: 'now', label: '진행 중' }
   }
@@ -57,5 +78,23 @@ export function eventTimingBadge(startAt, endAt) {
   if (daysToStart === 0) return { tone: 'now', label: '오늘' }
   if (daysToStart === 1) return { tone: 'soon', label: '내일' }
   if (daysToStart <= 7) return { tone: 'soon', label: `${daysToStart}일 뒤` }
-  return { tone: 'later', label: `${md(start)} 시작` }
+  return { tone: 'later', label: '예정' }
+}
+
+/** 마스트헤드에 쓰는 오늘 날짜 — "9월 28일 일요일" */
+export function todayLabel() {
+  const d = new Date()
+  return `${d.getMonth() + 1}월 ${d.getDate()}일 ${DAYS[d.getDay()]}요일`
+}
+
+/**
+ * 모임 날짜의 두 줄. 행사(formatEventDateLines)와 같은 MM.DD 형식으로 맞춘다.
+ * 목록에서 행사 행과 모임 행이 섞여 나오는데 한쪽만 "수요일"이면 세로줄이 어긋난다.
+ * 모임은 만나는 시각이 핵심이라 둘째 줄에 요일과 시각을 같이 둔다.
+ * @returns {{day: string, sub: string}}
+ */
+export function formatMeetingDateLines(date) {
+  if (!date) return { day: '', sub: '' }
+  const d = new Date(date)
+  return { day: md(d), sub: `${DAYS[d.getDay()]} ${hm(d)}` }
 }

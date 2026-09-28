@@ -6,7 +6,7 @@ function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <main className="container my-4">{children}</main>
+      <main className="mv-page">{children}</main>
       <Footer />
     </>
   )

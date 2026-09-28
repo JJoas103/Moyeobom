@@ -1,20 +1,26 @@
 // 홈.
 //
-// 첫 화면에서 서비스 정의를 먼저 준다 — "이 서비스가 뭔지 모르는 채로 들었다"는 지적이
-// 교수님 피드백 [2]였다. 배경 설명은 그 다음이다.
+// 히어로 문구를 걸지 않는다. 서비스 설명은 한 번 읽으면 그만이고, 매번 화면 위쪽을
+// 차지하면 정작 볼 것(오늘 열려 있는 행사)이 아래로 밀린다.
+// 대신 날짜 마스트헤드로 지금 상태를 알려주고 바로 추천으로 들어간다.
 //
-// 그 아래는 추천이다. 같은 화면을 열어도 사람마다 목록이 다르고, 카드마다 왜 떴는지가
-// 붙는다. 목록만 예쁘게 뿌리면 "목록이냐 지도냐는 표시 방법 차이"라는 지적이 반복된다.
+// 추천은 첫 항목만 크게 펼친다. 넷을 같은 크기로 늘어놓으면 순위가 있다는 게 안 보인다.
 
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import EventCard from '../components/event/EventCard'
-import GatheringCard from '../components/meeting/GatheringCard'
+import Masthead from '../components/common/Masthead'
+import SectionHead from '../components/common/SectionHead'
 import EmptyState from '../components/common/EmptyState'
+import Poster from '../components/common/Poster'
+import Status from '../components/common/Status'
+import EventRow from '../components/event/EventRow'
+import ReasonLine from '../components/event/ReasonLine'
+import MeetingRow from '../components/meeting/MeetingRow'
 import { fetchRecommendedEvents } from '../data/events'
 import { fetchMeetings } from '../data/meetings'
 import { ME } from '../data/me'
 import { useAuth } from '../context/AuthContext'
+import { eventTimingBadge, formatEventPeriod, todayLabel } from '../utils/formatEventDate'
 
 function Home() {
   const { user } = useAuth()
@@ -23,19 +29,20 @@ function Home() {
   const [recommended, setRecommended] = useState([])
   const [isColdStart, setColdStart] = useState(false)
   const [upcoming, setUpcoming] = useState([])
+  const [openCount, setOpenCount] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   useEffect(() => {
     let cancelled = false
 
-    Promise.all([fetchRecommendedEvents({ limit: 4 }), fetchMeetings({ status: 'recruit' })])
+    Promise.all([fetchRecommendedEvents({ limit: 5 }), fetchMeetings({ status: 'recruit' })])
       .then(([rec, meet]) => {
         if (cancelled) return
         setRecommended(rec.items)
         setColdStart(rec.isColdStart)
-        // 여러 행사에 걸친 모임을 시간순으로 펴서 앞의 세 개만 보여준다
-        setUpcoming(meet.groups.flatMap((g) => g.meetings).slice(0, 3))
+        setOpenCount(rec.totalOpenEvents ?? null)
+        setUpcoming(meet.groups.flatMap((g) => g.meetings).slice(0, 4))
       })
       .catch((err) => {
         if (!cancelled) setError(err.message)
@@ -49,126 +56,127 @@ function Home() {
     }
   }, [])
 
+  const [lead, ...rest] = recommended
+
   return (
     <div>
-      {/* ── 서비스 정의 ── */}
-      <section className="hero p-4 p-lg-5 mb-4">
-        <div className="row align-items-center g-3">
-          <div className="col-lg-8">
-            <h1 className="h3 h1-lg mb-3">게시판은 글이 남고, 모여봄은 약속이 남습니다</h1>
-            <p className="lead mb-3" style={{ color: 'var(--ink-sub)' }}>
-              같은 행사를 본 사람과, 여운이 식기 전에, 한 번 모입니다.
-            </p>
-            <div className="d-flex flex-wrap gap-2">
-              <span className="chip chip-brand">행사 단위</span>
-              <span className="chip chip-brand">관람 직후</span>
-              <span className="chip chip-brand">일회성</span>
-            </div>
-          </div>
-          <div className="col-lg-4 d-none d-lg-block text-center">
-            <div style={{ fontSize: 88 }} aria-hidden="true">
-              🎟️
-            </div>
-          </div>
-        </div>
-      </section>
+      <Masthead
+        title="오늘, 서울"
+        aside={
+          openCount === null
+            ? todayLabel()
+            : `${todayLabel()} · 열려 있는 행사 ${openCount}`
+        }
+      />
 
-      {error && <div className="alert alert-warning">{error}</div>}
+      {error && (
+        <p className="mv-note mv-note--dim mv-meta mb-4">{error}</p>
+      )}
 
       {/* ── 추천 ── */}
-      <section className="mb-5">
-        <div className="d-flex justify-content-between align-items-end mb-1 flex-wrap gap-2">
-          <h2 className="h5 mb-0">{displayName}님에게 맞는 행사</h2>
-          <Link to="/event" className="small text-decoration-none" style={{ color: 'var(--brand)' }}>
-            행사 전체 보기 →
-          </Link>
-        </div>
-        <p className="small text-muted mb-3">
-          같은 화면이라도 사람마다 순서가 다릅니다. 카드에 왜 떴는지를 함께 표시합니다.
-        </p>
+      <section className="mv-section">
+        <SectionHead
+          label={`${displayName}님에게 맞는 행사`}
+          action={
+            <Link to="/event" className="mv-link mv-micro">
+              행사 전체
+            </Link>
+          }
+          note="같은 화면이라도 사람마다 순서가 다릅니다. 왜 떴는지를 항목마다 함께 적었습니다."
+        />
 
         {isColdStart && (
-          <div className="alert alert-light border small mb-3">
-            아직 참여 이력이 없어 <strong>이력·친구 가중치를 빼고</strong> 취향·지역·시간만으로 계산했습니다.
-          </div>
+          <p className="mv-note mv-note--accent mv-meta my-3">
+            아직 참여 이력이 없어 이력·친구 가중치를 빼고 취향·지역·시간만으로 계산했습니다.
+          </p>
         )}
 
         {loading ? (
-          <div className="row g-3">
-            {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="col-6 col-lg-3">
-                <div className="card h-100 skeleton-card" />
-              </div>
-            ))}
-          </div>
+          <div className="mv-skeleton mt-3" style={{ height: 290 }} />
         ) : recommended.length === 0 ? (
           <EmptyState
-            emoji="🧭"
             title="아직 추천할 행사가 없습니다"
-            description={'취향을 알려주시면 첫날부터 순서를 매겨 보여드립니다.'}
+            description="취향을 알려주시면 첫날부터 순서를 매겨 보여드립니다."
             action={
-              <Link to="/event" className="btn btn-brand">
+              <Link to="/event" className="mv-btn">
                 행사 둘러보기
               </Link>
             }
           />
         ) : (
-          <div className="row g-3">
-            {recommended.map((item) => (
-              <div key={item.event._id} className="col-6 col-lg-3">
-                <EventCard event={item.event} reasons={item.reasons} score={item.score} />
+          <>
+            {/* 1위는 포스터를 크게 펼친다 — 순위가 있다는 걸 레이아웃으로 말한다 */}
+            <Link to={`/event/${lead.event._id}`} className="mv-feature">
+              <Poster src={lead.event.posterUrl} category={lead.event.category} alt={lead.event.title} />
+              <div>
+                <p className="mv-meta mv-dotsep mb-0">
+                  <span className="mv-tag">{lead.event.category}</span>
+                  {eventTimingBadge(lead.event.startAt, lead.event.endAt) && (
+                    <Status>{eventTimingBadge(lead.event.startAt, lead.event.endAt).label}</Status>
+                  )}
+                </p>
+                <h3 className="mv-feature__title">{lead.event.title}</h3>
+                <p className="mv-meta mv-dotsep mb-3">
+                  <span className="mv-num">{formatEventPeriod(lead.event.startAt, lead.event.endAt)}</span>
+                  <span>{lead.event.venue}</span>
+                  <span>{lead.event.area}</span>
+                </p>
+                <ReasonLine reasons={lead.reasons} max={4} />
+                <p className="mv-meta mv-dotsep mt-3 mb-0">
+                  <span className="mv-num">모임 {lead.openMeetingCount}</span>
+                  <span className="mv-num">감상 {lead.event.impressionCount ?? 0}</span>
+                </p>
               </div>
-            ))}
-          </div>
+            </Link>
+
+            <ul className="mv-list">
+              {rest.map((item) => (
+                <EventRow key={item.event._id} event={item.event} reasons={item.reasons} />
+              ))}
+            </ul>
+          </>
         )}
       </section>
 
       {/* ── 곧 열리는 모임 ── */}
-      <section className="mb-5">
-        <div className="d-flex justify-content-between align-items-end mb-3 flex-wrap gap-2">
-          <h2 className="h5 mb-0">곧 열리는 모임</h2>
-          <Link to="/meeting" className="small text-decoration-none" style={{ color: 'var(--brand)' }}>
-            모임 전체 보기 →
-          </Link>
-        </div>
+      <section className="mv-section">
+        <SectionHead
+          label="곧 열리는 모임"
+          action={
+            <Link to="/meeting" className="mv-link mv-micro">
+              모임 전체
+            </Link>
+          }
+        />
 
         {loading ? (
-          <div className="row g-3">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="col-12 col-lg-4">
-                <div className="card h-100 skeleton-card" style={{ minHeight: 170 }} />
-              </div>
-            ))}
-          </div>
+          <div className="mv-skeleton mt-3" style={{ height: 180 }} />
         ) : upcoming.length === 0 ? (
           <EmptyState
-            emoji="🤝"
             title="열려 있는 모임이 없습니다"
-            description={'행사를 고르고 첫 모임을 만들어 보세요.'}
+            description="행사를 고르면 거기서 첫 모임을 만들 수 있습니다."
             action={
-              <Link to="/event" className="btn btn-brand">
+              <Link to="/event" className="mv-btn">
                 행사 고르기
               </Link>
             }
           />
         ) : (
-          <div className="row g-3">
+          <ul className="mv-list">
             {upcoming.map((meeting) => (
-              <div key={meeting._id} className="col-12 col-lg-4">
-                <GatheringCard meeting={meeting} showEvent />
-              </div>
+              <MeetingRow key={meeting._id} meeting={meeting} showEvent />
             ))}
-          </div>
+          </ul>
         )}
       </section>
 
       {/* ── 한 바퀴 ── */}
-      <section className="card p-4 mb-2">
-        <h2 className="h6 mb-3">모여봄은 한 바퀴를 돕니다</h2>
-        <ol className="loop-steps mb-0">
+      <section className="mv-section">
+        <SectionHead label="모여봄은 한 바퀴를 돕니다" />
+        <ol className="mv-steps mt-2">
           <li>
             <strong>행사를 고른다</strong>
-            <span>제목·날짜·장소가 이미 채워져 있습니다</span>
+            <span>제목 · 날짜 · 장소가 이미 채워져 있습니다</span>
           </li>
           <li>
             <strong>관람하고 모인다</strong>

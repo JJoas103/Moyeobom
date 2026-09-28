@@ -1,0 +1,734 @@
+@charset "UTF-8";
+
+/* ═══════════════════════════════════════════════════════════════
+   모여봄 — 전시 도록 스타일
+   ═══════════════════════════════════════════════════════════════
+
+   행사 기반 화면이 쓰는 스타일. 이전 기획 화면(/member/* 등)이 index.css 의
+   Bootstrap 기반 룩을 그대로 쓰고 있으므로 그쪽은 건드리지 않고 여기에 따로 짠다.
+   클래스는 전부 mv- 로 시작한다.
+
+   원칙
+     · 카드와 그림자 대신 괘선으로 나눈다
+     · 위계는 크기가 아니라 무게·자간·여백으로 만든다
+     · 색은 거의 쓰지 않는다. 초록은 상태와 링크에만. 장식으로 쓰지 않는다
+     · 날짜는 tabular-nums 로 자리를 맞춘다 — 세로로 줄이 서야 도록처럼 읽힌다
+     · 이모지를 아이콘으로 쓰지 않는다
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --paper: #fbfaf8; /* 종이 — 차가운 회색 대신 따뜻한 흰색 */
+  --paper-2: #f4f2ed; /* 한 단 가라앉은 면 */
+  --ink: #17150f; /* 본문 */
+  --ink-sub: #6b665c; /* 보조 */
+  --ink-dim: #a39d92; /* 레이블·메타 */
+  --rule: #e5e0d7; /* 괘선 */
+  --rule-strong: #cfc8bb;
+  --accent: #1d9e75; /* 상태·링크·활성. 그 외에는 쓰지 않는다 */
+  --accent-soft: #eaf6f1;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+/* 본문 폭. 도록은 글줄이 너무 길면 읽히지 않는다 */
+.mv-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.mv-page--wide {
+  max-width: 1120px;
+}
+
+/* ───────────────────────── 타이포 ───────────────────────── */
+
+.mv-display {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
+  margin: 0;
+}
+.mv-title {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.3;
+  margin: 0;
+}
+/* 섹션 머리 — 크게 만들지 않는다. 작고 자간 넓은 레이블이 도록의 문법이다 */
+.mv-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--ink-dim);
+  margin: 0;
+}
+.mv-lead {
+  font-size: 16px;
+  color: var(--ink-sub);
+  line-height: 1.75;
+  margin: 0;
+}
+.mv-meta {
+  font-size: 13px;
+  color: var(--ink-sub);
+  line-height: 1.6;
+}
+/* 서울 API 의 요금 문구는 "VIP석 300,000원 R석 110,000원 S석 99,000원" 처럼 길다.
+   목록에서는 한 줄로 자른다. */
+.mv-meta--oneline {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.mv-micro {
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+}
+.mv-num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.mv-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+.mv-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ───────────────────────── 마스트헤드 ───────────────────────── */
+
+.mv-masthead {
+  padding: 40px 0 16px;
+  border-bottom: 1px solid var(--ink);
+  margin-bottom: 28px;
+}
+.mv-masthead__line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ───────────────────────── 섹션 ───────────────────────── */
+
+.mv-section {
+  margin-bottom: 56px;
+}
+.mv-section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule-strong);
+  margin-bottom: 4px;
+}
+.mv-section__note {
+  font-size: 13px;
+  color: var(--ink-sub);
+  margin: 12px 0 0;
+}
+
+/* ───────────────────────── 목록 행 ─────────────────────────
+   날짜 | 본문 | 포스터. 도록의 기본 단위다. */
+
+.mv-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mv-row {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) 68px;
+  gap: 24px;
+  align-items: start;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+  color: inherit;
+  text-decoration: none;
+}
+a.mv-row:hover {
+  color: inherit;
+}
+a.mv-row:hover .mv-row__title {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+.mv-row__date {
+  font-variant-numeric: tabular-nums;
+  line-height: 1.35;
+}
+.mv-row__day {
+  font-size: 21px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  display: block;
+}
+.mv-row__sub {
+  font-size: 12px;
+  color: var(--ink-dim);
+  display: block;
+}
+.mv-row__title {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+  margin: 0 0 4px;
+}
+.mv-row__poster {
+  width: 68px;
+}
+
+@media (max-width: 639.98px) {
+  .mv-row {
+    grid-template-columns: minmax(0, 1fr) 56px;
+    gap: 14px;
+    padding: 18px 0;
+  }
+  /* 좁으면 날짜를 본문 위로 올린다. 3단을 억지로 유지하면 제목이 두 글자씩 끊긴다 */
+  .mv-row__date {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .mv-row__day {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .mv-row__poster {
+    width: 56px;
+  }
+}
+
+/* ───────────────────────── 피처 (홈 첫 추천) ───────────────────────── */
+
+.mv-feature {
+  display: grid;
+  grid-template-columns: 196px minmax(0, 1fr);
+  gap: 32px;
+  /* start 가 없으면 grid 기본값 stretch 라 포스터가 오른쪽 글 높이만큼 늘어나
+     2:3 비율이 깨진다 */
+  align-items: start;
+  padding: 26px 0 30px;
+  border-bottom: 1px solid var(--rule);
+  color: inherit;
+  text-decoration: none;
+}
+a.mv-feature:hover .mv-feature__title {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.mv-feature__title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.3;
+  margin: 8px 0 6px;
+}
+@media (max-width: 639.98px) {
+  .mv-feature {
+    grid-template-columns: 116px minmax(0, 1fr);
+    gap: 18px;
+  }
+  .mv-feature__title {
+    font-size: 19px;
+  }
+}
+
+/* ───────────────────────── 포스터 ─────────────────────────
+   공연·전시 포스터는 2:3 이다. 4:3 으로 담으면 위아래가 잘린다. */
+
+.mv-poster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--paper-2);
+}
+.mv-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* 이미지가 없을 때 — 이모지 대신 카테고리 약자를 면에 앉힌다 */
+.mv-poster {
+  container-type: inline-size;
+}
+.mv-poster__fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6%;
+  text-align: center;
+  /* 34px 썸네일부터 196px 피처까지 같은 컴포넌트를 쓴다.
+     고정 크기로 두면 작은 쪽에서 글자가 끊긴다. */
+  font-size: clamp(9px, 17cqw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.92);
+  word-break: keep-all;
+}
+
+/* ───────────────────────── 상태 ─────────────────────────
+   색 칩을 쓰지 않는다. 점 하나와 글자로 표시한다. */
+
+.mv-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+/* 점을 가상 요소로 두면 부모 .mv-dotsep 의 구분점(::before)과 충돌한다.
+   실제 요소로 둬야 둘이 같이 쓰인다. */
+.mv-status__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+.mv-status--open {
+  color: var(--accent);
+}
+.mv-status--full,
+.mv-status--done {
+  color: var(--ink-dim);
+}
+
+/* 카테고리·지역 같은 분류 표시 — 테두리 없이 글자만 */
+.mv-tag {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--ink-sub);
+}
+.mv-dotsep > * + *::before {
+  content: "·";
+  margin: 0 7px;
+  color: var(--ink-dim);
+}
+
+/* ───────────────────────── 추천 근거 ─────────────────────────
+   "결국 필터링 아니냐"에 대한 답. 칩으로 알록달록하게 만들면 장식으로 읽히므로
+   한 줄 텍스트로 두되, 근거의 종류를 작은 레이블로 앞세운다. */
+
+.mv-reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 12.5px;
+  color: var(--ink-sub);
+}
+.mv-reason__kind {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+/* ───────────────────────── 버튼 ─────────────────────────
+   주 동작은 먹색이다. 초록을 버튼에까지 쓰면 화면이 초록으로 덮인다. */
+
+.mv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding: 10px 20px;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.12s ease;
+}
+.mv-btn:hover {
+  color: var(--paper);
+  opacity: 0.84;
+}
+.mv-btn:disabled,
+.mv-btn.is-disabled {
+  background: var(--paper-2);
+  border-color: var(--rule);
+  color: var(--ink-dim);
+  cursor: not-allowed;
+  opacity: 1;
+}
+.mv-btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--rule-strong);
+}
+.mv-btn--ghost:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+  opacity: 1;
+}
+.mv-btn--sm {
+  font-size: 13px;
+  padding: 7px 14px;
+}
+.mv-btn--block {
+  width: 100%;
+}
+
+/* ───────────────────────── 탭 · 필터 ───────────────────────── */
+
+.mv-tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid var(--rule);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.mv-tabs::-webkit-scrollbar {
+  display: none;
+}
+.mv-tab {
+  flex-shrink: 0;
+  padding: 10px 0;
+  margin-bottom: -1px;
+  border: 0;
+  border-bottom: 1.5px solid transparent;
+  background: none;
+  color: var(--ink-sub);
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.mv-tab:hover {
+  color: var(--ink);
+}
+.mv-tab[aria-current="true"] {
+  color: var(--ink);
+  font-weight: 600;
+  border-bottom-color: var(--ink);
+}
+
+.mv-select {
+  font-size: 13px;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule-strong);
+  padding: 4px 18px 4px 2px;
+  border-radius: 0;
+  cursor: pointer;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-sub) 50%),
+    linear-gradient(135deg, var(--ink-sub) 50%, transparent 50%);
+  background-position:
+    right 6px top 12px,
+    right 2px top 12px;
+  background-size: 4px 4px;
+  background-repeat: no-repeat;
+}
+.mv-select:focus {
+  outline: none;
+  border-bottom-color: var(--ink);
+}
+
+/* ───────────────────────── 검색 ───────────────────────── */
+
+.mv-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 8px;
+}
+.mv-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  padding: 2px 0;
+}
+.mv-search input:focus {
+  outline: none;
+}
+.mv-search input::placeholder {
+  color: var(--ink-dim);
+}
+
+/* ───────────────────────── 폼 ───────────────────────── */
+
+.mv-field {
+  margin-bottom: 22px;
+}
+.mv-field > label {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--ink-dim);
+  margin-bottom: 7px;
+}
+.mv-input,
+.mv-textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--rule-strong);
+  background: transparent;
+  font: inherit;
+  font-size: 16px;
+  padding: 6px 0;
+  border-radius: 0;
+}
+.mv-textarea {
+  border: 1px solid var(--rule-strong);
+  padding: 10px 12px;
+  resize: vertical;
+}
+.mv-input:focus,
+.mv-textarea:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+.mv-help {
+  font-size: 12px;
+  color: var(--ink-dim);
+  margin-top: 6px;
+}
+
+/* ───────────────────────── 정의 목록 ─────────────────────────
+   상세 화면의 기간·장소·요금. 레이블을 작게, 값은 본문 크기로. */
+
+.mv-dl {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 8px 16px;
+  margin: 0;
+  font-size: 14px;
+}
+.mv-dl dt {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--ink-dim);
+  padding-top: 3px;
+}
+.mv-dl dd {
+  margin: 0;
+  min-width: 0;
+  word-break: break-word;
+}
+
+/* ───────────────────────── 강조 상자 ─────────────────────────
+   면을 채우지 않고 왼쪽에 선 하나만 세운다. */
+
+.mv-note {
+  border-left: 2px solid var(--ink);
+  padding: 2px 0 2px 16px;
+}
+.mv-note--accent {
+  border-left-color: var(--accent);
+}
+.mv-note--dim {
+  border-left-color: var(--rule-strong);
+}
+
+/* ───────────────────────── 빈 상태 ───────────────────────── */
+
+.mv-empty {
+  padding: 48px 0 52px;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+}
+.mv-empty__title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+}
+.mv-empty__desc {
+  font-size: 13.5px;
+  color: var(--ink-sub);
+  white-space: pre-line;
+  margin: 0 0 18px;
+}
+
+/* ───────────────────────── 선택 목록 (2차 장소) ───────────────────────── */
+
+.mv-pick {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  width: 100%;
+  text-align: left;
+  padding: 13px 0;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+.mv-pick:hover:not(:disabled) {
+  color: var(--accent);
+}
+.mv-pick:disabled {
+  cursor: default;
+  color: inherit;
+  opacity: 1;
+}
+.mv-pick__name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* ───────────────────────── 번호 목록 (루프 안내) ───────────────────────── */
+
+.mv-steps {
+  list-style: none;
+  counter-reset: step;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+.mv-steps li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.mv-steps li::before {
+  content: counter(step, decimal-leading-zero);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  color: var(--ink-dim);
+  padding-top: 2px;
+}
+.mv-steps strong {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.mv-steps span {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-sub);
+}
+
+/* ───────────────────────── 네비 · 푸터 ───────────────────────── */
+
+.mv-nav {
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+.mv-nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 58px;
+}
+.mv-nav__brand {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.mv-nav__links {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.mv-nav__links::-webkit-scrollbar {
+  display: none;
+}
+.mv-nav__link {
+  font-size: 14px;
+  color: var(--ink-sub);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 2px 0;
+  border-bottom: 1.5px solid transparent;
+}
+.mv-nav__link:hover {
+  color: var(--ink);
+}
+.mv-nav__link[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 600;
+  border-bottom-color: var(--ink);
+}
+.mv-nav__right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.mv-footer {
+  border-top: 1px solid var(--rule);
+  margin-top: 72px;
+  padding: 28px 0 40px;
+  font-size: 12.5px;
+  color: var(--ink-dim);
+}
+
+/* ───────────────────────── 로딩 자리 ───────────────────────── */
+
+.mv-skeleton {
+  background: var(--paper-2);
+  animation: mv-pulse 1.5s ease-in-out infinite;
+}
+@keyframes mv-pulse {
+  50% {
+    opacity: 0.55;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mv-skeleton {
+    animation: none;
+  }
+}
+
+/* 좁은 칸에서 말줄임이 동작하려면 min-width 가 필요하다 */
+.mv-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}

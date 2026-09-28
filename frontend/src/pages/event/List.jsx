@@ -1,12 +1,14 @@
 // 행사 탐색.
 //
-// 필터 상태는 URL 쿼리에 둔다 — meeting/List.jsx 가 쓰던 useSearchParams 패턴과 같다.
-// 목록 자체는 어느 서비스나 비슷하므로, 여기서 승부를 보려 하지 않는다.
 // 이 화면의 일은 "고르게 하는 것"이고, 고른 다음 화면(행사 상세)이 진짜다.
+// 그래서 여기서 화려하게 만들지 않는다 — 도록 목차처럼 훑고 지나가게 둔다.
+//
+// 필터 상태는 URL 쿼리에 둔다. 새로고침·뒤로가기가 동작해야 한다.
 
 import { useEffect, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import EventCard from '../../components/event/EventCard'
+import Masthead from '../../components/common/Masthead'
+import EventRow from '../../components/event/EventRow'
 import EventFilterBar from '../../components/event/EventFilterBar'
 import EmptyState from '../../components/common/EmptyState'
 import { fetchEvents } from '../../data/events'
@@ -37,9 +39,7 @@ function List() {
   // 타이핑을 멈추고 0.3초가 지나면 keyword 쿼리에 반영
   useEffect(() => {
     if (keywordInput === keyword) return
-    debounceRef.current = setTimeout(() => {
-      updateParams({ keyword: keywordInput })
-    }, 300)
+    debounceRef.current = setTimeout(() => updateParams({ keyword: keywordInput }), 300)
     return () => clearTimeout(debounceRef.current)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [keywordInput])
@@ -108,7 +108,7 @@ function List() {
           setPage((prev) => prev + 1)
         }
       },
-      { rootMargin: '300px' },
+      { rootMargin: '400px' },
     )
     observer.observe(sentinel)
     return () => observer.disconnect()
@@ -129,67 +129,38 @@ function List() {
 
   return (
     <div>
-      <section className="hero p-4 mb-4">
-        <h1 className="h4 mb-2">행사 탐색</h1>
-        <p className="mb-0 small" style={{ color: 'var(--ink-sub)' }}>
-          서울시 문화행사를 매일 받아옵니다. 마음에 드는 행사를 고르면 거기서 모임이 시작됩니다.
-        </p>
-      </section>
+      <Masthead title="행사" aside={loading ? '' : `${totalCount}건`} />
 
-      <form
-        className="mb-3"
-        onSubmit={(e) => {
-          e.preventDefault()
-          updateParams({ keyword: keywordInput })
-        }}
-      >
-        <div className="input-group input-group-lg">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="🔍 행사명 · 장소 · 지역 검색"
-            value={keywordInput}
-            onChange={(e) => setKeywordInput(e.target.value)}
-          />
-          <button type="submit" className="btn btn-brand">
-            검색
-          </button>
-        </div>
-      </form>
-
-      <div className="mb-3">
-        <EventFilterBar category={category} area={area} period={period} onChange={updateParams} />
-      </div>
-
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <span className="small text-muted">
-          {loading ? '불러오는 중...' : `${totalCount}개의 행사`}
-        </span>
+      <div className="mv-search mb-4">
+        <input
+          type="text"
+          placeholder="행사명 · 장소 · 지역"
+          value={keywordInput}
+          onChange={(e) => setKeywordInput(e.target.value)}
+          aria-label="행사 검색"
+        />
         {hasFilter && (
-          <button type="button" className="btn btn-sm btn-link text-muted text-decoration-none" onClick={() => setSearchParams({})}>
-            필터 초기화
+          <button type="button" className="mv-micro" style={{ border: 0, background: 'none', color: 'var(--ink-dim)' }} onClick={() => setSearchParams({})}>
+            초기화
           </button>
         )}
       </div>
 
-      {error && <div className="alert alert-warning">{error}</div>}
+      <div className="mb-4">
+        <EventFilterBar category={category} area={area} period={period} onChange={updateParams} />
+      </div>
+
+      {error && <p className="mv-note mv-note--dim mv-meta mb-4">{error}</p>}
 
       {loading ? (
-        <div className="row g-3">
-          {[0, 1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="col-6 col-lg-4 col-xl-3">
-              <div className="card h-100 skeleton-card" />
-            </div>
-          ))}
-        </div>
+        <div className="mv-skeleton" style={{ height: 420 }} />
       ) : events.length === 0 ? (
         <EmptyState
-          emoji="🔍"
           title="조건에 맞는 행사가 없습니다"
-          description={'필터를 줄이거나 다른 검색어로 찾아보세요.'}
+          description="필터를 줄이거나 다른 검색어로 찾아보세요."
           action={
             hasFilter && (
-              <button type="button" className="btn btn-outline-brand" onClick={() => setSearchParams({})}>
+              <button type="button" className="mv-btn mv-btn--ghost" onClick={() => setSearchParams({})}>
                 필터 초기화
               </button>
             )
@@ -197,16 +168,16 @@ function List() {
         />
       ) : (
         <>
-          <div className="row g-3">
+          <ul className="mv-list">
             {events.map((event) => (
-              <div key={event._id} className="col-6 col-lg-4 col-xl-3">
-                <EventCard event={event} />
-              </div>
+              <EventRow key={event._id} event={event} />
             ))}
-          </div>
+          </ul>
 
-          {loadingMore && <div className="text-center text-muted py-4">더 불러오는 중...</div>}
-          {!loadingMore && !hasMore && <div className="text-center text-muted small py-4">모든 행사를 확인했습니다.</div>}
+          {loadingMore && <p className="mv-micro text-center py-4 mb-0">더 불러오는 중</p>}
+          {!loadingMore && !hasMore && (
+            <p className="mv-micro text-center py-4 mb-0">모든 행사를 확인했습니다</p>
+          )}
           {hasMore && <div ref={sentinelRef} style={{ height: 1 }} />}
         </>
       )}

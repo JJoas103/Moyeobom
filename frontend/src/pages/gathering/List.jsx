@@ -6,7 +6,8 @@
 
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import GatheringCard from '../../components/meeting/GatheringCard'
+import Masthead from '../../components/common/Masthead'
+import MeetingRow from '../../components/meeting/MeetingRow'
 import EmptyState from '../../components/common/EmptyState'
 import Poster from '../../components/common/Poster'
 import { fetchMeetings } from '../../data/meetings'
@@ -68,118 +69,88 @@ function List() {
 
   return (
     <div>
-      <section className="hero p-4 mb-4">
-        <h1 className="h4 mb-2">모임</h1>
-        <p className="mb-0 small" style={{ color: 'var(--ink-sub)' }}>
-          행사별로 묶여 있습니다. 같은 걸 보러 가는 사람끼리 한 곳에 모입니다.
-        </p>
-      </section>
+      <Masthead
+        title="모임"
+        aside={loading ? '' : `행사 ${groups.length} · 모임 ${totalCount}`}
+      />
 
-      <form
-        className="mb-3"
-        onSubmit={(e) => {
-          e.preventDefault()
-          updateParams({ keyword: keywordInput })
-        }}
-      >
-        <div className="input-group">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="🔍 모임 제목 · 행사명 · 지역 검색"
-            value={keywordInput}
-            onChange={(e) => setKeywordInput(e.target.value)}
-          />
-          <button type="submit" className="btn btn-brand">
-            검색
-          </button>
-        </div>
-      </form>
+      <div className="mv-search mb-4">
+        <input
+          type="text"
+          placeholder="모임 제목 · 행사명 · 지역"
+          value={keywordInput}
+          onChange={(e) => setKeywordInput(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && updateParams({ keyword: keywordInput })}
+          aria-label="모임 검색"
+        />
+      </div>
 
-      <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
-        <div className="d-flex gap-2 flex-wrap">
+      <div className="d-flex justify-content-between align-items-center gap-3 mb-4 flex-wrap">
+        <div className="mv-tabs" style={{ flex: '1 1 260px' }}>
           {STATUS_FILTERS.map((f) => (
             <button
               key={f.value}
               type="button"
-              className={`btn btn-sm ${status === f.value ? 'btn-brand' : 'btn-outline-brand'}`}
+              className="mv-tab"
+              aria-current={status === f.value}
               onClick={() => updateParams({ status: f.value })}
             >
               {f.label}
             </button>
           ))}
         </div>
-        <Link to="/event" className="btn btn-sm btn-brand">
-          + 행사 고르고 모임 만들기
+        <Link to="/event" className="mv-btn mv-btn--sm">
+          행사 고르고 모임 만들기
         </Link>
       </div>
 
-      {error && <div className="alert alert-warning">{error}</div>}
+      {error && <p className="mv-note mv-note--dim mv-meta mb-4">{error}</p>}
 
       {loading ? (
-        <div className="text-center text-muted py-5">불러오는 중...</div>
+        <div className="mv-skeleton" style={{ height: 380 }} />
       ) : groups.length === 0 ? (
         <EmptyState
-          emoji="🤝"
           title="조건에 맞는 모임이 없습니다"
-          description={'행사를 먼저 고르면 거기서 모임을 열 수 있습니다.'}
+          description="행사를 먼저 고르면 거기서 모임을 열 수 있습니다."
           action={
-            <Link to="/event" className="btn btn-brand">
+            <Link to="/event" className="mv-btn">
               행사 둘러보기
             </Link>
           }
         />
       ) : (
-        <>
-          <p className="small text-muted mb-3">
-            행사 {groups.length}개 · 모임 {totalCount}개
-          </p>
-
-          <div className="d-flex flex-column gap-4">
-            {groups.map((group) => (
-              <section key={group.event?._id || 'none'} className="event-group">
-                {group.event && (
-                  <Link
-                    to={`/event/${group.event._id}`}
-                    className="event-group-head text-decoration-none text-dark"
-                  >
-                    <div className="event-group-thumb">
-                      <Poster
-                        src={group.event.posterUrl}
-                        category={group.event.category}
-                        alt={group.event.title}
-                        ratio="1 / 1"
-                        rounded="all"
-                      />
-                    </div>
-                    <div className="flex-grow-1 min-width-0">
-                      <div className="small" style={{ color: 'var(--brand)' }}>
-                        {group.event.category}
-                      </div>
-                      <div className="fw-semibold text-truncate">{group.event.title}</div>
-                      <div className="small text-muted text-truncate">
-                        {formatEventPeriod(group.event.startAt, group.event.endAt)} · {group.event.venue}
-                      </div>
-                    </div>
-                    <span className="chip chip-brand flex-shrink-0">모임 {group.meetings.length}</span>
-                  </Link>
-                )}
-
-                {/* 행사 아래에 모임을 한 칸 들여 쌓는다. 들여쓰기가 없으면 행사 머리글과
-                    모임 카드가 같은 높이로 나열돼 묶여 있다는 게 안 읽힌다. */}
-                <div className="event-group-body">
-                  <div className="row g-3">
-                    {group.meetings.map((meeting) => (
-                      <div key={meeting._id} className="col-12 col-xl-6">
-                        <GatheringCard meeting={meeting} />
-                      </div>
-                    ))}
+        <div>
+          {groups.map((group) => (
+            <section key={group.event?._id || 'none'} className="mb-5">
+              {group.event && (
+                <Link
+                  to={`/event/${group.event._id}`}
+                  className="d-flex align-items-center gap-3 pb-2 mb-1 text-decoration-none"
+                  style={{ borderBottom: '1px solid var(--ink)', color: 'inherit' }}
+                >
+                  <div style={{ width: 34, flexShrink: 0 }}>
+                    <Poster src={group.event.posterUrl} category={group.event.category} alt="" />
                   </div>
-                </div>
-              </section>
-            ))}
-          </div>
-        </>
+                  <div className="mv-truncate flex-grow-1">
+                    <p className="mv-micro mb-0">{group.event.category}</p>
+                    <p className="mb-0 mv-truncate" style={{ fontWeight: 600, letterSpacing: '-0.025em' }}>
+                      {group.event.title}
+                    </p>
+                  </div>
+                  <span className="mv-micro mv-num flex-shrink-0">
+                    {formatEventPeriod(group.event.startAt, group.event.endAt)}
+                  </span>
+                </Link>
+              )}
+
+              <ul className="mv-list">
+                {group.meetings.map((meeting) => (
+                  <MeetingRow key={meeting._id} meeting={meeting} />
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
       )}
     </div>
   )

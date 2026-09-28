@@ -1,66 +1,45 @@
 // 행사 포스터.
 //
-// 서울 문화행사 API의 MAIN_IMG는 비어 있는 경우가 많고, 외부 이미지 서버가 죽으면
-// 카드가 통째로 깨진다. 그래서 이미지가 없거나 로드에 실패하면 카테고리별 색과
-// 이모지로 대체한다. 목록 어디에도 빈 네모가 남지 않게 하기 위한 것이다.
+// 서울 문화행사 API의 MAIN_IMG 는 있는 행사도 있고 없는 행사도 있다. 외부 도메인
+// (culture.seoul.go.kr)에서 직접 받아오므로 느리거나 죽는 경우도 생긴다.
+// 그때 빈 네모를 남기지 않도록 카테고리 색면 + 약자로 대체한다. 이모지는 쓰지 않는다.
+//
+// 비율은 2:3 이다. 공연·전시 포스터가 실제로 그 비율이라, 4:3 에 담으면 위아래가 잘린다.
 
 import { useState } from 'react'
 
+// 색은 카테고리를 구분하는 최소한으로만 쓴다. 채도를 낮춰 포스터가 옆에 있어도 튀지 않게.
 const BY_CATEGORY = {
-  '전시/미술': { emoji: '🖼️', from: '#0f766e', to: '#34d399' },
-  연극: { emoji: '🎭', from: '#9a3412', to: '#fb923c' },
-  '뮤지컬/오페라': { emoji: '🎼', from: '#701a75', to: '#e879f9' },
-  클래식: { emoji: '🎻', from: '#1e3a8a', to: '#60a5fa' },
-  국악: { emoji: '🪕', from: '#713f12', to: '#facc15' },
-  무용: { emoji: '🩰', from: '#831843', to: '#f472b6' },
-  콘서트: { emoji: '🎤', from: '#4c1d95', to: '#a78bfa' },
-  영화: { emoji: '🎬', from: '#0c4a6e', to: '#38bdf8' },
-  '축제-문화/예술': { emoji: '🎪', from: '#065f46', to: '#6ee7b7' },
-  '축제-전통/역사': { emoji: '🏯', from: '#78350f', to: '#fbbf24' },
-  '교육/체험': { emoji: '🧵', from: '#134e4a', to: '#5eead4' },
+  '전시/미술': { short: '전시', bg: '#2f4f45' },
+  연극: { short: '연극', bg: '#5b3a2e' },
+  '뮤지컬/오페라': { short: '뮤지컬', bg: '#4a3355' },
+  클래식: { short: '클래식', bg: '#2c3e57' },
+  국악: { short: '국악', bg: '#5a4526' },
+  무용: { short: '무용', bg: '#563245' },
+  콘서트: { short: '콘서트', bg: '#3b3560' },
+  영화: { short: '영화', bg: '#25404f' },
+  '축제-문화/예술': { short: '축제', bg: '#2e5040' },
+  '축제-전통/역사': { short: '축제', bg: '#4f3b24' },
+  '축제-자연/경관': { short: '축제', bg: '#33503a' },
+  '축제-시민화합': { short: '축제', bg: '#2e4a50' },
+  '교육/체험': { short: '체험', bg: '#2b4a4a' },
 }
 
-const FALLBACK = { emoji: '🌿', from: '#1d9e75', to: '#6ee7c7' }
+const FALLBACK = { short: '행사', bg: '#3a3733' }
 
-/**
- * @param {string} src        posterUrl
- * @param {string} category   행사 카테고리 (CODENAME)
- * @param {string} ratio      CSS aspect-ratio 값. 카드는 '4 / 3', 상세는 '3 / 4'
- */
-function Poster({ src, category, alt = '', ratio = '4 / 3', rounded = 'top' }) {
+function Poster({ src, category, alt = '' }) {
   const [failed, setFailed] = useState(false)
   const theme = BY_CATEGORY[category] || FALLBACK
 
-  const radius =
-    rounded === 'all' ? '12px' : rounded === 'top' ? '11px 11px 0 0' : '0'
-
-  if (src && !failed) {
-    return (
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        onError={() => setFailed(true)}
-        style={{ width: '100%', aspectRatio: ratio, objectFit: 'cover', borderRadius: radius, display: 'block' }}
-      />
-    )
-  }
-
   return (
-    <div
-      aria-hidden="true"
-      style={{
-        width: '100%',
-        aspectRatio: ratio,
-        borderRadius: radius,
-        background: `linear-gradient(140deg, ${theme.from} 0%, ${theme.to} 100%)`,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: 'clamp(28px, 6vw, 44px)',
-      }}
-    >
-      {theme.emoji}
+    <div className="mv-poster">
+      {src && !failed ? (
+        <img src={src} alt={alt} loading="lazy" onError={() => setFailed(true)} />
+      ) : (
+        <div className="mv-poster__fallback" style={{ background: theme.bg }} aria-hidden="true">
+          {theme.short}
+        </div>
+      )}
     </div>
   )
 }

@@ -87,6 +87,8 @@ export async function fetchRecommendedEvents({ limit = 4 } = {}) {
   return {
     success: true,
     items,
+    // 마스트헤드에 "열려 있는 행사 N" 으로 쓴다
+    totalOpenEvents: MOCK_EVENTS.filter(isOngoingOrUpcoming).length,
     // 참여 이력도 친구도 없는 신규 유저는 이력·소셜 가중치를 0으로 두고 다시 계산한다.
     // 빈 화면이 나오지 않게 하기 위한 것이고, 화면에서도 숨기지 않고 알려 준다.
     isColdStart: false,

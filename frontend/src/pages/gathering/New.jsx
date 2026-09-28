@@ -1,8 +1,8 @@
 // 모임 만들기.
 //
 // 게시판과 다른 지점 하나가 여기서 드러난다 — **입력이 아니라 선택이다.**
-// 행사를 고르면 제목·날짜·장소·좌표·요금이 이미 채워져 있고, 사람이 쓰는 건 두세 칸뿐이다.
-// 빈 칸에 글을 쓰는 게시판과 개설 비용이 다르다는 걸 화면으로 보여주는 자리다.
+// 행사를 고르면 제목·날짜·장소·좌표·요금이 이미 채워져 있고, 사람이 쓰는 건 세 칸뿐이다.
+// 그 대비를 색면이 아니라 괘선과 레이블로 만든다.
 //
 // 목업 단계라 저장은 하지 않는다. 채워지는 동선만 확인한다.
 
@@ -36,7 +36,7 @@ function New() {
       .then((res) => {
         if (cancelled) return
         setEvent(res.event)
-        // 행사에서 따라오는 값으로 기본 제목을 채워 둔다. 그대로 써도 되고 고쳐도 된다.
+        // 행사에서 따라오는 값으로 기본 제목을 채워 둔다. 그대로 써도 되고 고쳐도 된다
         setTitle(`${res.event.title} 보고 이야기해요`)
         const start = new Date(res.event.startAt)
         start.setHours(start.getHours() + 2)
@@ -57,11 +57,12 @@ function New() {
   if (!eventId) {
     return (
       <EmptyState
-        emoji="🎫"
         title="먼저 행사를 고르세요"
-        description={'모여봄의 모임은 항상 행사에서 시작합니다.\n행사를 고르면 제목·날짜·장소가 자동으로 채워집니다.'}
+        description={
+          '모여봄의 모임은 항상 행사에서 시작합니다.\n행사를 고르면 제목 · 날짜 · 장소가 자동으로 채워집니다.'
+        }
         action={
-          <Link to="/event" className="btn btn-brand">
+          <Link to="/event" className="mv-btn">
             행사 탐색으로
           </Link>
         }
@@ -69,15 +70,14 @@ function New() {
     )
   }
 
-  if (loading) return <div className="text-center text-muted py-5">불러오는 중...</div>
+  if (loading) return <div className="mv-skeleton mt-5" style={{ height: 340 }} />
 
   if (error || !event) {
     return (
       <EmptyState
-        emoji="😶"
         title={error || '행사를 찾을 수 없습니다'}
         action={
-          <Link to="/event" className="btn btn-outline-brand">
+          <Link to="/event" className="mv-btn mv-btn--ghost">
             행사 목록으로
           </Link>
         }
@@ -87,73 +87,75 @@ function New() {
 
   return (
     <div>
-      <nav className="small mb-3">
-        <Link to={`/event/${event._id}`} className="text-decoration-none text-muted">
+      <nav className="pt-4 pb-3">
+        <Link to={`/event/${event._id}`} className="mv-micro" style={{ color: 'var(--ink-dim)', textDecoration: 'none' }}>
           ← {event.title}
         </Link>
       </nav>
 
-      <h1 className="h4 mb-3">모임 만들기</h1>
+      <header className="mv-masthead">
+        <h1 className="mv-display">모임 만들기</h1>
+      </header>
 
-      <div className="row g-4">
+      <div className="row g-5">
         {/* ── 자동으로 채워진 것 ── */}
         <div className="col-12 col-lg-5">
-          <section className="card p-3 prefilled">
-            <div className="d-flex justify-content-between align-items-center mb-3">
-              <span className="small fw-semibold">행사에서 자동으로 채워진 정보</span>
-              <span className="chip chip-green">입력 불필요</span>
-            </div>
+          <div className="d-flex justify-content-between align-items-baseline pb-2 mb-3" style={{ borderBottom: '1px solid var(--rule-strong)' }}>
+            <p className="mv-label mb-0">행사에서 가져온 정보</p>
+            <span className="mv-micro">입력 불필요</span>
+          </div>
 
-            <div className="d-flex gap-3 mb-3">
-              <div style={{ width: 72, flexShrink: 0 }}>
-                <Poster src={event.posterUrl} category={event.category} alt={event.title} ratio="1 / 1" rounded="all" />
-              </div>
-              <div className="min-width-0">
-                <div className="small" style={{ color: 'var(--brand)' }}>
-                  {event.category}
-                </div>
-                <div className="fw-semibold">{event.title}</div>
-              </div>
+          <div className="d-flex gap-3 mb-4">
+            <div style={{ width: 72, flexShrink: 0 }}>
+              <Poster src={event.posterUrl} category={event.category} alt={event.title} />
             </div>
+            <div className="min-width-0">
+              <p className="mv-micro mb-1">{event.category}</p>
+              <p className="mb-0" style={{ fontWeight: 600, letterSpacing: '-0.025em' }}>
+                {event.title}
+              </p>
+            </div>
+          </div>
 
-            <dl className="event-meta mb-0">
-              <dt>기간</dt>
-              <dd>{formatEventPeriodFull(event.startAt, event.endAt)}</dd>
-              <dt>장소</dt>
-              <dd>{event.venue}</dd>
-              <dt>주소</dt>
-              <dd className="text-muted">{event.address}</dd>
-              <dt>지역</dt>
-              <dd>{event.area}</dd>
-              <dt>좌표</dt>
-              <dd className="text-muted">
-                {event.coords?.lat?.toFixed(4)}, {event.coords?.lng?.toFixed(4)}
-              </dd>
-              <dt>요금</dt>
-              <dd>{event.price || '무료'}</dd>
-            </dl>
-          </section>
+          <dl className="mv-dl">
+            <dt>기간</dt>
+            <dd className="mv-num">{formatEventPeriodFull(event.startAt, event.endAt)}</dd>
+            <dt>장소</dt>
+            <dd>{event.venue}</dd>
+            <dt>주소</dt>
+            <dd style={{ color: 'var(--ink-sub)' }}>{event.address}</dd>
+            <dt>지역</dt>
+            <dd>{event.area}</dd>
+            <dt>좌표</dt>
+            <dd className="mv-num" style={{ color: 'var(--ink-sub)' }}>
+              {event.coords?.lat?.toFixed(4)}, {event.coords?.lng?.toFixed(4)}
+            </dd>
+            <dt>요금</dt>
+            <dd>{event.price || '무료'}</dd>
+          </dl>
         </div>
 
         {/* ── 사람이 쓰는 것 ── */}
         <div className="col-12 col-lg-7">
           <form
-            className="card p-4"
             onSubmit={(e) => {
               e.preventDefault()
               setSubmitted(true)
             }}
           >
-            <div className="small fw-semibold mb-3">여기만 채우면 됩니다</div>
+            <div className="d-flex justify-content-between align-items-baseline pb-2 mb-4" style={{ borderBottom: '1px solid var(--ink)' }}>
+              <p className="mv-label mb-0" style={{ color: 'var(--ink)' }}>
+                여기만 채우면 됩니다
+              </p>
+              <span className="mv-micro mv-num">3칸</span>
+            </div>
 
-            <div className="mb-3">
-              <label className="form-label small" htmlFor="mtg-title">
-                모임 제목
-              </label>
+            <div className="mv-field">
+              <label htmlFor="mtg-title">모임 제목</label>
               <input
                 id="mtg-title"
                 type="text"
-                className="form-control"
+                className="mv-input"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 maxLength={60}
@@ -161,68 +163,66 @@ function New() {
               />
             </div>
 
-            <div className="mb-3">
-              <label className="form-label small" htmlFor="mtg-content">
-                한두 줄 소개
-              </label>
+            <div className="mv-field">
+              <label htmlFor="mtg-content">한두 줄 소개</label>
               <textarea
                 id="mtg-content"
-                className="form-control"
+                className="mv-textarea"
                 rows={3}
                 placeholder="관람만 따로 하고 끝나고 이야기만 함께해요. 처음 오셔도 괜찮습니다."
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 maxLength={200}
               />
-              <div className="form-text text-end">{content.length} / 200</div>
+              <p className="mv-help text-end mv-num">{content.length} / 200</p>
             </div>
 
-            <div className="row g-3 mb-3">
+            <div className="row g-4">
               <div className="col-7">
-                <label className="form-label small" htmlFor="mtg-when">
-                  만나는 시각
-                </label>
-                <input
-                  id="mtg-when"
-                  type="datetime-local"
-                  className="form-control"
-                  value={meetAt}
-                  onChange={(e) => setMeetAt(e.target.value)}
-                  required
-                />
-                <div className="form-text">관람이 끝나는 시각 근처로 제안해 두었습니다.</div>
+                <div className="mv-field">
+                  <label htmlFor="mtg-when">만나는 시각</label>
+                  <input
+                    id="mtg-when"
+                    type="datetime-local"
+                    className="mv-input mv-num"
+                    value={meetAt}
+                    onChange={(e) => setMeetAt(e.target.value)}
+                    required
+                  />
+                  <p className="mv-help">관람이 끝나는 시각 근처로 제안해 두었습니다.</p>
+                </div>
               </div>
               <div className="col-5">
-                <label className="form-label small" htmlFor="mtg-max">
-                  정원
-                </label>
-                <select
-                  id="mtg-max"
-                  className="form-select"
-                  value={maxParticipants}
-                  onChange={(e) => setMax(Number(e.target.value))}
-                >
-                  {[2, 3, 4, 5, 6, 8].map((n) => (
-                    <option key={n} value={n}>
-                      {n}명
-                    </option>
-                  ))}
-                </select>
-                <div className="form-text">선착순입니다.</div>
+                <div className="mv-field">
+                  <label htmlFor="mtg-max">정원</label>
+                  <select
+                    id="mtg-max"
+                    className="mv-input"
+                    value={maxParticipants}
+                    onChange={(e) => setMax(Number(e.target.value))}
+                  >
+                    {[2, 3, 4, 5, 6, 8].map((n) => (
+                      <option key={n} value={n}>
+                        {n}명
+                      </option>
+                    ))}
+                  </select>
+                  <p className="mv-help">선착순입니다.</p>
+                </div>
               </div>
             </div>
 
             {submitted && (
-              <div className="alert alert-success small">
+              <p className="mv-note mv-note--accent mv-meta mb-4">
                 화면 확인용입니다. 서버 저장은 다음 단계에서 붙입니다.
-              </div>
+              </p>
             )}
 
             <div className="d-flex gap-2">
-              <button type="submit" className="btn btn-brand">
+              <button type="submit" className="mv-btn">
                 모임 만들기
               </button>
-              <button type="button" className="btn btn-outline-brand" onClick={() => navigate(-1)}>
+              <button type="button" className="mv-btn mv-btn--ghost" onClick={() => navigate(-1)}>
                 취소
               </button>
             </div>

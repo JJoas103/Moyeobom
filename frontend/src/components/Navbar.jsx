@@ -2,9 +2,10 @@ import { Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 // 탭은 행사 → 모임 → 내 기록 순서다. 서비스가 도는 순서와 같게 둔다.
+// 좁은 화면에서는 접는 대신 가로로 흐르게 둔다 — 탭이 넷뿐이라 햄버거를 열게 할 이유가 없다.
 const TABS = [
   { to: '/', label: '홈', match: (p) => p === '/' },
-  { to: '/event', label: '행사 탐색', match: (p) => p.startsWith('/event') },
+  { to: '/event', label: '행사', match: (p) => p.startsWith('/event') },
   { to: '/meeting', label: '모임', match: (p) => p.startsWith('/meeting') },
   { to: '/me', label: '내 기록', match: (p) => p.startsWith('/me') },
 ]
@@ -14,54 +15,47 @@ function Navbar() {
   const { pathname } = useLocation()
 
   return (
-    <nav className="navbar navbar-expand-lg">
-      <div className="container">
-        <Link className="navbar-brand" to="/">
-          🌿 모여봄
-        </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="nav">
-          <ul className="navbar-nav me-auto">
+    <nav className="mv-nav">
+      <div className="mv-page mv-page--wide">
+        <div className="mv-nav__inner">
+          <Link className="mv-nav__brand" to="/">
+            모여봄
+          </Link>
+
+          <div className="mv-nav__links">
             {TABS.map((tab) => (
-              <li className="nav-item" key={tab.to}>
-                <Link className={`nav-link ${tab.match(pathname) ? 'active' : ''}`} to={tab.to}>
-                  {tab.label}
-                </Link>
-              </li>
+              <Link
+                key={tab.to}
+                className="mv-nav__link"
+                to={tab.to}
+                aria-current={tab.match(pathname) ? 'page' : undefined}
+              >
+                {tab.label}
+              </Link>
             ))}
-          </ul>
-          <ul className="navbar-nav ms-auto">
+          </div>
+
+          <div className="mv-nav__right">
             {user ? (
               <>
-                <li className="nav-item d-flex align-items-center">
-                  <span className="me-2">{user.avatar_emoji}</span>
-                  <Link className="nav-link" to="/member/info">
-                    {user.nickname}님
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <button type="button" className="nav-link btn btn-link border-0 bg-transparent" onClick={logout}>
-                    로그아웃
-                  </button>
-                </li>
+                <Link className="mv-nav__link" to="/member/info">
+                  {user.nickname}
+                </Link>
+                <button type="button" className="mv-nav__link" style={{ border: 0, background: 'none' }} onClick={logout}>
+                  로그아웃
+                </button>
               </>
             ) : (
               <>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/member/login">
-                    로그인
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/member/join">
-                    회원가입
-                  </Link>
-                </li>
+                <Link className="mv-nav__link" to="/member/login">
+                  로그인
+                </Link>
+                <Link className="mv-nav__link" to="/member/join">
+                  회원가입
+                </Link>
               </>
             )}
-          </ul>
+          </div>
         </div>
       </div>
     </nav>

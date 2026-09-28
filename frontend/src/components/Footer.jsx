@@ -34,10 +34,11 @@ function Footer() {
   }, [user])
 
   return (
-    <footer className="py-5 mt-5">
-      <div className="container text-center footer">
-        <div className="small">© 2026 모여봄 — 같은 행사를 본 사람과, 여운이 식기 전에</div>
-        <div className="small mt-1">팀 프로젝트 1조</div>
+    <footer className="mv-footer">
+      <div className="mv-page mv-page--wide d-flex justify-content-between flex-wrap gap-2">
+        <span>모여봄</span>
+        <span>행사 정보 · 서울 열린데이터광장 문화행사</span>
+        <span>1조</span>
       </div>
     </footer>
   )

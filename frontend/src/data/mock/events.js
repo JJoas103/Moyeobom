@@ -1,13 +1,15 @@
 // 목업 행사 데이터.
 //
-// 필드 구성은 models/Event.js 스키마를 그대로 따른다. 서울 열린데이터광장
-// 문화행사 API(culturalEventInfo)를 services/eventApiService.js 가 이 모양으로
-// 변환해 저장하므로, 나중에 USE_MOCK을 꺼도 화면 코드를 고칠 필요가 없다.
+// 우선순위
+//   1) events.generated.json — `npm run mock:events` 가 서울 열린데이터광장에서
+//      실제 행사를 받아 만든 파일. 포스터(MAIN_IMG)가 들어 있어 화면이 실제에 가깝다
+//   2) 아래 손으로 쓴 24건 — 키가 없거나 수집에 실패했을 때의 대비
 //
-// category 는 서울 API의 CODENAME 값이고, genres 는 eventApiService.GENRE_MAP 이
-// 붙이는 세부 태그다. 추천 매칭이 genres 로 이뤄지므로 문자열을 임의로 바꾸면 안 된다.
+// 어느 쪽이든 필드 구성은 models/Event.js 스키마를 따른다. category 는 서울 API의
+// CODENAME 이고 genres 는 eventApiService.GENRE_MAP 이 붙이는 태그다.
+// 추천 매칭이 genres 로 이뤄지므로 문자열을 임의로 바꾸면 안 된다.
 //
-// ※ 행사 제목·장소는 실제 서울 문화행사에서 흔한 형태를 본떠 지어낸 예시다.
+// ※ 아래 손으로 쓴 행사의 제목·장소는 실제 행사를 본떠 지어낸 예시다.
 
 const DAY = 24 * 60 * 60 * 1000
 
@@ -32,7 +34,7 @@ const makeEvent = (e) => ({
   sourceId: `seoul:${e.title}|${e.venue}`,
 })
 
-export const MOCK_EVENTS = [
+const HANDWRITTEN = [
   makeEvent({
     _id: 'evt-001',
     title: '빛과 물질 — 소재의 시간',
@@ -346,6 +348,15 @@ export const MOCK_EVENTS = [
     price: '12,000원',
   }),
 ]
+
+// 수집된 파일이 있으면 그쪽을 쓴다. 없을 때 Vite 가 빌드에서 걸리지 않도록
+// import.meta.glob 으로 "있으면 가져오기"를 한다 (없는 파일을 import 하면 빌드가 깨진다).
+const generatedModules = import.meta.glob('./events.generated.json', { eager: true })
+const generated = Object.values(generatedModules)[0]?.default
+
+export const IS_GENERATED = Array.isArray(generated) && generated.length >= 10
+
+export const MOCK_EVENTS = IS_GENERATED ? generated : HANDWRITTEN
 
 // 필터 UI가 쓰는 선택지. 행사 데이터에서 직접 뽑아 두 곳이 어긋나지 않게 한다.
 export const EVENT_CATEGORIES = [...new Set(MOCK_EVENTS.map((e) => e.category))].sort()
