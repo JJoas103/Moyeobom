@@ -16,6 +16,7 @@ import Poster from '../../components/common/Poster'
 import SectionHead from '../../components/common/SectionHead'
 import Status from '../../components/common/Status'
 import EmptyState from '../../components/common/EmptyState'
+import { endLabel, meetingTerms } from '../../components/meeting/MeetingTerms'
 import { fetchMeeting } from '../../data/meetings'
 import { ME } from '../../data/me'
 import { formatMeetingDate } from '../../utils/formatMeetingDate'
@@ -87,6 +88,9 @@ function Detail() {
   const others = meeting.participants.filter((p) => p._id !== ME._id)
   const joinedCount = others.length
   const left = Math.max(0, meeting.maxParticipants - joinedCount)
+  // 승인된 참여자인가. 정확한 장소는 이 사람들에게만 보인다.
+  // 신청만 한 상태(applied)는 아직 아니다 — 호스트가 승인해야 한다.
+  const isMember = isHost || meeting.participants.some((p) => p._id === ME._id)
 
   return (
     <div>
@@ -103,16 +107,61 @@ function Detail() {
           {!isEnded && left > 0 && <span>{left}자리 남음</span>}
           {isHost && <span>내가 만든 모임</span>}
         </p>
-        <h1 className="mv-title mb-3">{meeting.title}</h1>
+        <h1 className="mv-title mb-2">{meeting.title}</h1>
+
+        {/* 신청 전에 공개하는 조건. 목록(MeetingRow)과 같은 문구를 쓴다 —
+            목록에서 보고 들어왔는데 상세에서 사라지면 안 된다 */}
+        <p className="mv-meta mb-3">{meetingTerms(meeting).join(' · ')}</p>
+
         <dl className="mv-dl">
           <dt>일시</dt>
-          <dd className="mv-num">{formatMeetingDate(meeting.meetingDate)}</dd>
-          <dt>지역</dt>
-          <dd>{meeting.area}</dd>
-          <dt>정원</dt>
           <dd className="mv-num">
-            {joinedCount} / {meeting.maxParticipants}명
+            {formatMeetingDate(meeting.meetingDate)}
+            {meeting.endAt && (
+              <span style={{ color: 'var(--ink-dim)' }}> · {endLabel(meeting.endAt)}</span>
+            )}
           </dd>
+          <dt>만나는 곳</dt>
+          <dd>
+            {/* 정확한 장소는 승인된 참여자에게만. 화면이 말하는 승인제와 앞뒤를 맞춘다 */}
+            {isMember ? (
+              meeting.afterPlace?.address || meeting.whereLabel || meeting.area
+            ) : (
+              <>
+                {meeting.whereLabel || meeting.area}
+                <span style={{ color: 'var(--ink-dim)' }}> · 정확한 장소는 승인 후 공개</span>
+              </>
+            )}
+          </dd>
+          <dt>정원</dt>
+          <dd>
+            <span className="d-inline-flex align-items-center gap-2">
+              <span className="mv-gauge" aria-hidden="true">
+                <span
+                  className={`mv-gauge__fill mv-gauge__fill--${left === 0 ? 'closed' : left <= 1 ? 'soon' : 'open'}`}
+                  style={{ width: `${Math.min(100, Math.round((joinedCount / meeting.maxParticipants) * 100))}%` }}
+                />
+              </span>
+              <span className="mv-num">
+                {joinedCount} / {meeting.maxParticipants}명
+              </span>
+            </span>
+          </dd>
+          {meeting.withViewing && (
+            <>
+              <dt>관람 동행</dt>
+              <dd>
+                관람부터 함께
+                {meeting.event?.schedule && (
+                  <span className="mv-num" style={{ color: 'var(--ink-sub)' }}>
+                    {' · '}
+                    {meeting.event.schedule}
+                  </span>
+                )}
+                <span className="mv-help d-block mt-1">티켓은 각자 예매합니다.</span>
+              </dd>
+            </>
+          )}
         </dl>
       </header>
 

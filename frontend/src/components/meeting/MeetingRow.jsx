@@ -10,20 +10,13 @@
 
 import { Link } from 'react-router-dom'
 import Status from '../common/Status'
+import { meetingTerms } from './MeetingTerms'
 import { formatMeetingDateLines } from '../../utils/formatEventDate'
 
 const STATUS = {
   recruit: { label: '모집중', tone: 'open' },
   full: { label: '마감', tone: 'full' },
   completed: { label: '종료', tone: 'done' },
-}
-
-// 시각만 — "23:00 종료 예정"
-function endLabel(iso) {
-  if (!iso) return ''
-  const d = new Date(iso)
-  const pad = (n) => String(n).padStart(2, '0')
-  return `${pad(d.getHours())}:${pad(d.getMinutes())} 종료 예정`
 }
 
 function MeetingRow({ meeting, showEvent = false }) {
@@ -37,13 +30,8 @@ function MeetingRow({ meeting, showEvent = false }) {
   // 남은 자리에 따라 막대 색이 바뀐다 — 숫자를 읽기 전에 상태가 보인다
   const fillTone = left === 0 ? 'closed' : left <= 1 ? 'soon' : 'open'
 
-  // 신청 전에 공개되는 조건
-  const terms = [
-    meeting.withViewing ? '관람부터 함께 가능' : '이야기 자리만',
-    `술 ${meeting.drinking || '없음'}`,
-    meeting.budget,
-    endLabel(meeting.endAt),
-  ].filter(Boolean)
+  // 신청 전에 공개되는 조건 — 상세 화면과 같은 문구를 쓴다
+  const terms = meetingTerms(meeting)
 
   return (
     <li>
