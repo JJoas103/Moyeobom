@@ -10,14 +10,9 @@
 // 근거의 내용은 mock/users.js 의 ME.preferences 와 어긋나면 안 된다.
 // 취향에 없는 장르를 "고르셨어요"로 적으면 화면이 스스로 모순된다.
 
-export const REASON_LABEL = {
-  taste: '취향',
-  history: '이력',
-  social: '친구',
-  area: '동네',
-  time: '시간',
-  calm: '여유',
-}
+// 표 자체는 data/reasonLabel.js 로 옮겼다 — 실데이터를 보는 화면이 목업 모듈을
+// import 하지 않게 하기 위해서다. 기존 import 경로를 살려 두려고 여기서 재수출한다.
+export { REASON_LABEL } from '../reasonLabel'
 
 // 이벤트별 추천 근거와 점수 (서버 recommendService.scoreEvent 의 반환값과 같은 모양)
 export const MOCK_REASONS = {

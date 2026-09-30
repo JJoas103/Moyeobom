@@ -23,6 +23,7 @@ import EventCard from '../../components/event/EventCard'
 import EventMeetingCard from '../../components/event/EventMeetingCard'
 import EventVenueMap from '../../components/event/EventVenueMap'
 import { fetchEvent, fetchSimilarEvents } from '../../data/events'
+import { reasonLabel, reasonText } from '../../data/reasonLabel'
 import { categoryColor, categoryDetail, categoryEng, categoryGroup } from '../../utils/eventCategory'
 import {
   eventTimingBadge,
@@ -271,9 +272,11 @@ function Detail() {
                 <div className="mv-reason-card">
                   <span className="mv-reason-card__label">추천 이유</span>
                   {reasons.slice(0, 5).map((r, i) => (
-                    // 서버는 { factor, label, detail }, 목업은 { kind, text } 로 준다
+                    // 서버는 { factor, label, detail }, 목업은 { kind, text } 로 준다.
+                    // 목업에는 한글 label 이 없어 kind 를 표로 옮겨야 한다 — 안 그러면
+                    // 화면에 taste · history 같은 내부 키가 그대로 찍힌다.
                     <span key={r.factor || r.kind || i}>
-                      <strong>{r.label || r.kind}</strong> {r.detail || r.text}
+                      <strong>{reasonLabel(r)}</strong> {reasonText(r)}
                     </span>
                   ))}
                 </div>
