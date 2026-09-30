@@ -8,7 +8,8 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "seed:places": "node scripts/seedPlaces.js",
-    "seed:parking": "node scripts/createLivePark.js"
+    "seed:parking": "node scripts/createLivePark.js",
+    "seed:events": "node scripts/seedEvents.js"
   },
   "keywords": [],
   "author": "",
