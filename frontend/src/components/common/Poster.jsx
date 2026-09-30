@@ -39,7 +39,12 @@ function posterTitle(title = '') {
   return title.replace(/^\s*[[(【][^\])】]*[\])】]\s*/, '').trim() || title
 }
 
-function Poster({ src, category, title = '', alt = '' }) {
+/**
+ * @param overlay 포스터가 없을 때 면 위에 대신 앉힐 내용.
+ *   시안 v2 의 카드 타일은 가운데 정렬한 카테고리 약자 대신 아래쪽에 영문 + 제목을 쓴다.
+ *   넘기지 않으면 지금까지와 같은 모양이라 목록 한 줄(EventRow)·홈은 그대로다.
+ */
+function Poster({ src, category, title = '', alt = '', overlay = null }) {
   const [failed, setFailed] = useState(false)
   const theme = BY_CATEGORY[category] || FALLBACK
 
@@ -52,10 +57,14 @@ function Poster({ src, category, title = '', alt = '' }) {
   }
 
   return (
-    <div className="mv-poster">
+    <div className={overlay ? 'mv-poster mv-poster--tile' : 'mv-poster'}>
       <div className="mv-poster__fallback" style={{ background: theme.bg }} aria-hidden="true">
-        <span className="mv-poster__cat">{theme.short}</span>
-        {title && <span className="mv-poster__name">{posterTitle(title)}</span>}
+        {overlay ?? (
+          <>
+            <span className="mv-poster__cat">{theme.short}</span>
+            {title && <span className="mv-poster__name">{posterTitle(title)}</span>}
+          </>
+        )}
       </div>
     </div>
   )

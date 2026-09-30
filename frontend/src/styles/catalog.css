@@ -1025,3 +1025,831 @@ a.mv-feature:hover .mv-feature__title {
   color: var(--ink-dim);
   margin-bottom: 7px;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   시안 v2 — 행사 목록 · 행사 상세
+   ═══════════════════════════════════════════════════════════════
+
+   위쪽 도록 스타일(괘선 · mv-row)은 홈이 계속 쓴다. 행사 목록과 상세만 시안 v2 의
+   포스터 그리드로 바뀌었고, 그 두 화면이 쓰는 것을 여기 모았다.
+
+   시안의 중성색 토큰은 위 :root 와 값까지 같다 (--bg ≡ --paper #FBFAF7,
+   --line ≡ --rule #E6E1D7, --text ≡ --ink #26221E …). 없던 것만 더한다.
+   기존 --accent(#1d9e75)는 다른 화면이 쓰므로 건드리지 않고, 시안의 짙은 초록은
+   --primary 로 따로 둔다.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --primary: #1f6b52;
+  --primary-hover: #185843;
+  --primary-soft: #e5f1ec;
+  --primary-highlight: #cfe5da;
+
+  /* 분류 점 — 공연 계열은 하나로 묶는다. 여섯 색이면 구분이 안 된다 */
+  --cat-stage: #a23b4a;
+  --cat-exhibit: #3d4acc;
+  --cat-festival: #b06f0f;
+  --cat-etc: #5e5850;
+
+  /* 상태 — 진행 중 / 곧 끝남 / 끝남 */
+  --status-open: #2e5aac;
+  --status-open-soft: #eaf0fb;
+  --status-soon: #8f5500;
+  --status-soon-soft: #fff3dc;
+  --status-closed: #8c867d;
+
+  --shadow-tile: 0 2px 8px rgba(38, 34, 30, 0.08);
+  --shadow-hover:
+    0 2px 4px rgba(38, 34, 30, 0.04),
+    0 8px 24px rgba(38, 34, 30, 0.08);
+}
+
+/* ── 본문 폭 ──
+   시안은 1080px 인데 .mv-page 는 980px 다. Layout.jsx 를 고치면 모든 화면에 번지므로
+   이 두 페이지의 루트 클래스가 있을 때만 넓힌다 (.mv-page--wide 와 같은 값). */
+.mv-page:has(> .mv-event-wide) {
+  max-width: 1120px;
+}
+.mv-event-wide {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 0 80px;
+}
+
+/* ── 표제 행 ── */
+.mv-head {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1.5px solid var(--rule-strong);
+}
+.mv-head__title {
+  margin: 0;
+  margin-right: auto;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.mv-head__count {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink-sub);
+}
+
+.mv-search--pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--ink-sub);
+}
+.mv-search--pill svg {
+  position: absolute;
+  left: 18px;
+  pointer-events: none;
+}
+.mv-search--pill input {
+  width: 360px;
+  max-width: 100%;
+  height: 48px;
+  box-sizing: border-box;
+  padding: 0 20px 0 46px;
+  border: 1px solid var(--rule);
+  border-radius: 9999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 15px;
+  font-family: inherit;
+}
+.mv-search--pill input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* ── 칩 ── */
+.mv-chip-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.mv-chip-row--tight {
+  padding: 8px 0 16px;
+}
+.mv-chip {
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  background: var(--paper-2);
+  color: var(--ink-body);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+}
+.mv-chip--on {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ── 필터 박스 ── */
+.mv-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--paper-2);
+}
+.mv-filters__gap {
+  flex-grow: 1;
+}
+.mv-pillselect {
+  height: 36px;
+  padding: 0 32px 0 14px;
+  border: 1px solid var(--rule);
+  border-radius: 9999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  /* 기본 화살표는 브라우저마다 크기가 달라 줄 높이를 흔든다. 직접 그린다 */
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-sub) 50%),
+    linear-gradient(135deg, var(--ink-sub) 50%, transparent 50%);
+  background-position:
+    calc(100% - 17px) 16px,
+    calc(100% - 13px) 16px;
+  background-size:
+    4px 4px,
+    4px 4px;
+  background-repeat: no-repeat;
+}
+.mv-pillselect:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* ── 스위치 ── */
+.mv-switchlabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+}
+.mv-switch {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: var(--rule);
+  transition: background 0.2s ease-out;
+}
+.mv-switch--on {
+  background: var(--primary);
+}
+.mv-switch__knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(38, 34, 30, 0.2);
+  transition: left 0.2s ease-out;
+}
+.mv-switch--on .mv-switch__knob {
+  left: 19px;
+}
+
+/* ── 요약 한 줄 ── */
+.mv-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-sub);
+}
+.mv-summary__reset {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-dim);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+}
+.mv-summary__reset:hover {
+  text-decoration: underline;
+}
+
+/* ── 그리드 ──
+   시안은 1440px 고정이라 5열이 박혀 있다. auto-fill 로 두면 좁아질 때 5→4→3→2 로
+   스스로 접힌다 — 칸 폭이 아니라 칸 개수가 바뀌어야 포스터 비율이 유지된다. */
+.mv-grid--poster {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  column-gap: 24px;
+  row-gap: 48px;
+  margin-top: 8px;
+}
+.mv-grid--3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 40px;
+}
+
+/* ── 포스터 카드 ── */
+/* .mv-card 는 감싸는 바깥이고, 링크는 .mv-card__link 다.
+   찜 버튼이 앵커 밖에 있어야 해서(비적합 HTML) 두 겹으로 나눴다.
+   버튼이 없는 모임 카드는 Link 하나에 두 클래스를 같이 준다. */
+.mv-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  color: var(--ink);
+  text-decoration: none;
+}
+.mv-card__link {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+.mv-card__img {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--img-edge);
+  transition:
+    transform 0.2s ease-out,
+    box-shadow 0.2s ease-out;
+}
+.mv-card__img .mv-poster {
+  border-radius: 12px;
+}
+.mv-card:hover .mv-card__img {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover), var(--img-edge);
+}
+.mv-card:hover .mv-card__title {
+  text-decoration: underline;
+}
+
+.mv-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  height: 24px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+.mv-card__badge--date {
+  font-weight: 700;
+}
+.mv-card__dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+}
+.mv-card__like {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.mv-card__like > span {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--ink);
+}
+
+/* 포스터가 없을 때만 면 위에 글자를 앉힌다 (Poster 의 overlay prop).
+   실제 포스터가 있으면 작품을 가리므로 쓰지 않는다 — 시안도 같은 분기를 쓴다. */
+.mv-poster--tile .mv-poster__fallback {
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: 0;
+  padding: 0;
+  text-align: left;
+}
+.mv-card__overlay {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+}
+.mv-card__eng {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.mv-card__postertitle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.mv-card__postertitle--lg {
+  font-size: 28px;
+}
+
+.mv-card__veil {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(251, 250, 247, 0.72);
+  color: var(--ink-body);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.mv-card__statusline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.mv-card__status {
+  align-self: flex-start;
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.mv-card__status--open {
+  color: var(--status-open);
+}
+.mv-card__status--soon {
+  color: var(--status-soon);
+}
+.mv-card__status--closed {
+  color: var(--status-closed);
+}
+.mv-card__status--plan {
+  color: var(--ink-sub);
+}
+.mv-card__kind {
+  min-width: 0;
+  font-size: 13px;
+  color: var(--ink-sub);
+}
+.mv-card__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+.mv-card__meta {
+  font-size: 14px;
+  color: var(--ink-body);
+}
+.mv-card__meet {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-sub);
+}
+.mv-card__meet--on {
+  font-weight: 700;
+  color: var(--ink);
+}
+.mv-card__seats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  font-size: 13px;
+  color: var(--ink-body);
+}
+
+.mv-clamp2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.mv-one {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mv-more {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+}
+
+/* ── 상세: 2단 ── */
+.mv-crumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--ink-sub);
+}
+.mv-crumbs a {
+  color: inherit;
+  text-decoration: none;
+}
+.mv-crumbs a:hover {
+  text-decoration: underline;
+}
+
+.mv-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  column-gap: 40px;
+  align-items: start;
+}
+.mv-detail__main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  min-width: 0;
+}
+.mv-detail__aside {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+/* ── 상세: 표제 ── */
+.mv-hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+.mv-hero__poster {
+  position: relative;
+  width: 300px;
+  flex-shrink: 0;
+}
+/* 시안의 표제 포스터는 300x400 (3:4) 이다. 카드는 실제 포스터 비율인 2:3 을 쓴다 */
+.mv-hero__poster .mv-poster {
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+}
+.mv-hero__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+  min-width: 0;
+}
+.mv-hero__chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+}
+.mv-hero__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: var(--ink-body);
+}
+.mv-hero__foot {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+.mv-hero__foot .mv-help {
+  flex-grow: 1;
+}
+
+.mv-reason-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 20px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--surface);
+  font-size: 15px;
+  color: var(--ink-body);
+}
+.mv-reason-card__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-sub);
+}
+.mv-reason-card strong {
+  margin-right: 6px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* ── 상세: 섹션 표제 ── */
+.mv-h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+}
+.mv-h2 h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+.mv-h2__count {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink-sub);
+}
+.mv-h2__gap {
+  flex-grow: 1;
+}
+.mv-h2__action {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.mv-h2__action:hover {
+  text-decoration: underline;
+}
+
+/* ── 상세: 행사 정보 ── */
+.mv-info {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 16px;
+}
+.mv-info li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.mv-info li svg {
+  flex-shrink: 0;
+}
+.mv-info__key {
+  width: 80px;
+  flex-shrink: 0;
+  color: var(--ink-sub);
+}
+.mv-info__note {
+  color: var(--ink-dim);
+}
+
+/* ── 상세: 장소 ── */
+.mv-venue {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mv-map {
+  height: 240px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+.mv-map--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--ink-sub);
+  font-size: 14px;
+}
+.mv-venue__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+}
+.mv-venue__row > span {
+  flex-grow: 1;
+}
+
+/* ── 상세: 사이드바 ── */
+.mv-aside__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.mv-aside__rule {
+  height: 1px;
+  background: var(--rule);
+}
+.mv-aside__dl {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  row-gap: 12px;
+  margin: 0;
+  font-size: 15px;
+}
+.mv-aside__dl dt {
+  color: var(--ink-body);
+  font-weight: 400;
+}
+.mv-aside__dl dd {
+  margin: 0;
+  text-align: right;
+  font-weight: 700;
+}
+.mv-aside__dd--accent {
+  color: var(--status-open);
+}
+.mv-aside__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+.mv-aside__like {
+  width: 64px;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink-body);
+  font-family: inherit;
+  cursor: pointer;
+}
+.mv-aside__like:hover {
+  background: var(--paper-2);
+}
+
+/* ── 버튼 ── */
+.mv-btn--primary {
+  flex-grow: 1;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 12px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease-out;
+}
+.mv-btn--primary:hover {
+  background: var(--primary-hover);
+  color: #ffffff;
+}
+.mv-btn--line {
+  height: 44px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.mv-btn--line:hover {
+  background: var(--paper-2);
+  color: var(--ink);
+}
+.mv-btn--line:disabled {
+  color: var(--ink-dim);
+  cursor: default;
+}
+.mv-btn--line-lg {
+  height: 48px;
+  padding: 0 32px;
+  font-size: 16px;
+}
+
+/* ── 좁은 화면 ──
+   시안에는 1440px 한 폭만 있다. 2단은 사이드바가 먼저 아래로 내려가고,
+   표제는 포스터가 위로 올라간다. */
+@media (max-width: 1024px) {
+  .mv-detail {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 48px;
+  }
+  .mv-detail__aside {
+    position: static;
+  }
+  .mv-detail__main {
+    gap: 56px;
+  }
+}
+
+@media (max-width: 760px) {
+  .mv-hero {
+    flex-direction: column;
+  }
+  .mv-hero__poster {
+    width: 100%;
+    max-width: 260px;
+  }
+  .mv-head {
+    flex-wrap: wrap;
+  }
+  .mv-head__title {
+    margin-right: 0;
+  }
+  .mv-search--pill,
+  .mv-search--pill input {
+    width: 100%;
+  }
+  .mv-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .mv-grid--3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mv-card:hover .mv-card__img {
+    transform: none;
+  }
+  .mv-switch,
+  .mv-switch__knob,
+  .mv-btn--primary {
+    transition: none;
+  }
+}
