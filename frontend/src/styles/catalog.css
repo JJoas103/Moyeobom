@@ -1682,9 +1682,27 @@ a.mv-feature:hover .mv-feature__title {
   color: var(--ink-sub);
   font-size: 14px;
 }
+/* 마커 위에 띄우는 장소 이름. 지도 조작을 막지 않도록 포인터 이벤트를 넘긴다 */
+.mv-map__label {
+  max-width: 220px;
+  padding: 4px 10px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 2px 6px rgb(38 34 30 / 12%);
+  pointer-events: none;
+}
 .mv-venue__row {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
   font-size: 16px;
 }
