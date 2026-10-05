@@ -71,33 +71,52 @@ async function naverVerify(accessToken, refreshToken, profile, done) {
     }
 }
 
-// 구글 전략
-passport.use(new GoogleStrategy({
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "/auth/google/callback"
-}, googleVerify));
+// 소셜 전략은 키가 있을 때만 등록한다.
+//
+// passport-oauth2 는 clientID 가 비어 있으면 생성 시점에 바로 예외를 던진다. 이 파일은
+// app.js 가 require 하는 자리라, 그러면 서버가 아예 뜨지 않는다. 소셜 로그인을 안 쓰는
+// 상황(.env 를 아직 안 채운 새 팀원, 행사 화면만 띄워 확인할 때)에서도 서버는 떠야 하므로
+// 키가 없으면 건너뛰고 알려만 준다.
+//
+// 키를 채우면 그때부터 지금과 똑같이 동작한다 — 등록 조건만 붙였고 내용은 그대로다.
+// 등록되지 않은 전략으로 /auth/google 에 들어가면 passport 가 "Unknown strategy" 로
+// 받으므로, 로그인 화면에서 소셜 버튼을 누르면 500 이 난다. 키를 넣는 것이 정답이다.
 
-// 네이버 전략
-passport.use(new NaverStrategy({
-    clientID: process.env.NAVER_CLIENT_ID,
-    clientSecret: process.env.NAVER_CLIENT_SECRET,
-    callbackURL: "/auth/naver/callback"
-}, naverVerify));
+if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET) {
+    // 구글 전략
+    passport.use(new GoogleStrategy({
+        clientID: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        callbackURL: "/auth/google/callback"
+    }, googleVerify));
 
-// 리액트 구글 전략
-passport.use('google-api', new GoogleStrategy({
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "/api/auth/google/callback"
-}, googleVerify));
+    // 리액트 구글 전략
+    passport.use('google-api', new GoogleStrategy({
+        clientID: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        callbackURL: "/api/auth/google/callback"
+    }, googleVerify));
+} else {
+    console.warn('[passport] GOOGLE_CLIENT_ID 가 없어 구글 로그인을 건너뜁니다');
+}
 
-// 리액트 네이버 전략
-passport.use('naver-api', new NaverStrategy({
-    clientID: process.env.NAVER_CLIENT_ID,
-    clientSecret: process.env.NAVER_CLIENT_SECRET,
-    callbackURL: "/api/auth/naver/callback"
-}, naverVerify));
+if (process.env.NAVER_CLIENT_ID && process.env.NAVER_CLIENT_SECRET) {
+    // 네이버 전략
+    passport.use(new NaverStrategy({
+        clientID: process.env.NAVER_CLIENT_ID,
+        clientSecret: process.env.NAVER_CLIENT_SECRET,
+        callbackURL: "/auth/naver/callback"
+    }, naverVerify));
+
+    // 리액트 네이버 전략
+    passport.use('naver-api', new NaverStrategy({
+        clientID: process.env.NAVER_CLIENT_ID,
+        clientSecret: process.env.NAVER_CLIENT_SECRET,
+        callbackURL: "/api/auth/naver/callback"
+    }, naverVerify));
+} else {
+    console.warn('[passport] NAVER_CLIENT_ID 가 없어 네이버 로그인을 건너뜁니다');
+}
 
 passport.serializeUser((user, done) => done(null, user.id));
 passport.deserializeUser(async (id, done) => {
