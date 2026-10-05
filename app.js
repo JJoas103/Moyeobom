@@ -134,7 +134,8 @@ const memberApiRouter = require("./routes/api/memberApiRouter");
 const placeApiRouter = require("./routes/api/placeApiRouter");
 const feedApiRouter = require("./routes/api/feedApiRouter");
 const commentApiRouter = require("./routes/api/commentApiRouter");
-// 재참여루프 — 행사 추천 / 취향 온보딩 / 상호 매칭 / 1:1 채팅 (React 전용, EJS 화면 없음)
+// 재참여루프 — 행사 목록·추천 / 취향 온보딩 / 상호 매칭 / 1:1 채팅 (React 전용, EJS 화면 없음)
+const eventApiRouter = require("./routes/api/eventApiRouter");
 const recommendApiRouter = require("./routes/api/recommendApiRouter");
 const onboardingApiRouter = require("./routes/api/onboardingApiRouter");
 const friendApiRouter = require("./routes/api/friendApiRouter");
@@ -156,6 +157,7 @@ app.use("/api/member", memberApiRouter);
 app.use("/api/place", placeApiRouter);
 app.use("/api/feed", feedApiRouter);
 app.use("/api/comment", commentApiRouter);
+app.use("/api/event", eventApiRouter);
 app.use("/api/recommend", recommendApiRouter);
 app.use("/api/onboarding", onboardingApiRouter);
 app.use("/api/friend", friendApiRouter);

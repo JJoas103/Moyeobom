@@ -174,13 +174,205 @@ const searchEvents = async (keyword, limit = 30) => {
     return await Event.find(query).sort({ startAt: 1 }).limit(limit).lean();
 };
 
+// ──────────────────────────────────────────────────────────────
+// 목록 조회 — GET /api/event/list · /api/event/facets 가 쓴다
+// ──────────────────────────────────────────────────────────────
+
+// 화면의 표시 분류(여섯 갈래) → 서울 CODENAME 집합.
+//
+// frontend/src/utils/eventCategory.js 의 GROUP_BY_CODENAME 과 쌍이다. CODENAME 은
+// "뮤지컬/오페라" 처럼 길고 많아서 화면이 여섯 개로 접어 쓰는데, 필터 칩이 보내는 값은
+// 그 접힌 이름이다. 서버는 그걸 다시 CODENAME 으로 펼쳐야 한다.
+// 한쪽만 고치면 필터가 0건을 내므로 바꿀 때는 두 곳을 같이 본다.
+//
+// '축제' 는 '축제-문화/예술' 처럼 접두사로 묶인 분류라 표에 넣지 않고 buildCategoryFilter
+// 에서 정규식으로 받는다.
+const CODENAMES_BY_GROUP = {
+    '공연': ['뮤지컬/오페라', '콘서트', '무용'],
+    '연극': ['연극'],
+    '영화': ['영화'],
+    '전시': ['전시/미술'],
+    '클래식 · 국악': ['클래식', '국악', '독주/독창회']
+};
+
+// "아직 안 끝난 행사" — getUpcomingEvents · searchEvents 와 같은 조건이다.
+// 종료일이 없는 상설 행사도 남긴다.
+const liveCondition = (now = new Date()) => ({
+    $or: [{ endAt: { $gte: now } }, { endAt: null }]
+});
+
+// 표시 분류 → $match 조각
+const buildCategoryFilter = (group) => {
+    const name = String(group || '').trim();
+    if (!name) return null;
+    if (name === '축제') return { category: { $regex: '^축제' } };
+
+    const codenames = CODENAMES_BY_GROUP[name];
+    // 표에 없으면 CODENAME 을 직접 보낸 것으로 보고 그대로 맞춘다
+    return codenames ? { category: { $in: codenames } } : { category: name };
+};
+
+// 기간 필터의 시작일 상한. 프론트 data/events.js 의 matchPeriod 와 같은 경계다.
+// "종료일이 지금보다 뒤" 쪽은 liveCondition 이 이미 담당하므로 여기서는 상한만 만든다.
+const periodBound = (period, now = new Date()) => {
+    if (!period) return null;
+
+    const bound = new Date(now);
+    bound.setHours(23, 59, 59, 999);          // 'today' 는 오늘 끝까지
+    if (period === 'week') bound.setDate(bound.getDate() + 7);
+    if (period === 'month') bound.setDate(bound.getDate() + 30);
+    return bound;
+};
+
+// 서울 API 의 price 는 자유 문자열이다 ("무료", "전석 40,000원", ""). 무료 여부만 가른다.
+// 프론트 matchFee 가 값이 없는 것을 무료로 보므로 서버도 빈 문자열·null·필드 없음을 무료로 둔다.
+const FREE_PRICES = ['', '무료', null];
+
+const buildFeeFilter = (fee) => {
+    if (fee === 'free') return { price: { $in: FREE_PRICES } };
+    if (fee === 'paid') return { price: { $nin: FREE_PRICES } };
+    return null;
+};
+
+// 검색어가 그대로 정규식이 되면 사용자가 '(' 하나만 쳐도 조회가 터진다
+// 메타문자 앞에 역슬래시를 붙여 글자 그대로 찾게 한다.
+const BACKSLASH = String.fromCharCode(92);
+const REGEX_META = new Set(['.', '*', '+', '?', '^', '$', '{', '}', '(', ')', '|', '[', ']', BACKSLASH]);
+
+const escapeRegex = (value) =>
+    String(value)
+        .split('')
+        .map((ch) => (REGEX_META.has(ch) ? BACKSLASH + ch : ch))
+        .join('');
+
+// searchEvents 와 같은 네 필드를 본다
+const buildKeywordFilter = (keyword) => {
+    const text = String(keyword || '').trim();
+    if (!text) return null;
+
+    const rx = { $regex: escapeRegex(text), $options: 'i' };
+    return { $or: [{ title: rx }, { venue: rx }, { area: rx }, { category: rx }] };
+};
+
+const isTruthyFlag = (value) =>
+    value === true || value === 'true' || value === '1' || value === 'on';
+
+const LIST_LIMIT_DEFAULT = 15;   // 목록이 한 페이지에 15건 (프론트 fetchEvents 와 같다)
+const LIST_LIMIT_MAX = 60;
+
+/**
+ * 행사 목록 — 필터 6종 · 모임 많은 순 정렬 · 페이지네이션.
+ *
+ * 프론트 data/events.js 의 fetchEvents 가 목업으로 하던 일을 그대로 옮긴 것이라
+ * 응답 모양도 그쪽에 맞춘다: { events, totalCount, totalPages, currentPage }
+ */
+const listEvents = async (query = {}) => {
+    const { category, area, genre, period, keyword, fee, hasMeeting } = query;
+    const now = new Date();
+
+    const pageNum = Math.max(1, parseInt(query.page, 10) || 1);
+    const limitNum = Math.min(
+        LIST_LIMIT_MAX,
+        Math.max(1, parseInt(query.limit, 10) || LIST_LIMIT_DEFAULT)
+    );
+
+    // liveCondition · fee · keyword 가 모두 $or 를 쓴다. 한 객체에 겹쳐 담으면 뒤 $or 가
+    // 앞을 덮어 조건이 조용히 사라지므로 $and 로 모은다.
+    const conditions = [liveCondition(now)];
+
+    const categoryFilter = buildCategoryFilter(category);
+    if (categoryFilter) conditions.push(categoryFilter);
+    if (area) conditions.push({ area });
+    if (genre) conditions.push({ genres: genre });      // 배열 필드 — 요소 하나만 맞으면 된다
+
+    const bound = periodBound(period, now);
+    if (bound) conditions.push({ startAt: { $lte: bound } });
+
+    const feeFilter = buildFeeFilter(fee);
+    if (feeFilter) conditions.push(feeFilter);
+
+    const keywordFilter = buildKeywordFilter(keyword);
+    if (keywordFilter) conditions.push(keywordFilter);
+
+    const pipeline = [
+        { $match: { $and: conditions } },
+        // 이 행사로 열린 모임 수. 카드에 적고 정렬 기준으로도 쓴다.
+        // 페이지를 자른 뒤에 세면 "모임 많은 순"이 그 페이지 안에서만 맞으므로 먼저 센다.
+        {
+            $lookup: {
+                from: 'meetings',
+                localField: '_id',
+                foreignField: 'event',
+                as: 'openMeetings',
+                pipeline: [{ $match: { status: { $ne: 'completed' } } }]
+            }
+        },
+        { $addFields: { openMeetingCount: { $size: '$openMeetings' } } },
+        { $project: { openMeetings: 0 } }
+    ];
+
+    if (isTruthyFlag(hasMeeting)) {
+        pipeline.push({ $match: { openMeetingCount: { $gt: 0 } } });
+    }
+
+    // 프론트 fetchEvents 의 정렬과 같다 — 모임이 많은 순, 같으면 곧 시작하는 것 먼저.
+    // _id 를 마지막에 두는 것은 동점끼리 순서가 흔들려 페이지 사이에 같은 행사가
+    // 두 번 나오거나 빠지는 것을 막기 위해서다.
+    pipeline.push({ $sort: { openMeetingCount: -1, startAt: 1, _id: 1 } });
+
+    // 목록과 전체 건수를 한 번의 조회로 받는다
+    pipeline.push({
+        $facet: {
+            items: [{ $skip: (pageNum - 1) * limitNum }, { $limit: limitNum }],
+            total: [{ $count: 'count' }]
+        }
+    });
+
+    const [result] = await Event.aggregate(pipeline);
+    const events = (result && result.items) || [];
+    const totalCount = (result && result.total[0] && result.total[0].count) || 0;
+
+    return {
+        events,
+        totalCount,
+        totalPages: Math.max(1, Math.ceil(totalCount / limitNum)),
+        currentPage: pageNum
+    };
+};
+
+/**
+ * 필터 드롭다운에 채울 선택지 — 지금 데이터에 실제로 있는 지역과 세부 장르.
+ *
+ * 서울 25개 구를 다 늘어놓으면 골라도 0건인 항목이 대부분이라 있는 것만 준다.
+ * 지역 표기 순서는 프론트 data/eventOptions.js 의 SEOUL_AREAS 를 따라야 하는데 그 표가
+ * 화면 쪽에만 있다. 여기서는 목록만 주고 순서는 화면이 맞춘다.
+ */
+const getEventFacets = async () => {
+    const live = liveCondition();
+
+    const [areas, genres] = await Promise.all([
+        Event.distinct('area', live),
+        Event.distinct('genres', live)
+    ]);
+
+    const byKorean = (a, b) => a.localeCompare(b, 'ko');
+
+    return {
+        areas: areas.filter(Boolean).sort(byKorean),
+        genres: genres.filter(Boolean).sort(byKorean)
+    };
+};
+
 module.exports = {
     syncEvents,
     getUpcomingEvents,
     getEventById,
     searchEvents,
+    listEvents,
+    getEventFacets,
     // 테스트/검증용 내부 함수 노출
     mapRow,
     normalizeCoords,
-    GENRE_MAP
+    GENRE_MAP,
+    CODENAMES_BY_GROUP
 };

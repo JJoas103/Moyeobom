@@ -1,14 +1,16 @@
 // 행사 데이터 접근.
 //
-// 화면은 여기만 부른다.
+// 화면은 여기만 부른다. 서버에서 오든 목업에서 오든 돌려주는 모양이 같아서, 화면 코드는
+// 어느 쪽인지 몰라도 된다. 데이터 출처가 바뀔 때 화면을 안 고치려고 한 겹 둔 것이다.
 //
-//   fetchEvents            목록 — 목업. /api/event/list 가 백엔드에 아직 없다
-//   fetchRecommendedEvents 홈 추천 — USE_MOCK 토글
-//   fetchEvent             상세 — id 모양으로 실제 API / 목업을 가른다 (아래 주석)
-//   fetchSimilarEvents     상세의 "비슷한 행사"
+//   fetchEvents            목록 — /api/event/list
+//   fetchEventFacets       필터 드롭다운 선택지 — /api/event/facets
+//   fetchRecommendedEvents 홈 추천 — 아직 목업 (config.js 의 USE_MOCK 설명 참고)
+//   fetchEvent             상세 — /api/recommend/event/:id
+//   fetchSimilarEvents     상세의 "비슷한 행사" — /api/recommend/search
 
 import { apiGet } from '../api'
-import { USE_MOCK, delay } from './config'
+import { USE_MOCK, USE_MOCK_EVENTS, delay } from './config'
 import { MOCK_EVENTS } from './mock/events'
 import { impressionsOfEvent } from './mock/impressions'
 import { meetingsOfEvent } from './mock/meetings'
@@ -19,9 +21,10 @@ import { categoryGroup } from '../utils/eventCategory'
 import { SEOUL_AREAS } from './eventOptions'
 
 // 실제 행사 _id 는 MongoDB ObjectId(24자 hex)고, 목업은 'evt-001' 이다.
-// 목록이 목업이라 상세로 넘어오는 id 가 두 종류 섞이는데, 목업 id 를 실제 API 로 보내면
-// Event.findById('evt-001') 이 CastError 를 내서 404 도 아닌 500 이 된다.
-// 목록까지 실제 API 로 넘긴 뒤에는 이 분기를 지우면 된다.
+//
+// 목록이 실데이터로 넘어간 뒤에도 이 검사가 남아 있는 이유는 목업 시절 주소다. 'evt-001' 을
+// 서버로 보내면 Event.findById 가 CastError 를 내서 404 가 아닌 500 이 되고, 화면에는
+// "행사를 찾을 수 없습니다"가 아니라 아무것도 안 뜬다. 그런 id 는 목업으로 돌려 둔다.
 const isRealId = (id) => /^[0-9a-f]{24}$/i.test(String(id || ''))
 
 const isOngoingOrUpcoming = (event) => !event.endAt || new Date(event.endAt) >= new Date()
@@ -67,12 +70,14 @@ export async function fetchEvents({
   page = 1,
   limit = 15,
 } = {}) {
-  if (!USE_MOCK) {
-    // 주의 — 이 엔드포인트는 백엔드에 아직 없다 (routes/api 에 event 라우터 미구현).
-    // USE_MOCK 을 끄기 전에 먼저 만들어야 한다.
-    return apiGet('/api/event/list', {
+  if (!USE_MOCK_EVENTS) {
+    const data = await apiGet('/api/event/list', {
       params: { category, area, genre, period, keyword, fee, hasMeeting, page, limit },
     })
+
+    // 서버가 주지 않는 파생 필드(러닝타임·회차·주최 기관)를 붙인다. 이걸 빼면 카드와
+    // 상세의 문구가 비어 보인다 — 목업 분기와 같은 모양으로 맞춰야 한다.
+    return { ...data, events: normalizeEvents(data.events || []) }
   }
 
   await delay()
@@ -120,8 +125,17 @@ export async function fetchEvents({
  * 순서를 그대로 쓰면 목록이 바뀔 때마다 드롭다운 순서가 흔들린다.
  */
 export async function fetchEventFacets() {
-  if (!USE_MOCK) {
-    return apiGet('/api/event/facets')
+  if (!USE_MOCK_EVENTS) {
+    const data = await apiGet('/api/event/facets')
+    const serverAreas = new Set(data.areas || [])
+
+    // 순서를 서버 응답이 아니라 SEOUL_AREAS 로 다시 세운다. 그 표가 화면 쪽에만 있어서
+    // 서버는 목록만 준다. 목업 분기와 같은 순서여야 출처가 바뀌어도 드롭다운이 그대로다.
+    return {
+      ...data,
+      areas: SEOUL_AREAS.filter((a) => serverAreas.has(a)),
+      genres: data.genres || [],
+    }
   }
 
   const live = MOCK_EVENTS.filter(isOngoingOrUpcoming)
@@ -135,9 +149,15 @@ export async function fetchEventFacets() {
   }
 }
 
-/** 개인화 추천 — 점수 순. 각 행사에 왜 떴는지가 함께 붙는다 */
+/**
+ * 개인화 추천 — 점수 순. 각 행사에 왜 떴는지가 함께 붙는다.
+ *
+ * 행사 목록·상세와 달리 여기만 아직 목업이다. /api/recommend 는 requireAuth 라 비로그인
+ * 홈에서 401 이 되고, 홈이 읽는 totalOpenEvents 를 서버가 내려주지 않는다. 점수를 매기는
+ * 코드는 services/recommendService.js 에 있으니, 그 두 가지가 정리되면 넘어간다.
+ */
 export async function fetchRecommendedEvents({ limit = 4 } = {}) {
-    if (!USE_MOCK) {
+  if (!USE_MOCK) {
     return apiGet('/api/recommend', { params: { limit } })
   }
 
@@ -175,7 +195,9 @@ export async function fetchRecommendedEvents({ limit = 4 } = {}) {
  * 화면도 그 키를 읽지 않는다.
  */
 export async function fetchEvent(eventId) {
-  if (isRealId(eventId)) {
+  // 조건이 둘인 이유 — USE_MOCK_EVENTS 는 어느 쪽을 볼지 정하고, isRealId 는 서버로
+  // 보낼 수 있는 id 인지를 본다 (위 isRealId 주석 참고).
+  if (!USE_MOCK_EVENTS && isRealId(eventId)) {
     const data = await apiGet(`/api/recommend/event/${eventId}`)
     return {
       ...data,
@@ -209,14 +231,14 @@ export async function fetchEvent(eventId) {
 /**
  * 같은 분류의 다른 행사 — 상세 맨 아래 "비슷한 행사".
  *
- * 실제 행사는 /api/recommend/search 를 쓴다. eventApiService.searchEvents 가 keyword 를
- * title·venue·area·category 에 regex 로 걸기 때문에 CODENAME 을 넘기면 같은 분류가 온다.
- * 목록 엔드포인트가 없어도 되고 백엔드를 고칠 필요도 없다.
+ * 새 기능을 만든 게 아니라 모임 개설 때 쓰는 행사 검색을 그대로 재사용했다.
+ * eventApiService.searchEvents 가 keyword 를 title·venue·area·category 에 regex 로 걸기
+ * 때문에 CODENAME 을 넘기면 같은 분류가 온다. 백엔드를 고칠 필요가 없었다.
  */
 export async function fetchSimilarEvents(event, { limit = 3 } = {}) {
   if (!event) return []
 
-  if (isRealId(event._id)) {
+  if (!USE_MOCK_EVENTS && isRealId(event._id)) {
     const data = await apiGet('/api/recommend/search', { params: { keyword: event.category } })
     return normalizeEvents(
       (data.events || []).filter((e) => String(e._id) !== String(event._id)).slice(0, limit),
@@ -236,7 +258,7 @@ export async function fetchSimilarEvents(event, { limit = 3 } = {}) {
 }
 
 // 카드에 바로 쓰도록 집계 두 개를 붙여 둔다.
-// 서버에서는 recommendService 가 같은 값을 계산해 내려준다.
+// 서버에서는 listEvents 의 $lookup 과 recommendService 가 같은 값을 계산해 내려준다.
 function withCounts(event) {
   return {
     ...event,
